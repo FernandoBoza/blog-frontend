@@ -16,6 +16,8 @@ export default function Home() {
         <div className={styles.grid}>
           <Query id query={PORTFOLIO_ARTICLES_QUERY}>
             {({ data }) => {
+              console.log(process.env.API_URL);
+
               return (
                 data.portfolioArticles.map(x => {
                   return (
