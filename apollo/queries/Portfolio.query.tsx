@@ -5,6 +5,7 @@ query portfolioArticles{
   portfolioArticles {
     title
     slug
+    published_at
     articleBase {
       content
       image {

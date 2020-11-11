@@ -6,6 +6,7 @@ query blogArticles{
     title
     slug
     category
+    published_at
     articleBase {
       content
       image {
