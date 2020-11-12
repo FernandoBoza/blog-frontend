@@ -1,6 +1,6 @@
 import gql from "graphql-tag";
 
-const BLOG_ARTICLES_QUERY = gql`
+const BLOGS_ARTICLES_QUERY = gql`
 query blogArticles{
   blogArticles {
     title
@@ -17,4 +17,4 @@ query blogArticles{
 }
 `;
 
-export default BLOG_ARTICLES_QUERY;
+export default BLOGS_ARTICLES_QUERY;

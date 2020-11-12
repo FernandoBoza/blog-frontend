@@ -1,6 +1,6 @@
 import gql from "graphql-tag";
 
-const PORTFOLIO_ARTICLES_QUERY = gql`
+const PORTFOLIOS_ARTICLES_QUERY = gql`
 query portfolioArticles{
   portfolioArticles {
     title
@@ -16,4 +16,4 @@ query portfolioArticles{
 }
 `;
 
-export default PORTFOLIO_ARTICLES_QUERY;
+export default PORTFOLIOS_ARTICLES_QUERY;

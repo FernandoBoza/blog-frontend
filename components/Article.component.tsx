@@ -1,16 +1,13 @@
 import React from "react";
 
-const Article = ({ articles }) => {
+
+const Article = (data) => {
+    let article = data.data
     return (
-        <div>
-            <div className="uk-child-width-1-2" data-uk-grid>
-                <div>
-                    {/* {articles.map((article, i) => {
-            return <Card article={article} key={`article__${article.article.slug}`} />;
-          })} */}
-                </div>
-            </div>
-        </div>
+        <section className='container'>
+            <h1>{article.title}</h1>
+            <p>{article.articleBase.content}</p>
+        </section>
     );
 };
 

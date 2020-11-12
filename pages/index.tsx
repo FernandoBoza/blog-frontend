@@ -1,62 +1,76 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.scss'
+import Link from "next/link";
 import Query from "../components/Query.component"
-import BLOG_ARTICLES_QUERY from '../apollo/queries/Blog.query'
-import PORTFOLIO_ARTICLES_QUERY from '../apollo/queries/Portfolio.query'
-
-export default function Home() {
-
-  const publishDate = date => {
-    return new Date(date).toLocaleDateString('en-US', {
-      day: 'numeric',
-      month: 'short',
-      year: 'numeric',
-    });
-  }
-
+import Card from "../components/Card.component"
+import BLOGS_ARTICLES_QUERY from '../apollo/queries/Blog/Blogs.query'
+import PORTFOLIOS_ARTICLES_QUERY from '../apollo/queries/Portfolio/Portfolios.query'
+const Home = () => {
   return (
-    <div className={styles.container}>
+    <section className='Home container'>
       <Head>
-        <title>Create Next App</title>
+        <title>Fernando Boza | Home</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <div className={styles.grid}>
-          <Query id query={PORTFOLIO_ARTICLES_QUERY}>
+      <div className="row">
+        <div className="col">
+          <h1 className='title'><span className='font-weight-light'>Fernando</span>Boza</h1>
+          <p>I’m a 3D artist by trade, years in agency and
+          marketing environment. While working in Paris I fell
+          in love with the art and dynamics of coding and fully
+          transitioned to Computer Science. I build full stack
+          and front end solutions revolving around users and
+          the MO.</p>
+
+          <div className="btn_list">
+            <button className="btn btn-primary">
+              <a href="/FernandoBoza_Resume.pdf" download="FernandoBoza-Resume">
+                <i className="mr-2 fas fa-download"/> Download Resume
+              </a>
+            </button>
+            <button className="btn btn-success"><i className="mr-2 far fa-window"/> View Web Resume</button>
+          </div>
+        </div>
+
+        <div className="col">
+          <Link href="/blog">
+            <a className='category-title-link'>
+              <h1>Blog.<i className="fas fa-external-link-square-alt" /></h1>
+            </a>
+          </Link>
+          <Query slug query={BLOGS_ARTICLES_QUERY}>
             {({ data }) => {
               return (
-                data.portfolioArticles.map(x => {
+                data.blogArticles.map(blog => {
                   return (
-                    <div key={x.slug} className={styles.card}>
-                      <h3>{x.title}</h3>
-                      <p>{x.articleBase.content}</p>
-                      <span>{publishDate(x.published_at)}</span>
-                      {/* <img src={x.articleBase.image != null ? x.articleBase.image.url : ''} alt="" /> */}
-                    </div>
-                  )
-                })
-              );
-            }}
-          </Query>
-          <Query id query={BLOG_ARTICLES_QUERY}>
-            {({ data }) => {
-              return (
-                data.blogArticles.map(x => {
-                  return (
-                    <div key={x.slug} className={styles.card}>
-                      <h3>{x.title}</h3>
-                      <p>{x.articleBase.content}</p>
-                      <span>{publishDate(x.published_at)}</span>
-                      {/* <img src={x.articleBase.image != null ? x.articleBase.image.url : ''} alt="" /> */}
-                    </div>
+                    <Card key={blog.slug} article={blog}/>
                   )
                 })
               );
             }}
           </Query>
         </div>
-      </main>
-    </div>
+        <div className="col">
+          <Link href="/portfolio">
+            <a className='category-title-link'>
+              <h1>Portfolio. <i className="fas fa-external-link-square-alt" /></h1>
+            </a>
+          </Link>
+          <Query slug query={PORTFOLIOS_ARTICLES_QUERY}>
+            {({ data }) => {
+              return (
+                data.portfolioArticles.map(portfolio => {
+                  return (
+                    <Card key={portfolio.slug} article={portfolio}/>
+                  )
+                })
+              );
+            }}
+          </Query>
+        </div>
+      </div>
+    </section>
   )
 }
+
+export default Home;
