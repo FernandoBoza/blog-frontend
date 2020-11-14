@@ -1,13 +1,14 @@
 import Card from "../components/Card.component";
+
 export const getItemsInCol = (data, type) => {
     let columns = [];
-    data[type+'Articles'].forEach((blog, index) => {
+    data[type + 'Articles'].forEach((blog, index) => {
         columns.push(
             <div key={blog.slug} className="col-sm-6 col-md-5 col-lg-4">
-                <Card article={blog}/>
+                <Card article={blog} />
             </div>
         )
-        if ((index+1)%4===0) {}
+        if ((index + 1) % 4 === 0) { }
     })
 
     return (
@@ -15,4 +16,8 @@ export const getItemsInCol = (data, type) => {
             {columns}
         </div>
     )
+}
+
+export const shortenContent = (content, len) => {
+    return content.slice(0, len);
 }

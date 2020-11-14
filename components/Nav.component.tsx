@@ -11,9 +11,9 @@ const Nav = () => {
                     </a>
                 </Link>
                 <div className="right">
-                    <Link href="/resume">
+                    {/* <Link href="/resume">
                         <a>Resume</a>
-                    </Link>
+                    </Link> */}
                     <Link href="/blog">
                         <a>Blog</a>
                     </Link>

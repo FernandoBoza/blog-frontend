@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import {publishDate} from '../Utils/Dates.utils'
+import { publishDate } from '../Utils/Dates.utils'
+import { shortenContent } from '../Utils/SharedPlans'
 
 const Card = ({ article }) => {
 
@@ -15,8 +16,8 @@ const Card = ({ article }) => {
                     </div>
                     <div className="col-md-8">
                         <div className="card-body">
-                            <h5 className="card-title">{article.title}</h5>
-                            <p className="card-text">{article.articleBase.content}</p>
+                            <h5 className="card-title">{shortenContent(article.title, 30)} ...</h5>
+                            <p className="card-text">{shortenContent(article.articleBase.content, 40)} ...</p>
                             <p className="card-text"><small className="text-muted">{publishDate(article.published_at)}</small></p>
                         </div>
                     </div>

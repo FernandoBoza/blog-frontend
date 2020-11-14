@@ -11,6 +11,9 @@ import Nav from '../components/Nav.component';
 import Footer from '../components/Footer.component';
 
 const MyApp = ({ Component, pageProps, apollo }) => {
+  // if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  //   console.log('dark mode')
+  // }
   return (
     <ApolloProvider client={apollo}>
       <Nav />

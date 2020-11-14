@@ -1,6 +1,10 @@
+
+
 const Resume = () => {
     return (
-        <h1>Resume</h1>
+        <div className='Resume container'>
+            Job
+        </div>
     )
 }
 
