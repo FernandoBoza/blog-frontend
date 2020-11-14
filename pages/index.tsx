@@ -28,7 +28,9 @@ const Home = () => {
                 <i className="mr-2 fas fa-download"/> Download Resume
               </a>
             </button>
-            <button className="btn btn-success"><i className="mr-2 far fa-window"/> View Web Resume</button>
+            <Link href='/resume'>
+            <a className="btn btn-success"><i className="mr-2 far fa-window"/> View Web Resume</a>
+            </Link>
           </div>
         </div>
 
@@ -40,8 +42,9 @@ const Home = () => {
           </Link>
           <Query slug query={BLOGS_ARTICLES_QUERY}>
             {({ data }) => {
+              data = data.blogArticles.slice(0,2);
               return (
-                data.blogArticles.map(blog => {
+                data.map(blog => {
                   return (
                     <Card key={blog.slug} article={blog}/>
                   )
@@ -58,8 +61,9 @@ const Home = () => {
           </Link>
           <Query slug query={PORTFOLIOS_ARTICLES_QUERY}>
             {({ data }) => {
+              data = data.portfolioArticles.splice(0,2);
               return (
-                data.portfolioArticles.map(portfolio => {
+                data.map(portfolio => {
                   return (
                     <Card key={portfolio.slug} article={portfolio}/>
                   )

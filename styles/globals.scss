@@ -1,5 +1,6 @@
 // @import "../node_modules/bootstrap/scss/bootstrap.scss";
-@import url("https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css");
+ @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css");
+@import url("https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/materia/bootstrap.min.css");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;900&display=swap");
 
 .font-weight-light {
@@ -63,7 +64,7 @@ nav {
         width: 30vw;
         justify-content: space-between;
         a {
-            font-weight: 100;
+            font-weight: 200;
             text-decoration: none;
         }
     }
@@ -91,8 +92,20 @@ section.Home {
     background-color: transparent;
     border: none;
     &-body {
-        padding: 0 0 0 1rem;
+        padding: 1rem 0 0 1rem;
     }
+}
+
+.card_custom {
+    transition: box-shadow .4s;
+    &:hover {
+        box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+    }
+}
+
+.card,
+.navbar {
+    box-shadow: none;
 }
 
 // Extra small devices (portrait phones, less than 576px)

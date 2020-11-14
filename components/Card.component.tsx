@@ -1,24 +1,17 @@
 import React from "react";
 import Link from "next/link";
+import {publishDate} from '../Utils/Dates.utils'
 
 const Card = ({ article }) => {
-
-    const publishDate = (date: string) => {
-        return new Date(date).toLocaleDateString('en-US', {
-            day: 'numeric',
-            month: 'short',
-            year: 'numeric',
-        });
-    }
 
     let path = article.__typename.toLowerCase().replace('articles', 's/') + article.slug;
 
     return (
         <Link href={path}>
-            <a href={path} className="card mb-3">
+            <a href={path} className="card_custom card mb-3">
                 <div className="row no-gutters">
                     <div className="col-md-4">
-                        <img src="https://via.placeholder.com/200" className="card-img" alt="..." />
+                        <img src="https://via.placeholder.com/200x240" className="card-img rounded" alt="..." />
                     </div>
                     <div className="col-md-8">
                         <div className="card-body">
