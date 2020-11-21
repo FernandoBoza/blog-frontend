@@ -13,7 +13,7 @@ const Home = () => {
       </Head>
 
       <div className="row">
-        <div className="col-sm-12 col-md-5">
+        <div className="col-sm-12 col-md-4">
           <h1 className='title'><span className='font-weight-light'>Fernando</span>Boza</h1>
           <p>I’m a 3D artist by trade, years in agency and
           marketing environment. While working in Paris I fell
@@ -32,10 +32,10 @@ const Home = () => {
             </Link> */}
           </div>
         </div>
-        <div className="col col-sm-6 offset-md-1 col-md-3">
+        <div className="col col-sm-6 col-md-4">
           <Link href="/blog">
             <a className='category-title-link'>
-              <h1>Blog.<i className="fas fa-external-link-square-alt" /></h1>
+              <h1 className='pl-3'>Blog.<i className="fas fa-external-link-square-alt" /></h1>
             </a>
           </Link>
           <Query slug query={BLOGS_ARTICLES_QUERY}>
@@ -51,10 +51,10 @@ const Home = () => {
             }}
           </Query>
         </div>
-        <div className="col col-sm-6 col-md-3">
+        <div className="col col-sm-6 col-md-4">
           <Link href="/portfolio">
             <a className='category-title-link'>
-              <h1>Portfolio. <i className="fas fa-external-link-square-alt" /></h1>
+              <h1 className='pl-3'>Portfolio. <i className="fas fa-external-link-square-alt" /></h1>
             </a>
           </Link>
           <Query slug query={PORTFOLIOS_ARTICLES_QUERY}>
