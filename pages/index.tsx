@@ -13,7 +13,7 @@ const Home = () => {
       </Head>
 
       <div className="row">
-        <div className="col">
+        <div className="col-sm-12 col-md-5">
           <h1 className='title'><span className='font-weight-light'>Fernando</span>Boza</h1>
           <p>I’m a 3D artist by trade, years in agency and
           marketing environment. While working in Paris I fell
@@ -21,20 +21,18 @@ const Home = () => {
           transitioned to Computer Science. I build full stack
           and front end solutions revolving around users and
           the MO.</p>
-
           <div className="btn_list">
             <button className="btn btn-primary">
               <a href="/FernandoBoza_Resume.pdf" download="FernandoBoza-Resume">
-                <i className="mr-2 fas fa-download"/> Download Resume
+                <i className="mr-2 fas fa-download" /> Download Resume
               </a>
             </button>
-            <Link href='/resume'>
+            {/* <Link href='/resume'>
             <a className="btn btn-success"><i className="mr-2 far fa-window"/> View Web Resume</a>
-            </Link>
+            </Link> */}
           </div>
         </div>
-
-        <div className="col">
+        <div className="col col-sm-6 offset-md-1 col-md-3">
           <Link href="/blog">
             <a className='category-title-link'>
               <h1>Blog.<i className="fas fa-external-link-square-alt" /></h1>
@@ -42,18 +40,18 @@ const Home = () => {
           </Link>
           <Query slug query={BLOGS_ARTICLES_QUERY}>
             {({ data }) => {
-              data = data.blogArticles.slice(0,2);
+              data = data.blogArticles.slice(0, 2);
               return (
                 data.map(blog => {
                   return (
-                    <Card key={blog.slug} article={blog}/>
+                    <Card key={blog.slug} article={blog} />
                   )
                 })
               );
             }}
           </Query>
         </div>
-        <div className="col">
+        <div className="col col-sm-6 col-md-3">
           <Link href="/portfolio">
             <a className='category-title-link'>
               <h1>Portfolio. <i className="fas fa-external-link-square-alt" /></h1>
@@ -61,11 +59,11 @@ const Home = () => {
           </Link>
           <Query slug query={PORTFOLIOS_ARTICLES_QUERY}>
             {({ data }) => {
-              data = data.portfolioArticles.splice(0,2);
+              data = data.portfolioArticles.slice(0, 2);
               return (
                 data.map(portfolio => {
                   return (
-                    <Card key={portfolio.slug} article={portfolio}/>
+                    <Card key={portfolio.slug} article={portfolio} />
                   )
                 })
               );
