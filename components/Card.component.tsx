@@ -17,7 +17,7 @@ const Card = ({ article }) => {
                     <div className="col-md-8">
                         <div className="card-body">
                             <h5 className="card-title">{shortenContent(article.title, 30)} ...</h5>
-                            <p className="card-text">{shortenContent(article.articleBase.content, 40)} ...</p>
+                            {/* <p className="card-text">{shortenContent(article.articleBase.content, 40)} ...</p> */}
                             <p className="card-text"><small className="text-muted">{publishDate(article.published_at)}</small></p>
                         </div>
                     </div>
