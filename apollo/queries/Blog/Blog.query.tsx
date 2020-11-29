@@ -1,8 +1,8 @@
 import gql from "graphql-tag";
 
 const BLOG_ARTICLE_QUERY = gql`
-  query blogArticles($slug: String!, $limit: Int) {
-    blogArticles(where: {slug: $slug, limit: $limit}) {
+  query blogArticles($slug: String!) {
+    blogArticles(where: {slug: $slug}) {
       title
       slug
       published_at

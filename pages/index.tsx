@@ -14,7 +14,9 @@ const Home = () => {
 
       <div className="row">
         <div className="col-sm-12 col-md-4">
-          <h1 className='title'><span className='font-weight-light'>Fernando</span>Boza</h1>
+          <h1 className='title'><span className='font-weight-light'>Fernando</span>
+            <span>Boza</span>
+          </h1>
           <p>I’m a 3D artist by trade, years in agency and
           marketing environment. While working in Paris I fell
           in love with the art and dynamics of coding and fully
@@ -22,14 +24,12 @@ const Home = () => {
           and front end solutions revolving around users and
           the MO.</p>
           <div className="btn_list">
-            <button className="btn btn-primary">
-              <a href="/FernandoBoza_Resume.pdf" download="FernandoBoza-Resume">
+              <a className="text-capitalize btn btn-primary mr-3" href="/FernandoBoza_Resume.pdf" download="FernandoBoza-Resume">
                 <i className="mr-2 fas fa-download" /> Download Resume
               </a>
-            </button>
-            {/* <Link href='/resume'>
-            <a className="btn btn-success"><i className="mr-2 far fa-window"/> View Web Resume</a>
-            </Link> */}
+            <Link href='/FernandoBoza_Resume.pdf'>
+            <a className="text-capitalize btn btn-success"><i className="mr-2 far fa-window"/> View Web Resume</a>
+            </Link>
           </div>
         </div>
         <div className="col col-sm-6 col-md-4">
@@ -40,7 +40,8 @@ const Home = () => {
           </Link>
           <Query slug query={BLOGS_ARTICLES_QUERY}>
             {({ data }) => {
-              data = data.blogArticles.slice(0, 2);
+              data = data.blogArticles;
+              console.log(data)
               return (
                 data.map(blog => {
                   return (
@@ -59,7 +60,8 @@ const Home = () => {
           </Link>
           <Query slug query={PORTFOLIOS_ARTICLES_QUERY}>
             {({ data }) => {
-              data = data.portfolioArticles.slice(0, 2);
+              data = data.portfolioArticles;
+              // console.log(data)
               return (
                 data.map(portfolio => {
                   return (

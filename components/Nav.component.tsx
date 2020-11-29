@@ -7,7 +7,7 @@ const Nav = () => {
             <nav className="navbar px-0">
                 <Link href="/">
                     <a className="navbar-brand" href="#">
-                        <img className='logo' src="/LogoV2.svg" alt="Fernando Boza Logo" loading="lazy" />
+                        <img className='logo' src="/Logo.svg" alt="Fernando Boza Logo" loading="lazy" />
                     </a>
                 </Link>
                 <div className="right">
