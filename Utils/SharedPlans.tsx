@@ -19,5 +19,5 @@ export const getItemsInCol = (data, type) => {
 }
 
 export const shortenContent = (content, len) => {
-    return content.slice(0, len);
+    return content.slice(0, len) + "...";
 }

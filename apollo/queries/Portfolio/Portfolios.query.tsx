@@ -3,10 +3,11 @@ import gql from "graphql-tag";
 const PORTFOLIOS_ARTICLES_QUERY = gql`
 query portfolioArticles{
   portfolioArticles(sort: "published_at:desc") {
+    published_at
     title
     slug
-    published_at
     articleBase {
+      url
       content
       image {
         url

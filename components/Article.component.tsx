@@ -8,31 +8,34 @@ const Article = (data) => {
     const article = data.data;
     const category_title = article.__typename.replace('Articles', '');
     const imgPath = article.articleBase.image.length > 0 ? article.articleBase.image[1].url : "https://via.placeholder.com/1200x600";
-
+    const projURL = () => {
+        if (article.articleBase.url != null) {
+            return (
+                <Link href={article.articleBase.url}><a className="btn btn-primary">View Project</a></Link>
+            )
+        }
+    };
     return (
-        <section className='container'>
+        <section className='article container'>
             <Head>
                 <title>Fernando Boza | {article.title}</title>
             </Head>
-            <div className="row">
-                <div className="col">
-                    <Link href={'/' + category_title.toLowerCase()}>
-                        <a>
-                            <h3><i className="fas fa-chevron-left"/> Back To {category_title}</h3>
-                        </a>
-                    </Link>
-                </div>
+
+            <Link href={'/' + category_title.toLowerCase()}>
+                <a>
+                    <h4><i className="fas fa-chevron-left" /> Back To {category_title}</h4>
+                </a>
+            </Link>
+
+            <div className="d-flex mt-5">
+                <div className="mr-auto"><h1>{article.title}</h1></div>
+                {projURL()}
             </div>
-            <div className="row text-center">
-                <div className="col">
-                    <h1 className='mt-5'>{article.title}</h1>
-                    <img className='img-fluid my-5' src={imgPath} />
-                    <div id={styles.content}>
-                        {/* <ReactMarkdown source={article.articleBase.content} /> */}
-                        <div dangerouslySetInnerHTML={{__html: article.articleBase.content}}/>
-                    </div>
-                </div>
-            </div>
+
+            <img className='article-image img-fluid my-5' src={imgPath} />
+
+            <div id={styles.content} dangerouslySetInnerHTML={{ __html: article.articleBase.content }} />
+
         </section>
     );
 };

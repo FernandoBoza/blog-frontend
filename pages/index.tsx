@@ -35,7 +35,7 @@ const Home = () => {
         <div className="col col-sm-6 col-md-4">
           <Link href="/blog">
             <a className='category-title-link'>
-              <h1 className='pl-3'>Blog.<i className="fas fa-external-link-square-alt" /></h1>
+              <h1 className=''>Blog.<i className="fas fa-external-link-square-alt" /></h1>
             </a>
           </Link>
           <Query slug query={BLOGS_ARTICLES_QUERY}>
@@ -54,7 +54,7 @@ const Home = () => {
         <div className="col col-sm-6 col-md-4">
           <Link href="/portfolio">
             <a className='category-title-link'>
-              <h1 className='pl-3'>Portfolio. <i className="fas fa-external-link-square-alt" /></h1>
+              <h1 className=''>Portfolio. <i className="fas fa-external-link-square-alt" /></h1>
             </a>
           </Link>
           <Query slug query={PORTFOLIOS_ARTICLES_QUERY}>

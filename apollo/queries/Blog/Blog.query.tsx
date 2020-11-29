@@ -7,6 +7,7 @@ const BLOG_ARTICLE_QUERY = gql`
       slug
       published_at
       articleBase {
+        url
         content
         image {
         url 
