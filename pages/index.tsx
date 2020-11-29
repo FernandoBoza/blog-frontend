@@ -24,11 +24,11 @@ const Home = () => {
           and front end solutions revolving around users and
           the MO.</p>
           <div className="btn_list">
-              <a className="text-capitalize btn btn-primary mr-3" href="/FernandoBoza_Resume.pdf" download="FernandoBoza-Resume">
-                <i className="mr-2 fas fa-download" /> Download Resume
+            <a className="text-capitalize btn btn-primary mr-3" href="/FernandoBoza_Resume.pdf" download="FernandoBoza-Resume">
+              <i className="mr-2 fas fa-download" /> Download Resume
               </a>
             <Link href='/FernandoBoza_Resume.pdf'>
-            <a className="text-capitalize btn btn-success"><i className="mr-2 far fa-window"/> View Web Resume</a>
+              <a className="text-capitalize btn btn-success"><i className="mr-2 far fa-window" /> View Web Resume</a>
             </Link>
           </div>
         </div>
@@ -40,8 +40,7 @@ const Home = () => {
           </Link>
           <Query slug query={BLOGS_ARTICLES_QUERY}>
             {({ data }) => {
-              data = data.blogArticles;
-              console.log(data)
+              data = data.blogArticles.slice(0, 4);
               return (
                 data.map(blog => {
                   return (
@@ -60,8 +59,7 @@ const Home = () => {
           </Link>
           <Query slug query={PORTFOLIOS_ARTICLES_QUERY}>
             {({ data }) => {
-              data = data.portfolioArticles;
-              // console.log(data)
+              data = data.portfolioArticles.slice(0, 4);
               return (
                 data.map(portfolio => {
                   return (
