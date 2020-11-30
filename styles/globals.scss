@@ -7,12 +7,27 @@
     font-weight: 100 !important;
 }
 
-$bg: #ebebeb;
-$color: #333;
+@media (prefers-color-scheme: dark) {
+    $bg: #333;
+    $color: #ebebeb;
+
+    body {
+        background: $bg;
+        color: $color;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    $bg: #ebebeb;
+    $color: #333;
+
+    body {
+        background: $bg;
+        color: $color;
+    }
+}
 
 body {
-    background: $bg;
-    color: $color;
     font-family: Poppins, Helvetic, serif;
     margin-bottom: 60px; /* Margin bottom by footer height */
 
