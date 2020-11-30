@@ -4,7 +4,6 @@ import { publishDate } from '../Utils/Dates.utils'
 import { shortenContent } from '../Utils/SharedPlans'
 
 const Card = ({ article }) => {
-    console.log(article);
 
     const path = article.__typename.toLowerCase().replace('articles', 's/') + article.slug;
     const imgPath = article.articleBase.image.length > 0 ? article.articleBase.image[0].url : "https://via.placeholder.com/200x240";

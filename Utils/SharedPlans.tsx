@@ -4,7 +4,7 @@ export const getItemsInCol = (data, type) => {
     let columns = [];
     data[type + 'Articles'].forEach((blog, index) => {
         columns.push(
-            <div key={blog.slug} className="col-6 col-sm-6 col-md-5 col-lg-4">
+            <div key={blog.slug} className="col-6 col-sm-6 col-md-6 col-lg-4">
                 <Card article={blog} />
             </div>
         )

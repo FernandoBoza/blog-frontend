@@ -13,7 +13,7 @@ const Home = () => {
       </Head>
 
       <div className="row">
-        <div className="col-sm-12 col-md-4">
+        <div className="col-sm-12 col-md-10 col-lg-4 mb-5">
           <h1 className='title'><span className='font-weight-light'>Fernando</span>
             <span>Boza</span>
           </h1>
@@ -32,7 +32,7 @@ const Home = () => {
             </Link>
           </div>
         </div>
-        <div className="col col-sm-6 col-md-4">
+        <div className="col col-sm-6 col-md-6 col-lg-4">
           <Link href="/blog">
             <a className='category-title-link'>
               <h1 className=''>Blog.<i className="fas fa-external-link-square-alt" /></h1>
@@ -51,7 +51,7 @@ const Home = () => {
             }}
           </Query>
         </div>
-        <div className="col col-sm-6 col-md-4">
+        <div className="col col-sm-6 col-md-6 col-lg-4">
           <Link href="/portfolio">
             <a className='category-title-link'>
               <h1 className=''>Portfolio. <i className="fas fa-external-link-square-alt" /></h1>

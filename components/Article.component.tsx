@@ -27,7 +27,7 @@ const Article = (data) => {
                 </a>
             </Link>
 
-            <div className="d-flex mt-5">
+            <div className="d-flex mt-5 flex-sm-column flex-md-column flex-lg-row">
                 <div className="mr-auto"><h1>{article.title}</h1></div>
                 {projURL()}
             </div>
