@@ -11,7 +11,7 @@ const Article = (data) => {
     const projURL = () => {
         if (article.articleBase.url != null) {
             return (
-                <Link href={article.articleBase.url}><a className="btn btn-primary">View Project</a></Link>
+                <Link href={article.articleBase.url}><a target="_blank" className="btn btn-primary">View Project</a></Link>
             )
         }
     };
