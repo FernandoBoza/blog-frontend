@@ -1,6 +1,6 @@
 // @import "../node_modules/bootstrap/scss/bootstrap.scss";
-@import url("https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css");
-@import url("https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/materia/bootstrap.min.css");
+@import "./bootstrap.4.5.2.scss";
+@import "./bootswatch_materia.scss";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;900&display=swap");
 
 .font-weight-light {
@@ -155,6 +155,10 @@ img.article-image {
     .card-body {
         padding: 1rem 0 0 0;
     }
+
+    .card-body p.card-text:nth-last-child(2) {
+        display: none;
+    }
 }
 
 // Extra small devices (portrait phones, less than 576px)
@@ -187,9 +191,6 @@ img.article-image {
     h1.title {
         display: flex;
         flex-direction: column;
-    }
-    .card-body p.card-text:nth-last-child(2) {
-        display: none;
     }
 }
 
