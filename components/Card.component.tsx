@@ -2,18 +2,12 @@ import React, { Component } from "react";
 import Link from "next/link";
 import { publishDate } from '../Utils/Dates.utils'
 import { shortenContent } from '../Utils/SharedPlans'
+const isServer = typeof window === 'undefined'
+const WOW = !isServer ? require('wowjs') : null
 
-export default class Card extends Component {
-
-    constructor(article) {
-        super(article);
-    }
-
+export default class Card extends Component<{ article: any }> {
     componentDidMount() {
-        if (typeof window !== 'undefined') {
-            window.WOW = require('wowjs');
-        }
-        new WOW.WOW({ live: false }).init();
+        new WOW.WOW().init()
     }
 
     render() {

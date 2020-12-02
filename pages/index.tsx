@@ -7,14 +7,6 @@ import PORTFOLIOS_ARTICLES_QUERY from '../apollo/queries/Portfolio/Portfolios.qu
 import { Component } from 'react';
 
 export default class Home extends Component {
-
-  componentDidMount() {
-    if (typeof window !== 'undefined') {
-      window.WOW = require('wowjs');
-    }
-    new WOW.WOW({ live: false }).init();
-  }
-
   render() {
     return (
       <section className='Home container'>

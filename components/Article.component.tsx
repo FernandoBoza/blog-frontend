@@ -1,17 +1,14 @@
-import { fromPromise } from "@apollo/react-hooks";
-import ReactMarkdown from "react-markdown";
 import Link from "next/link";
 import Head from 'next/head';
 import styles from "../styles/blog.module.scss";
 import { Component } from "react";
+const isServer = typeof window === 'undefined'
+const WOW = !isServer ? require('wowjs') : null
 
-export default class Article extends Component {
+export default class Article extends Component<{ data: any }> {
 
     componentDidMount() {
-        if (typeof window !== 'undefined') {
-            window.WOW = require('wowjs');
-        }
-        new WOW.WOW({ live: false }).init();
+        new WOW.WOW().init()
     }
 
     render() {
