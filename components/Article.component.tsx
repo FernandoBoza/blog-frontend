@@ -5,47 +5,41 @@ import { Component } from "react";
 const isServer = typeof window === 'undefined'
 const WOW = !isServer ? require('wowjs') : null
 
-export default class Article extends Component<{ data: any }> {
+const Article = ({ data }) => {
 
-    componentDidMount() {
-        new WOW.WOW().init()
-    }
+    const article = data;
+    const category_title = article.__typename.replace('Articles', '');
+    const imgPath = article.articleBase.image.length > 0 ? article.articleBase.image[1].url : "https://via.placeholder.com/1200x600";
+    const projURL = () => {
+        if (article.articleBase.url != null) {
+            return (
+                <Link href={article.articleBase.url}><a className='btn btn-primary wow fadeInDown' data-wow-delay=".5s" target="_blank">View Project</a></Link>
+            )
+        }
+    };
+    return (
+        <section className='article container'>
+            <Head>
+                <title>Fernando Boza | {article.title}</title>
+            </Head>
 
-    render() {
-        const article = this.props.data;
-        const category_title = article.__typename.replace('Articles', '');
-        const imgPath = article.articleBase.image.length > 0 ? article.articleBase.image[1].url : "https://via.placeholder.com/1200x600";
-        const projURL = () => {
-            if (article.articleBase.url != null) {
-                return (
-                    <Link href={article.articleBase.url}><a className='btn btn-primary wow fadeInDown' data-wow-delay=".5s" target="_blank">View Project</a></Link>
-                )
-            }
-        };
-        return (
-            <section className='article container'>
-                <Head>
-                    <title>Fernando Boza | {article.title}</title>
-                </Head>
+            <Link href={'/' + category_title.toLowerCase()}>
+                <a>
+                    <h4><i className="fas fa-chevron-left" /> Back To {category_title}</h4>
+                </a>
+            </Link>
 
-                <Link href={'/' + category_title.toLowerCase()}>
-                    <a>
-                        <h4><i className="fas fa-chevron-left" /> Back To {category_title}</h4>
-                    </a>
-                </Link>
+            <div className="d-flex mt-5 flex-sm-column flex-md-column flex-lg-row">
+                <div className="mr-auto"><h1 className='wow fadeInDown' data-wow-delay=".5s">{article.title}</h1></div>
+                {projURL()}
+            </div>
 
-                <div className="d-flex mt-5 flex-sm-column flex-md-column flex-lg-row">
-                    <div className="mr-auto"><h1 className='wow fadeInDown' data-wow-delay=".5s">{article.title}</h1></div>
-                    {projURL()}
-                </div>
+            <img className='article-image img-fluid my-5 wow fadeInUp' data-wow-delay="1s" src={imgPath} />
 
-                <img className='article-image img-fluid my-5 wow fadeInUp' data-wow-delay="1s" src={imgPath} />
+            <div className='wow fadeInUp' data-wow-delay="1.4s" id={styles.content} dangerouslySetInnerHTML={{ __html: article.articleBase.content }} />
 
-                <div className='wow fadeInUp' data-wow-delay="1.4s" id={styles.content} dangerouslySetInnerHTML={{ __html: article.articleBase.content }} />
-
-            </section>
-        );
-    }
+        </section>
+    );
 };
 
-
+export default Article;
