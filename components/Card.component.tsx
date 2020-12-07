@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Link from "next/link";
-import { publishDate } from '../Utils/Dates.utils'
-import { shortenContent } from '../Utils/SharedPlans'
+import { publishDate } from '../utils/Dates.utils'
+import { shortenContent } from '../utils/SharedPlans'
 const isServer = typeof window === 'undefined'
 const WOW = !isServer ? require('wowjs') : null
 

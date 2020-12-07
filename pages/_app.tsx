@@ -1,7 +1,7 @@
 import { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import * as gtag from "../Utils/gtag";
+import * as gtag from "../utils/gtag";
 
 import '../styles/globals.scss';
 import '../styles/fontawesome-pro-5.15.1-web/scss/fontawesome.scss';

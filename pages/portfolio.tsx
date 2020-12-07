@@ -1,6 +1,6 @@
 import Query from "../components/Query.component";
 import PORTFOLIOS_ARTICLES_QUERY from "../apollo/queries/Portfolio/Portfolios.query";
-import {getItemsInCol} from "../Utils/SharedPlans";
+import { getItemsInCol } from "../utils/SharedPlans";
 
 const Portfolio = () => {
     return (
@@ -11,9 +11,9 @@ const Portfolio = () => {
                 </div>
             </div>
             <Query slug query={PORTFOLIOS_ARTICLES_QUERY}>
-                {({data}) => {
+                {({ data }) => {
                     return (
-                        getItemsInCol(data,'portfolio')
+                        getItemsInCol(data, 'portfolio')
                     );
                 }}
             </Query>

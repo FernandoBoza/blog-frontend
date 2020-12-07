@@ -159,6 +159,23 @@ section.article.container {
     }
 }
 
+a.text-capitalize.btn {
+    i {
+        position: absolute;
+        opacity: 0;
+        left: 11px;
+        top: calc(50% + -5px);
+        transition: opacity 0.4s;
+    }
+
+    &:hover {
+        padding-left: 2rem;
+        i {
+            opacity: 1;
+        }
+    }
+}
+
 // Apple iPhone 12 Pro Max Min-Width Media Queries
 
 @media only screen and (min-width: 428px) {
