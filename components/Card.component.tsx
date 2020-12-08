@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Link from "next/link";
 import { publishDate } from '../utils/Dates'
 import { shortenContent } from '../utils/SharedPlans'
