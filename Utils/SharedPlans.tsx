@@ -1,5 +1,13 @@
 import Card from "../components/Card.component";
 
+export const publishDate = (date: string) => {
+    return new Date(date).toLocaleDateString('en-US', {
+        day: 'numeric',
+        month: 'short',
+        year: 'numeric',
+    });
+}
+
 export const getItemsInCol = (data, type) => {
     let columns = [];
     data[type + 'Articles'].forEach((blog, index) => {
