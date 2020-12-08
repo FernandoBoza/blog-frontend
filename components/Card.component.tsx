@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
-// import { publishDate } from "../utils/Dates";
-// import { shortenContent } from "../utils/SharedPlans";
+import { publishDate } from "../utils/Dates";
+import { shortenContent } from "../utils/SharedPlans";
 
 const Card = ({ article }) => {
     const path = article.__typename.toLowerCase().replace('articles', 's/') + article.slug;
@@ -16,8 +16,8 @@ const Card = ({ article }) => {
                     <div className="col-md-8">
                         <div className="card-body">
                             <h5 className="card-title">{article.title}</h5>
-                            {/* <p className="card-text">{shortenContent(article.articleBase.content, 70)}</p> */}
-                            {/* <p className="card-text"><small className="text-muted">{publishDate(article.published_at)}</small></p> */}
+                            <p className="card-text">{shortenContent(article.articleBase.content, 70)}</p>
+                            <p className="card-text"><small className="text-muted">{publishDate(article.published_at)}</small></p>
                         </div>
                     </div>
                 </div>
