@@ -13,7 +13,18 @@ const Article = ({ data }) => {
     const projURL = () => {
         if (article.articleBase.url != null) {
             return (
-                <Link href={article.articleBase.url}><a className='btn btn-primary wow fadeInDown' data-wow-delay=".5s" target="_blank">View Project</a></Link>
+                <div>
+                    <Link href={'/' + category_title.toLowerCase()}>
+                        <a className='text-capitalize btn btn-warning'>
+                            <i className="fas fa-chevron-left" /> Back To {category_title}
+                        </a>
+                    </Link>
+                    <Link href={article.articleBase.url}>
+                        <a className='btn btn-primary text-capitalize ml-3' target="_blank">
+                            <i className="fas fa-external-link-square-alt"></i>
+                        View Project</a>
+                    </Link>
+                </div>
             )
         }
     };
@@ -22,12 +33,6 @@ const Article = ({ data }) => {
             <Head>
                 <title>Fernando Boza | {article.title}</title>
             </Head>
-
-            <Link href={'/' + category_title.toLowerCase()}>
-                <a>
-                    <h4><i className="fas fa-chevron-left" /> Back To {category_title}</h4>
-                </a>
-            </Link>
 
             <div className="d-flex mt-5 flex-sm-column flex-md-column flex-lg-row">
                 <div className="mr-auto"><h1 className='wow fadeInDown' data-wow-delay=".5s">{article.title}</h1></div>
