@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import Link from "next/link";
-import { publishDate } from '../utils/Dates.utils'
+import { publishDate } from '../utils/Dates'
 import { shortenContent } from '../utils/SharedPlans'
-const isServer = typeof window === 'undefined'
 
 const Card = ({ article }) => {
     const path = article.__typename.toLowerCase().replace('articles', 's/') + article.slug;
