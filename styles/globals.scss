@@ -10,20 +10,30 @@
 @media (prefers-color-scheme: dark) {
     $bg: #333;
     $color: #ebebeb;
+    $img: "../public/LogoV2.svg";
 
     body {
         background: $bg;
         color: $color;
+    }
+
+    .navbar-brand {
+        background-image: url($img);
     }
 }
 
 @media (prefers-color-scheme: light) {
     $bg: #ebebeb;
     $color: #333;
+    $img: "../public/Logo.svg";
 
     body {
         background: $bg;
         color: $color;
+    }
+
+    .navbar-brand {
+        background-image: url($img);
     }
 }
 
@@ -81,7 +91,7 @@ nav {
 
 section.Home {
     h1.title {
-        font-size: xxx-large;
+        display: flex;
         letter-spacing: 4px;
 
         .font-weight-light {
@@ -117,16 +127,28 @@ section.Home {
 .card_custom {
     transition: box-shadow 0.4s;
     padding: 1rem;
+
+    img.card-img.rounded {
+        transition: box-shadow 0.5s;
+    }
+
+    .card-title {
+        transition: background 0.4s, color 0.35s;
+        padding: 0.5rem;
+        border-radius: 4px;
+    }
+
     &:hover {
         box-shadow: 0px 5px 10px 0px #00000012;
 
         img.card-img.rounded {
             box-shadow: 0px 0px 16px 0px #00000059;
         }
-    }
 
-    img.card-img.rounded {
-        transition: box-shadow 0.5s;
+        .card-title {
+            background: rgb(2, 126, 227);
+            color: white;
+        }
     }
 }
 
@@ -176,6 +198,13 @@ a.text-capitalize.btn {
     }
 }
 
+.navbar-brand {
+    width: 56px;
+    height: 50px;
+    display: block;
+    background-size: cover;
+}
+
 // Apple iPhone 12 Pro Max Min-Width Media Queries
 
 @media only screen and (min-width: 428px) {
@@ -192,6 +221,10 @@ a.text-capitalize.btn {
 
     .card-body p.card-text:nth-last-child(2) {
         display: none;
+    }
+
+    h1.title {
+        font-size: 72px;
     }
 }
 
@@ -214,6 +247,10 @@ a.text-capitalize.btn {
             }
         }
     }
+
+    h1.title {
+        font-size: 72px;
+    }
 }
 
 // Medium devices (tablets, 768px and up)
@@ -223,8 +260,7 @@ a.text-capitalize.btn {
     }
 
     h1.title {
-        display: flex;
-        flex-direction: column;
+        font-size: 90px;
     }
 }
 
@@ -232,6 +268,10 @@ a.text-capitalize.btn {
 @media (min-width: 992px) {
     .card-body p.card-text:nth-last-child(2) {
         display: unset;
+    }
+
+    h1.title {
+        font-size: 39px;
     }
 }
 
@@ -247,6 +287,7 @@ a.text-capitalize.btn {
 
     h1.title {
         display: flex;
+        font-size: 51px;
         flex-direction: row;
     }
 
