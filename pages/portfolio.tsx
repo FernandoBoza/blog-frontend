@@ -1,6 +1,6 @@
 import Query from "../components/Query.component";
 import PORTFOLIOS_ARTICLES_QUERY from "../apollo/queries/Portfolio/Portfolios.query";
-import { getItemsInCol } from "../utils/SharedPlans";
+import { getItemsInCol } from "../Utils/SharedPlans";
 
 const Portfolio = () => {
     return (

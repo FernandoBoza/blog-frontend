@@ -1,6 +1,6 @@
 import Query from "../components/Query.component";
 import BLOGS_ARTICLES_QUERY from "../apollo/queries/Blog/Blogs.query";
-import { getItemsInCol } from '../utils/SharedPlans'
+import { getItemsInCol } from '../Utils/SharedPlans'
 
 const Blog = () => {
     return (
