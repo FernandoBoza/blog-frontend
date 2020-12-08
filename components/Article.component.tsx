@@ -3,7 +3,6 @@ import Head from 'next/head';
 import styles from "../styles/blog.module.scss";
 import { Component } from "react";
 const isServer = typeof window === 'undefined'
-const WOW = !isServer ? require('wowjs') : null
 
 const Article = ({ data }) => {
 
