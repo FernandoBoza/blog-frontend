@@ -18,23 +18,19 @@ import withData from '../apollo/apollo';
 import Nav from '../components/Nav.component';
 import Footer from '../components/Footer.component';
 
-const isServer = typeof window === 'undefined'
-const WOW = !isServer ? require('wowjs') : null
-
-
 const MyApp = ({ Component, pageProps, apollo }) => {
-  let isProduction = true;
-  const router = useRouter();
-  useEffect(() => {
-    const handleRouteChange = (url: URL) => {
-      /* invoke analytics function only for production */
-      if (isProduction) gtag.pageview(url);
-    };
-    router.events.on("routeChangeComplete", handleRouteChange);
-    return () => {
-      router.events.off("routeChangeComplete", handleRouteChange);
-    };
-  }, [router.events]);
+  // let isProduction = true;
+  // const router = useRouter();
+  // useEffect(() => {
+  //   const handleRouteChange = (url: URL) => {
+  //     /* invoke analytics function only for production */
+  //     if (isProduction) gtag.pageview(url);
+  //   };
+  //   router.events.on("routeChangeComplete", handleRouteChange);
+  //   return () => {
+  //     router.events.off("routeChangeComplete", handleRouteChange);
+  //   };
+  // }, [router.events]);
   // eslint-disable-next-line react/jsx-props-no-spreading
   return (
     <ApolloProvider client={apollo}>

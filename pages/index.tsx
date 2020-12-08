@@ -16,30 +16,30 @@ export default class Home extends Component {
         </Head>
 
         <div className="row">
-          <div className="col-sm-12 col-md-10 col-lg-4 mb-5">
+          <div className="col-sm-12 col-md-12 col-lg-4 mb-5">
             <h1 className="title">
-              <span className='font-weight-light wow fadeInDown'>Fernando</span>
-              <span className='wow fadeInDown' data-wow-delay=".5s">Boza</span>
+              <span className='font-weight-light '>Fernando</span>
+              <span className=''>Boza</span>
             </h1>
-            <p className='wow fadeInDown' data-wow-delay=".6s">I’m a 3D artist by trade, years in agency and
+            <p className=''>I’m a 3D artist by trade, years in agency and
             marketing environment. While working in Paris I fell
             in love with the art and dynamics of coding and fully
             transitioned to Computer Science. I build full stack
             and front end solutions revolving around users and
           the MO.</p>
             <div className="btn_list">
-              <a className="text-capitalize btn btn-primary mr-3 wow fadeInUp" data-wow-delay=".5s" href="/FernandoBoza_Resume.pdf" download="FernandoBoza-Resume">
+              <a className="text-capitalize btn btn-primary mr-3 " href="/FernandoBoza_Resume.pdf" download="FernandoBoza-Resume">
                 <i className="mr-2 fas fa-download" /> Download Resume
               </a>
               <Link href='/FernandoBoza_Resume.pdf'>
-                <a className="text-capitalize btn btn-success wow fadeInUp" data-wow-delay=".9s"><i className="mr-2 far fa-window" /> View Resume</a>
+                <a className="text-capitalize btn btn-success "><i className="mr-2 far fa-window" /> View Resume</a>
               </Link>
             </div>
           </div>
           <div className="col col-sm-6 col-md-6 col-lg-4">
             <Link href="/blog">
-              <a className='category-title-link'>
-                <h1 className=' wow fadeInRight' data-wow-delay=".9s">Blog.<i className="fas fa-external-link-square-alt" /></h1>
+              <a target="_blank" className='category-title-link'>
+                <h1 className=' '>Blog.<i className="fas fa-external-link-square-alt" /></h1>
               </a>
             </Link>
             <Query slug query={BLOGS_ARTICLES_QUERY}>
@@ -58,7 +58,7 @@ export default class Home extends Component {
           <div className="col col-sm-6 col-md-6 col-lg-4">
             <Link href="/portfolio">
               <a className='category-title-link'>
-                <h1 className=' wow fadeInRight' data-wow-delay="1s">Portfolio. <i className="fas fa-external-link-square-alt" /></h1>
+                <h1 className=' '>Portfolio. <i className="fas fa-external-link-square-alt" /></h1>
               </a>
             </Link>
             <Query slug query={PORTFOLIOS_ARTICLES_QUERY}>
