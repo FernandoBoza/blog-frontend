@@ -249,4 +249,9 @@ a.text-capitalize.btn {
         display: flex;
         flex-direction: row;
     }
+
+    .card-body p.card-text:nth-last-child(2) {
+        font-size: 0.8rem;
+        opacity: 0.7;
+    }
 }
