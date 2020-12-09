@@ -29,7 +29,7 @@ const Home = () => {
           and front end solutions revolving around users and
           the MO.</p>
           <div className="btn_list">
-            <a className="text-capitalize btn btn-primary mr-3 " href="/FernandoBoza_Resume.pdf" download="FernandoBoza-Resume">
+            <a className="text-capitalize btn btn-primary mr-3" target="_blank" href="/FernandoBoza_Resume.pdf" download="FernandoBoza-Resume">
               <i className="mr-2 fas fa-download" /> Download Resume
               </a>
             <Link href='/FernandoBoza_Resume.pdf'>
