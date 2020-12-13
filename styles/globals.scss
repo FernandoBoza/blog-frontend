@@ -146,7 +146,15 @@ section.Home {
         }
 
         .card-title {
-            background: rgb(2, 126, 227);
+            &.bg- {
+                &portfolio {
+                    background-color: #4caf50;
+                }
+
+                &blog {
+                    background-color: #0c7cd5;
+                }
+            }
             color: white;
         }
     }
