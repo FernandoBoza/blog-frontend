@@ -13,7 +13,6 @@ const Article = () => {
             let article = data[router.query.category + 'Articles'][0]
             return (
                 <ArticleComp article={article} />
-                // <h1>Hello</h1>
             );
         }}
     </Query>
