@@ -2,13 +2,9 @@ import Head from 'next/head'
 import Link from "next/link";
 import Query from "../components/Query.component"
 import Card from "../components/Card.component"
-import BLOGS_ARTICLES_QUERY from '../apollo/queries/Blog/Blogs.query'
-import PORTFOLIOS_ARTICLES_QUERY from '../apollo/queries/Portfolio/Portfolios.query'
+import ARTICLE_QUERY from '../apollo/queries/allArticlesQuery';
 
 const Home = () => {
-  function hook(data) {
-    console.log(data);
-  }
   return (
     <section className='Home container'>
       <Head>
@@ -43,7 +39,7 @@ const Home = () => {
               <h1 className=' '>Blog.<i className="fas fa-external-link-square-alt" /></h1>
             </a>
           </Link>
-          <Query slug query={BLOGS_ARTICLES_QUERY}>
+          <Query slug query={ARTICLE_QUERY('blog')}>
             {({ data }) => {
               data = data.blogArticles.slice(0, 4);
               return (
@@ -62,7 +58,7 @@ const Home = () => {
               <h1 className=' '>Portfolio. <i className="fas fa-external-link-square-alt" /></h1>
             </a>
           </Link>
-          <Query slug query={PORTFOLIOS_ARTICLES_QUERY}>
+          <Query slug query={ARTICLE_QUERY('portfolio')}>
             {({ data }) => {
               data = data.portfolioArticles.slice(0, 4);
               return (
