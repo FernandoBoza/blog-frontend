@@ -4,11 +4,6 @@ import { GA_TRACKING_ID } from '../utils/gtag'
 
 export default class MyDocument extends Document {
     render() {
-
-        function hook(data) {
-            console.log(data);
-        }
-
         return (
             <Html>
                 <Head>

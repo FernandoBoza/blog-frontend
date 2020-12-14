@@ -61,10 +61,6 @@ html {
         justify-content: flex-end;
         align-items: flex-end;
     }
-
-    .icon-group i {
-        margin-right: 1rem;
-    }
 }
 
 nav {
@@ -73,8 +69,62 @@ nav {
         display: flex;
         justify-content: space-between;
         a {
-            font-weight: 200;
+            font-weight: 300;
             text-decoration: none;
+            letter-spacing: 2px;
+            position: relative;
+
+            &::after {
+                content: "";
+                background: #d600a8;
+                height: 1px;
+                position: absolute;
+                top: 45%;
+                display: block;
+                width: 0%;
+                left: -3%;
+                transition: width 0.4s;
+            }
+            &:hover {
+                &::after {
+                    width: 110%;
+                }
+            }
+
+            &.active {
+                &::after {
+                    width: 110%;
+                }
+            }
+        }
+
+        .icon-group {
+            width: 204px;
+            display: flex;
+            position: relative;
+            justify-content: space-between;
+
+            &::after {
+                content: "";
+                background: black;
+                height: 150%;
+                position: absolute;
+
+                display: block;
+                width: 1px;
+                left: -14%;
+                top: -30%;
+                ::after {
+                    content: "";
+                    background: #d600a8;
+                    height: 1px;
+                    position: absolute;
+                    top: 45%;
+                    display: block;
+                    width: 105%;
+                    left: -3%;
+                }
+            }
         }
     }
 }
@@ -239,10 +289,10 @@ a.text-capitalize.btn {
         }
 
         .right {
-            width: 171px;
+            width: 461px;
 
             a {
-                font-size: 1.3rem;
+                font-size: 1rem;
             }
         }
     }
