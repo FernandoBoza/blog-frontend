@@ -6,12 +6,10 @@ const Footer = () => {
         <footer className="footer">
             <div className="container">
                 <h1>Contact</h1>
-                <p>hi (at) fernandoboza.com</p>
-                <div className="row">
-                    <div className="col">
-                        <p className="text-right">{new Date().getFullYear()} © FernandoBoza.com</p>
-                    </div>
-                </div>
+                <p className='m-0 d-flex justify-content-between'>
+                    hi (at) fernandoboza.com
+                    <p className="m-0 text-right">{new Date().getFullYear()} © FernandoBoza.com</p>
+                </p>
             </div>
         </footer>
     );
