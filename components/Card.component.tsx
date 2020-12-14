@@ -4,7 +4,7 @@ import { publishDate } from "../utils/Dates";
 import { shortenContent } from "../utils/SharedPlans";
 
 const Card = ({ article }) => {
-    const path = article.__typename.toLowerCase().replace('articles', 's/') + article.slug;
+    const path = article.__typename.toLowerCase().replace('articles', '/') + article.slug;
     const imgPath = article.articleBase.image.length > 0 ? article.articleBase.image[0].url : "https://via.placeholder.com/200x240";
     let color = article.__typename.toLowerCase().replace('articles', '')
     return (
