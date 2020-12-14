@@ -30,7 +30,7 @@ const Article = ({ article }) => {
                 <title>Fernando Boza | {article.title}</title>
             </Head>
 
-            <div className="d-flex mt-5 flex-sm-column flex-md-column flex-lg-row">
+            <div className="d-flex mt-5 flex-column flex-lg-row">
                 <div className="mr-auto"><h1 className='wow fadeInDown'>{article.title}</h1></div>
                 {projURL()}
             </div>

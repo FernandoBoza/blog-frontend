@@ -277,6 +277,17 @@ a.text-capitalize.btn {
     }
 }
 
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 440px) {
+    nav .right {
+        width: 75vw;
+
+        .icon-group {
+            width: 134px;
+        }
+    }
+}
+
 // Extra small devices (portrait phones, less than 576px)
 // No media query for `xs` since this is the default in Bootstrap
 
