@@ -35,7 +35,7 @@ const Home = () => {
         </div>
         <div className="col col-sm-6 col-md-6 col-lg-4">
           <Link href="/blog">
-            <a target="_blank" className='category-title-link'>
+            <a className='category-title-link'>
               <h1 className=' '>Blog.<i className="fas fa-external-link-square-alt" /></h1>
             </a>
           </Link>
