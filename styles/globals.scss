@@ -247,8 +247,16 @@ a.text-capitalize.btn {
     z-index: 1;
     transition: box-shadow 0.4s;
 
+    .container {
+        transition: transform 0.4s;
+    }
+
     &.shadow {
+        height: 61px;
         box-shadow: 0 9px 23px rgba(0, 0, 0, 0.28);
+        .container {
+            transform: scale(0.7) translateY(-17px);
+        }
     }
 }
 
@@ -263,6 +271,10 @@ a.text-capitalize.btn {
 // Apple iPhone 12 Pro Max Min-Width Media Queries
 
 @media only screen and (min-width: 428px) {
+    .nav-padding {
+        height: 120px;
+    }
+
     nav {
         img.logo {
             width: 40px;
@@ -279,6 +291,18 @@ a.text-capitalize.btn {
                     left: -14%;
                 }
             }
+        }
+
+        &.navbar.shadow {
+            height: 81px;
+            .container {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+        .navbar-brand {
+            margin-bottom: 8px;
         }
     }
 
@@ -337,6 +361,13 @@ a.text-capitalize.btn {
 
     h1.title {
         font-size: 90px;
+    }
+
+    nav.navbar.shadow {
+        height: 61px;
+        .container {
+            flex-direction: row;
+        }
     }
 }
 
