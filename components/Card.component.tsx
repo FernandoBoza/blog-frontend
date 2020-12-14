@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { publishDate } from "../utils/Dates";
+import { publishDate } from "../utils/SharedPlans";
 import { shortenContent } from "../utils/SharedPlans";
 
 const Card = ({ article }) => {
