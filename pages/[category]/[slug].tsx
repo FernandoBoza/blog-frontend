@@ -6,7 +6,6 @@ import ArticleComp from "../../components/Article.component";
 
 const Article = () => {
     const router = useRouter();
-    console.log(router.query);
 
     return <Query slug={router.query.slug} query={SINGLE_QUERY(router.query.category)}>
         {({ data }) => {

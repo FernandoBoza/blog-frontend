@@ -4,7 +4,6 @@ import styles from "../styles/blog.module.scss";
 const isServer = typeof window === 'undefined'
 
 const Article = ({ article }) => {
-    console.log(article);
     const category_title = article.__typename.replace('Articles', '');
     const imgPath = article.articleBase.image.length > 0 ? article.articleBase.image[1].url : "https://via.placeholder.com/1200x600";
     const projURL = () => {
