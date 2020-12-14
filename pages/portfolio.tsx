@@ -12,7 +12,8 @@ const Portfolio = () => {
             </Head>
             <div className="row">
                 <div className="col">
-                    <h1>Portfolio</h1>
+                    <h1>Portfolio 🎯</h1>
+                    <p>Here you can find my professional work for clients, agencies and such.</p>
                 </div>
             </div>
             <Query slug query={ARTICLES_QUERY('portfolio')}>

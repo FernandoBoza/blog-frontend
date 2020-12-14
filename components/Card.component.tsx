@@ -9,7 +9,7 @@ const Card = ({ article }) => {
     let color = article.__typename.toLowerCase().replace('articles', '')
     return (
         <Link href={path}>
-            <a href={path} className="card_custom card mb-3 wow fadeInDown" data-wow-delay=".7s">
+            <a className="card_custom card mb-3 wow fadeInDown" data-wow-delay=".7s">
                 <div className="row no-gutters">
                     <div className="col-md-4">
                         <img src={imgPath} className="card-img rounded" alt="..." />
