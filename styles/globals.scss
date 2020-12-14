@@ -10,30 +10,20 @@
 @media (prefers-color-scheme: dark) {
     $bg: #333;
     $color: #ebebeb;
-    $img: "../public/LogoV2.svg";
 
     body {
         background: $bg;
         color: $color;
-    }
-
-    .navbar-brand {
-        background-image: url($img);
     }
 }
 
 @media (prefers-color-scheme: light) {
     $bg: #ebebeb;
     $color: #333;
-    $img: "../public/Logo.svg";
 
     body {
         background: $bg;
         color: $color;
-    }
-
-    .navbar-brand {
-        background-image: url($img);
     }
 }
 
@@ -211,6 +201,7 @@ a.text-capitalize.btn {
     height: 50px;
     display: block;
     background-size: cover;
+    background-image: url("../public/Logo.svg");
 }
 
 // Apple iPhone 12 Pro Max Min-Width Media Queries
