@@ -1,18 +1,16 @@
-import { log } from "console";
 import Link from "next/link"
 import { useRouter } from "next/router";
 
-const Nav = () => {
+const Nav = ({ data }) => {
     let category;
     if (useRouter().query.category == undefined) {
         category = useRouter().pathname.replace('/', '');
     } else {
         category = useRouter().query.category;
     }
-
     return (
-        <section className="Nav container">
-            <nav className="navbar px-0">
+        <nav className={`navbar ${data}`}>
+            <section className="container">
                 <Link href="/"><a className="navbar-brand" href="#"></a></Link>
                 <div className="right">
                     <Link href="/blog"><a className={category === 'blog' ? 'active' : ''}>BLOG</a></Link>
@@ -25,8 +23,8 @@ const Nav = () => {
                         <Link href="https://repl.it/@fernandob"><a target='_blank'><i className="fas fa-terminal" /></a></Link>
                     </div>
                 </div>
-            </nav>
-        </section>
+            </section>
+        </nav>
     );
 }
 

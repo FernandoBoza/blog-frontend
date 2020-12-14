@@ -85,12 +85,7 @@ nav {
                 left: -3%;
                 transition: width 0.4s;
             }
-            &:hover {
-                &::after {
-                    width: 110%;
-                }
-            }
-
+            &:hover,
             &.active {
                 &::after {
                     width: 110%;
@@ -242,6 +237,19 @@ a.text-capitalize.btn {
         i {
             opacity: 1;
         }
+    }
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    background: rgba(247, 247, 247, 0.522);
+    backdrop-filter: blur(10px);
+    z-index: 1;
+    transition: box-shadow 0.4s;
+
+    &.shadow {
+        box-shadow: 0 9px 23px rgba(0, 0, 0, 0.28);
     }
 }
 

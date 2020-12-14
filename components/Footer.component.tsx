@@ -1,6 +1,3 @@
-import React from "react";
-import Link from "next/link"
-
 const Footer = () => {
     return (
         <footer className="footer">
@@ -8,7 +5,7 @@ const Footer = () => {
                 <h1>Contact</h1>
                 <p className='m-0 d-flex justify-content-between'>
                     hi (at) fernandoboza.com
-                    <p className="m-0 text-right">{new Date().getFullYear()} © FernandoBoza.com</p>
+                    <span className="m-0 text-right">{new Date().getFullYear()} © FernandoBoza.com</span>
                 </p>
             </div>
         </footer>
