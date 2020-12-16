@@ -15,6 +15,10 @@
         background: $bg;
         color: $color;
     }
+
+    .icon-group::after {
+        background: $color;
+    }
 }
 
 @media (prefers-color-scheme: light) {
@@ -24,6 +28,9 @@
     body {
         background: $bg;
         color: $color;
+    }
+    .icon-group::after {
+        background: $color;
     }
 }
 
@@ -101,7 +108,6 @@ nav {
 
             &::after {
                 content: "";
-                background: black;
                 height: 150%;
                 position: absolute;
 
@@ -125,7 +131,7 @@ nav {
 
 section.Home {
     h1.title {
-        display: flex;
+        // display: flex;
         letter-spacing: 4px;
 
         .font-weight-light {
@@ -393,7 +399,6 @@ a.text-capitalize.btn {
     }
 
     h1.title {
-        display: flex;
         font-size: 51px;
         flex-direction: row;
     }
@@ -401,5 +406,11 @@ a.text-capitalize.btn {
     .card-body p.card-text:nth-last-child(2) {
         font-size: 0.8rem;
         opacity: 0.7;
+    }
+
+    .row.hero {
+        height: 66vh;
+        align-items: center;
+        margin-bottom: 2rem;
     }
 }
