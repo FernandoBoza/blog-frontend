@@ -17,10 +17,10 @@ const Nav = ({ data }) => {
                     <Link href="/portfolio"><a className={category === 'portfolio' ? 'active' : ''}>PORTFOLIO</a></Link>
 
                     <div className="icon-group">
-                        <Link href="http://github.com/FernandoBoza"><a target='_blank'><i className="fab fa-github" /></a></Link>
-                        <Link href="https://codepen.io/fernandob"><a target='_blank'><i className="fab fa-codepen" /></a></Link>
-                        <Link href="https://www.linkedin.com/in/fboza/"><a target='_blank'><i className="fab fa-linkedin" /></a></Link>
-                        <Link href="https://repl.it/@fernandob"><a target='_blank'><i className="fas fa-terminal" /></a></Link>
+                        <a target='_blank' href="http://github.com/FernandoBoza"><i className="fab fa-github" /></a>
+                        <a target='_blank' href="https://codepen.io/fernandob"><i className="fab fa-codepen" /></a>
+                        <a target='_blank' href="https://www.linkedin.com/in/fboza/"><i className="fab fa-linkedin" /></a>
+                        <a target='_blank' href="https://repl.it/@fernandob"><i className="fas fa-terminal" /></a>
                     </div>
                 </div>
             </section>
