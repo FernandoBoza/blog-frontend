@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Head from 'next/head';
 import styles from "../styles/blog.module.scss";
-const isServer = typeof window === 'undefined'
+import Fade from 'react-reveal/Fade';
 
 const Article = ({ article }) => {
     const category_title = article.__typename.replace('Articles', '');
@@ -31,13 +31,17 @@ const Article = ({ article }) => {
             </Head>
 
             <div className="d-flex mt-5 flex-column flex-lg-row">
-                <div className="mr-auto"><h1 className='wow fadeInDown'>{article.title}</h1></div>
-                {projURL()}
+                <Fade left>
+                    <div className="mr-auto"><h1 className='wow fadeInDown'>{article.title}</h1></div>
+                </Fade>
+                <Fade right>
+                    {projURL()}
+                </Fade>
             </div>
 
-            {/*<img className='article-image img-fluid my-5 wow fadeInUp' src={imgPath} />*/}
-
-            <div className='wow fadeInUp' id={styles.content} dangerouslySetInnerHTML={{ __html: article.articleBase.content }} />
+            <Fade up    >
+                <div className='wow fadeInUp' id={styles.content} dangerouslySetInnerHTML={{ __html: article.articleBase.content }} />
+            </Fade>
 
         </section>
     );

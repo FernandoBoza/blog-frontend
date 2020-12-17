@@ -11,82 +11,82 @@ const Home = () => {
   return (
     <section className='Home container'>
       <style jsx>{`
-section.Home .category-title-link i.fas.fa-external-link-square-alt {
-  font-size: 1rem;
-  position: absolute;
-}
+        section.Home .category-title-link i.fas.fa-external-link-square-alt {
+          font-size: 1rem;
+          position: absolute;
+        }
 
-section.Home h1.title .font-weight-light {
-  letter-spacing: 0;
-}
+        section.Home h1.title .font-weight-light {
+          letter-spacing: 0;
+        }
 
-section.Home h1.title {
-  letter-spacing: 4px;
-}
+        section.Home h1.title {
+          letter-spacing: 4px;
+        }
 
-.bg-pink {
-  background-color: #FF19AF;
-}
+        .bg-pink {
+          background-color: #FF19AF;
+        }
 
-.text-pink {
-  color: #FF19AF;
-}
+        .text-pink {
+          color: #FF19AF;
+        }
 
-.bg-purblue {
-  background-color: #1304CB;
-}
+        .bg-purblue {
+          background-color: #1304CB;
+        }
 
-.progress {
-  height: 1.5rem;
-  font-size: 1.1rem;
-  font-weight: bold;
-}
+        .progress {
+          height: 1.5rem;
+          font-size: 1.1rem;
+          font-weight: bold;
+        }
 
-.progress-container i {
-  font-size: 1.4rem;
-}
+        .progress-container i {
+          font-size: 1.4rem;
+        }
 
-.mousey {
-  width: 20px;
-  height: 30px;
-  border-radius: 6px;
-  padding: 0 6px;
-  border: 1px solid;
-  box-sizing: border-box;
-  position: relative;
-  // z-index: 10;
-  margin: 0 auto;
-}
-.scroller {
-  position: relative;
-  left: 50%;
-  top: 6px;
-  margin-left: -2px;
-  width: 4px;
-  height: 4px;
-  border-radius: 4px;
-  animation-name: scroll;
-  animation-duration: 2.2s;
-  animation-timing-function: cubic-bezier(0.15, 0.41, 0.69, 0.94);
-  animation-iteration-count: infinite;
-}
-@keyframes scroll {
-  0% {
-      opacity: 0;
-  }
-  10% {
-      transform: translateY(0);
-      opacity: 1;
-  }
-  100% {
-      transform: translateY(50px);
-      opacity: 0;
-  }
-}
+        .mousey {
+          width: 20px;
+          height: 30px;
+          border-radius: 6px;
+          padding: 0 6px;
+          border: 1px solid;
+          box-sizing: border-box;
+          position: relative;
+          // z-index: 10;
+          margin: 0 auto;
+        }
+        .scroller {
+          position: relative;
+          left: 50%;
+          top: 6px;
+          margin-left: -2px;
+          width: 4px;
+          height: 4px;
+          border-radius: 4px;
+          animation-name: scroll;
+          animation-duration: 2.2s;
+          animation-timing-function: cubic-bezier(0.15, 0.41, 0.69, 0.94);
+          animation-iteration-count: infinite;
+        }
+        @keyframes scroll {
+          0% {
+              opacity: 0;
+          }
+          10% {
+              transform: translateY(0);
+              opacity: 1;
+          }
+          100% {
+              transform: translateY(50px);
+              opacity: 0;
+          }
+        }
 
-.progress-container {
-  margin-bottom: 2rem;
-}
+        .progress-container {
+          margin-bottom: 2rem;
+        }
 
 `}</style>
       <Head>

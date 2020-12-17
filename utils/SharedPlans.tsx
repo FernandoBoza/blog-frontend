@@ -1,4 +1,5 @@
 import Card from "../components/Card.component";
+import Fade from 'react-reveal/Fade';
 
 export const publishDate = (date: string) => {
     return new Date(date).toLocaleDateString('en-US', {
@@ -13,7 +14,9 @@ export const getItemsInCol = (data, type) => {
     data[type + 'Articles'].forEach((blog, index) => {
         columns.push(
             <div key={blog.slug} className="col-6 col-sm-6 col-md-6 col-lg-4">
-                <Card article={blog} />
+                <Fade left>
+                    <Card article={blog} />
+                </Fade>
             </div>
         )
         if ((index + 1) % 4 === 0) { }
