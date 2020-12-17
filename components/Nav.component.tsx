@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { useRouter } from "next/router";
+import Fade from 'react-reveal/Fade';
 
 const Nav = ({ data }) => {
     let category;
@@ -11,17 +12,23 @@ const Nav = ({ data }) => {
     return (
         <nav className={`navbar ${data}`}>
             <section className="container">
-                <Link href="/"><a className="navbar-brand" href="#"></a></Link>
+                <Fade top>
+                    <Link href="/"><a className="navbar-brand" href="#"></a></Link>
+                </Fade>
                 <div className="right">
-                    <Link href="/blog"><a className={category === 'blog' ? 'active' : ''}>BLOG</a></Link>
-                    <Link href="/portfolio"><a className={category === 'portfolio' ? 'active' : ''}>PORTFOLIO</a></Link>
+                    <Fade right>
+                        <Link href="/blog"><a className={category === 'blog' ? 'active' : ''}>BLOG</a></Link>
+                        <Link href="/portfolio"><a className={category === 'portfolio' ? 'active' : ''}>PORTFOLIO</a></Link>
+                    </Fade>
 
-                    <div className="icon-group">
-                        <a target='_blank' href="http://github.com/FernandoBoza"><i className="fab fa-github" /></a>
-                        <a target='_blank' href="https://codepen.io/fernandob"><i className="fab fa-codepen" /></a>
-                        <a target='_blank' href="https://www.linkedin.com/in/fboza/"><i className="fab fa-linkedin" /></a>
-                        <a target='_blank' href="https://repl.it/@fernandob"><i className="fas fa-terminal" /></a>
-                    </div>
+                    <Fade right cascade>
+                        <div className="icon-group">
+                            <a target='_blank' href="http://github.com/FernandoBoza"><i className="fab fa-github" /></a>
+                            <a target='_blank' href="https://codepen.io/fernandob"><i className="fab fa-codepen" /></a>
+                            <a target='_blank' href="https://www.linkedin.com/in/fboza/"><i className="fab fa-linkedin" /></a>
+                            <a target='_blank' href="https://repl.it/@fernandob"><i className="fas fa-terminal" /></a>
+                        </div>
+                    </Fade>
                 </div>
             </section>
         </nav>
