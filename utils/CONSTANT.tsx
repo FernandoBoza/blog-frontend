@@ -29,3 +29,16 @@ export const progressObject = [
     }
 ]
 
+export const homeObject = {
+    intro: `
+            Software developer by trade, I started while working in Paris I fell
+            in love with the art and dynamics of coding and fully
+            transitioned to Computer Science. I build full stack
+            and front end solutions revolving around users and
+            the mission objective.
+    `,
+    services: `
+        From mockup and prototype to database configuration and cloud deployment. I also have 5+ years of in agency environment and content creaton.
+    `
+}
+

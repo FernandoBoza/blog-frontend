@@ -3,7 +3,7 @@ import Link from "next/link";
 import Query from "../components/Query.component"
 import Card from "../components/Card.component"
 import ARTICLE_QUERY from '../apollo/queries/allArticlesQuery';
-import { progressObject as pg } from '../utils/CONSTANT'
+import { progressObject as pg, homeObject } from '../utils/CONSTANT'
 import Fade from 'react-reveal/Fade';
 
 const Home = () => {
@@ -102,11 +102,7 @@ section.Home h1.title {
               <span className='font-weight-light '>Fernando</span>
               <span className=''>Boza</span>
             </h1>
-            <p className=''>Software developer by trade, I started while working in Paris I fell
-            in love with the art and dynamics of coding and fully
-            transitioned to Computer Science. I build full stack
-            and front end solutions revolving around users and
-          the mission objective.</p>
+            <p className=''>{homeObject.intro}</p>
             <div className="mt-5">
               <div className="mousey">
                 <div className="scroller" />
@@ -119,7 +115,7 @@ section.Home h1.title {
         <div className="col">
           <Fade left>
             <h1 className="title">What I Do</h1>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus quis possimus beatae, tempora numquam illum doloremque dolor molestias nemo voluptates quasi tenetur sint amet dolorum eveniet ipsum impedit mollitia aspernatur!</p>
+            <p>{homeObject.services}</p>
             <div className="btn_list">
               <a className="text-capitalize btn btn-primary mr-3" target="_blank" href="/FernandoBoza_Resume.pdf" download="FernandoBoza-Resume">
                 <i className="mr-2 fas fa-download" /> Download Resume
@@ -133,12 +129,14 @@ section.Home h1.title {
         <div className="col">
           <Fade right cascade>
             {pg.map(data => {
-              return <div key={data.text} className="progress-container">
-                <h1 className={`d-flex justify-content-between ${data.h1Class}`}>{data.text} <i className={`fal ${data.icon}`}></i></h1>
-                <div className="progress">
-                  <div className={`progress-bar progress-bar-striped ${data.prgsbarColor}`} role="progressbar" style={{ width: data.width }}>{data.width}</div>
+              return (
+                <div key={data.text} className="progress-container">
+                  <h1 className={`d-flex justify-content-between ${data.h1Class}`}>{data.text} <i className={`fal ${data.icon}`}></i></h1>
+                  <div className="progress">
+                    <div className={`progress-bar progress-bar-striped ${data.prgsbarColor}`} role="progressbar" style={{ width: data.width }}>{data.width}</div>
+                  </div>
                 </div>
-              </div>
+              )
             })}
           </Fade>
         </div>
@@ -156,8 +154,8 @@ section.Home h1.title {
               return (
                 data.map(blog => {
                   return (
-                    <Fade left>
-                      <Card key={blog.slug} article={blog} />
+                    <Fade key={blog.slug} left>
+                      <Card article={blog} />
                     </Fade>
                   )
                 })
@@ -177,8 +175,8 @@ section.Home h1.title {
               return (
                 data.map(portfolio => {
                   return (
-                    <Fade right>
-                      <Card key={portfolio.slug} article={portfolio} />
+                    <Fade key={portfolio.slug} right>
+                      <Card article={portfolio} />
                     </Fade>
                   )
                 })
