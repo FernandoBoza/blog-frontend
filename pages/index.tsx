@@ -112,7 +112,7 @@ section.Home h1.title {
         </Fade>
       </div>
       <div className="row" id="skills">
-        <div className="col">
+        <div className="col-10 offset-1 offset-lg-0 col-lg-5">
           <Fade left>
             <h1 className="title">What I Do</h1>
             <p>{homeObject.services}</p>
@@ -126,7 +126,7 @@ section.Home h1.title {
             </div>
           </Fade>
         </div>
-        <div className="col">
+        <div className="col-10 offset-1 offset-lg-1 col-lg-5">
           <Fade right cascade>
             {pg.map(data => {
               return (
