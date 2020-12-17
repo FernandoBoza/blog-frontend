@@ -35,7 +35,7 @@ const Article = ({ article }) => {
                 {projURL()}
             </div>
 
-            <img className='article-image img-fluid my-5 wow fadeInUp' src={imgPath} />
+            {/*<img className='article-image img-fluid my-5 wow fadeInUp' src={imgPath} />*/}
 
             <div className='wow fadeInUp' id={styles.content} dangerouslySetInnerHTML={{ __html: article.articleBase.content }} />
 

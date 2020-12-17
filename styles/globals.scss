@@ -19,7 +19,14 @@
     .icon-group::after {
         background: $color;
     }
-}
+
+    .mousey {
+        border-color: $color;
+        .scroller {
+            background: $color;
+        }
+        }
+    }
 
 @media (prefers-color-scheme: light) {
     $bg: #f7f7f7;
@@ -32,6 +39,12 @@
     .icon-group::after {
         background: $color;
     }
+    .mousey {
+        border-color: $color;
+        .scroller {
+            color: $color;
+        }
+        }
 }
 
 body {
@@ -272,6 +285,45 @@ a.text-capitalize.btn {
     display: block;
     background-size: cover;
     background-image: url("../public/Logo.svg");
+}
+
+.mousey {
+    width: 20px;
+    height: 30px;
+    border-radius: 6px;
+    padding: 0 6px;
+    border: 1px solid;
+    box-sizing: border-box;
+    position:relative;
+    z-index:10;
+    margin: 0 auto;
+}
+.scroller {
+    position: relative;
+    left: 50%;
+    top: 6px;
+    margin-left: -2px;
+    width: 4px;
+    height: 4px;
+    background:#292929;
+    border-radius: 4px;
+    animation-name: scroll;
+    animation-duration: 2.2s;
+    animation-timing-function: cubic-bezier(.15, .41, .69, .94);
+    animation-iteration-count: infinite;
+}
+@keyframes scroll {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
 }
 
 // Apple iPhone 12 Pro Max Min-Width Media Queries

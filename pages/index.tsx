@@ -5,6 +5,10 @@ import Card from "../components/Card.component"
 import ARTICLE_QUERY from '../apollo/queries/allArticlesQuery';
 
 const Home = () => {
+  const dual_col = "col col-sm-6 col-md-6 col-lg-4";
+  const handleScroll = () => {
+    console.log('clicked')
+  }
   return (
     <section className='Home container'>
       <Head>
@@ -12,28 +16,31 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="row">
-        <div className="col-sm-12 col-md-12 col-lg-4 mb-5">
-          <h1 className="title">
+      <div className="row hero">
+        <div className="col-sm-12 col-md-12 offset-lg-3 col-lg-6 text-center">
+          <h1 className='m-0'>Hi there, i'm 👋</h1>
+          <h1 className="title my-4">
             <span className='font-weight-light '>Fernando</span>
             <span className=''>Boza</span>
           </h1>
-          <p className=''>I’m a 3D artist by trade, years in agency and
-          marketing environment. While working in Paris I fell
+          <p className=''>Software developer by trade, I started while working in Paris I fell
           in love with the art and dynamics of coding and fully
           transitioned to Computer Science. I build full stack
           and front end solutions revolving around users and
-          the MO.</p>
-          <div className="btn_list">
-            <a className="text-capitalize btn btn-primary mr-3" target="_blank" href="/FernandoBoza_Resume.pdf" download="FernandoBoza-Resume">
-              <i className="mr-2 fas fa-download" /> Download Resume
-              </a>
-            <Link href='/FernandoBoza_Resume.pdf'>
-              <a className="text-capitalize btn btn-success "><i className="mr-2 far fa-window" /> View Resume</a>
-            </Link>
-          </div>
+          the mission objective.</p>
+          <Link href='#title'>
+            <div className="hero-scroll-down-notifer mt-5">
+              <div className="scroll-down-wrap ">
+                <div className="mousey" onClick={handleScroll}>
+                  <div className="scroller" />
+                </div>
+              </div>
+            </div>
+          </Link>
         </div>
-        <div className="col col-sm-6 col-md-6 col-lg-4">
+      </div>
+      <div className="row" id='title'>
+        <div className={dual_col}>
           <Link href="/blog">
             <a className='category-title-link'>
               <h1 className=' '>Blog.<i className="fas fa-external-link-square-alt" /></h1>
@@ -52,7 +59,7 @@ const Home = () => {
             }}
           </Query>
         </div>
-        <div className="col col-sm-6 col-md-6 col-lg-4">
+        <div className={dual_col}>
           <Link href="/portfolio">
             <a className='category-title-link'>
               <h1 className=' '>Portfolio. <i className="fas fa-external-link-square-alt" /></h1>
