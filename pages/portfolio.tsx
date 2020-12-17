@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Query from "../components/Query.component";
 import ARTICLES_QUERY from "../apollo/queries/allArticlesQuery";
 import { getItemsInCol } from "../utils/SharedPlans";
+import Fade from 'react-reveal/Fade';
 
 const Portfolio = () => {
     return (
@@ -11,10 +12,12 @@ const Portfolio = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <div className="row">
-                <div className="col">
-                    <h1>Portfolio 🎯</h1>
-                    <p>Here you can find my professional work for clients, agencies and such.</p>
-                </div>
+                <Fade top cascade>
+                    <div className="col">
+                        <h1>Portfolio 🎯</h1>
+                        <p>Here you can find my professional work for clients, agencies and such.</p>
+                    </div>
+                </Fade>
             </div>
             <Query slug query={ARTICLES_QUERY('portfolio')}>
                 {({ data }) => {
