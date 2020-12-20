@@ -20,9 +20,9 @@ const Home = () => {
           letter-spacing: 0;
         }
 
-        section.Home h1.title {
-          letter-spacing: 4px;
-        }
+        // section.Home h1.title {
+        //   letter-spacing: 4px;
+        // }
 
         .bg-pink {
           background-color: #FF19AF;
@@ -120,7 +120,7 @@ const Home = () => {
         </Fade>
       </div>
       <div className="row" id="skills">
-        <div className="col-10 offset-1 offset-lg-0 col-lg-5">
+        <div className="col-12 offset-0 offset-lg-0 col-lg-5 mb-5">
           <Fade left>
             <h1 className="title">What I Do</h1>
             <p>{homeObject.services}</p>
@@ -134,7 +134,7 @@ const Home = () => {
             </div>
           </Fade>
         </div>
-        <div className="col-10 offset-1 offset-lg-1 col-lg-5">
+        <div className="col-12 offset-lg-1 col-lg-5">
           <Fade right cascade>
             {pg.map(data => {
               return (

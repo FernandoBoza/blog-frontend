@@ -11,14 +11,31 @@ const Nav = ({ data }) => {
     }
     return (
         <nav className={`navbar ${data}`}>
+            <style jsx>{`
+                .icon-group a:nth-child(1):hover {
+                    color: #d600a8
+                }
+                
+                .icon-group a:nth-child(2):hover {
+                    color: #0c7cd5
+                }
+                
+                .icon-group a:nth-child(3):hover {
+                    color: #4caf50
+                }
+                
+                .icon-group a:nth-child(4):hover {
+                    color: #ffa726
+                }
+            `}</style>
             <section className="container">
                 <Fade top>
                     <Link href="/"><a className="navbar-brand" href="#"></a></Link>
                 </Fade>
                 <div className="right">
                     <Fade right>
-                        <Link href="/blog"><a className={category === 'blog' ? 'active' : ''}>BLOG</a></Link>
-                        <Link href="/portfolio"><a className={category === 'portfolio' ? 'active' : ''}>PORTFOLIO</a></Link>
+                        <Link href="/blog"><a className={category === 'blog' ? 'active nav-item' : 'nav-item'}>BLOG</a></Link>
+                        <Link href="/portfolio"><a className={category === 'portfolio' ? 'active nav-item' : 'nav-item'}>PORTFOLIO</a></Link>
                     </Fade>
 
                     <Fade right cascade>

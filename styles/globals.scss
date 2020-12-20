@@ -96,7 +96,7 @@ nav {
         width: 30vw;
         display: flex;
         justify-content: space-between;
-        a {
+        a.nav-item {
             font-weight: 300;
             text-decoration: none;
             letter-spacing: 2px;
@@ -127,24 +127,14 @@ nav {
             position: relative;
             justify-content: space-between;
 
+            // the left border
             &::after {
                 content: "";
                 height: 150%;
                 position: absolute;
-
                 display: block;
                 width: 1px;
                 top: -30%;
-                ::after {
-                    content: "";
-                    background: #d600a8;
-                    height: 1px;
-                    position: absolute;
-                    top: 45%;
-                    display: block;
-                    width: 105%;
-                    left: -3%;
-                }
             }
         }
     }
