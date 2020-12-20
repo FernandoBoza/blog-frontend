@@ -40,6 +40,14 @@ const Home = () => {
           height: 1.5rem;
           font-size: 1.1rem;
           font-weight: bold;
+          border-radius: 2px;
+        }
+
+        .progress-bar {
+          border-top-right-radius: 2px;
+          border-bottom-right-radius: 2px;
+          text-align: left;
+          padding-left: 1rem;
         }
 
         .progress-container i {
@@ -133,7 +141,7 @@ const Home = () => {
                 <div key={data.text} className="progress-container">
                   <h1 className={`d-flex justify-content-between ${data.h1Class}`}>{data.text} <i className={`fal ${data.icon}`}></i></h1>
                   <div className="progress">
-                    <div className={`progress-bar progress-bar-striped ${data.prgsbarColor}`} role="progressbar" style={{ width: data.width }}>{data.width}</div>
+                    <div className={`progress-bar ${data.prgsbarColor}`} role="progressbar" style={{ width: data.width }}>{data.width}</div>
                   </div>
                 </div>
               )
