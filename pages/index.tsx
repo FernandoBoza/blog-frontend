@@ -5,9 +5,17 @@ import Card from "../components/Card.component"
 import ARTICLE_QUERY from '../apollo/queries/allArticlesQuery';
 import { progressObject as pg, homeObject } from '../utils/CONSTANT'
 import Fade from 'react-reveal/Fade';
+import jump from 'jump.js'
 
 const Home = () => {
   const dual_col = "col col-sm-6 col-md-6 col-lg-4";
+  const handleScroll = () => {
+    if (typeof window !== 'undefined') {
+      jump('#skills', {
+        offset: -100,
+      })
+    }
+  }
   return (
     <section className='Home container'>
       <style jsx>{`
@@ -62,7 +70,7 @@ const Home = () => {
           border: 1px solid;
           box-sizing: border-box;
           position: relative;
-          // z-index: 10;
+          cursor: pointer;
           margin: 0 auto;
         }
         .scroller {
@@ -112,7 +120,7 @@ const Home = () => {
             </h1>
             <p className=''>{homeObject.intro}</p>
             <div className="mt-5">
-              <div className="mousey">
+              <div onClick={handleScroll} className="mousey">
                 <div className="scroller" />
               </div>
             </div>
