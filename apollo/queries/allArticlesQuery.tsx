@@ -8,7 +8,6 @@ const ARTICLES_QUERY = (category) => {
         title
         slug
         articleBase {
-          favorite
           url
           content
           image {

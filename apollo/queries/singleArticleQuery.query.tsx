@@ -8,7 +8,6 @@ const SINGLE_QUERY = category => {
         slug
         published_at
         articleBase {
-          favorite
           url
           content
           image {
