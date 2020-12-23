@@ -6,7 +6,7 @@ import Fade from 'react-reveal/Fade';
 
 const Portfolio = () => {
     return (
-        <div className='container'>
+        <div className='portfolio-container container'>
             <Head>
                 <title>Fernando Boza | Portfolios</title>
                 <link rel="icon" href="/favicon.ico" />

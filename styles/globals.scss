@@ -10,32 +10,32 @@
 @media (prefers-color-scheme: dark) {
     $bg: #333;
     $color: #ebebeb;
-
     body {
         background: $bg;
         color: $color;
     }
-
     .icon-group::after {
         background: $color;
     }
-
     .mousey {
         border-color: $color;
         .scroller {
             background: $color;
         }
     }
-
     #pg404 {
         background-color: $bg;
+    }
+    .row.hero::after {
+        background: #3c3c3c;
+        border-bottom: 1px solid #404040;
+        box-shadow: 0 3px 40px rgba(0, 0, 0, 0.21);
     }
 }
 
 @media (prefers-color-scheme: light) {
     $bg: #f7f7f7;
     $color: #333;
-
     body {
         background: $bg;
         color: $color;
@@ -49,9 +49,13 @@
             background: $color;
         }
     }
-
     #pg404 {
         background-color: $bg;
+    }
+    .row.hero::after {
+        background: #fff;
+        border-bottom: 1px solid #d7d7d7;
+        box-shadow: 0 3px 40px rgba(0, 0, 0, 0.21);
     }
 }
 
@@ -77,6 +81,22 @@ html {
     position: relative;
     min-height: 100%;
     // scroll-behavior: smooth;
+}
+
+.row.hero {
+    height: 100vh;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    &::after {
+        content: "";
+        height: 100vh;
+        width: 100%;
+        display: block;
+        position: absolute;
+        left: 0;
+        z-index: -1;
+    }
 }
 
 .footer {
@@ -206,10 +226,6 @@ img.article-image {
     margin: 0 auto;
 }
 
-section.article.container {
-    margin-bottom: 10rem;
-}
-
 .category-title-link h1 {
     &:hover i {
         opacity: 1;
@@ -240,11 +256,18 @@ a.text-capitalize.btn {
     }
 }
 
+.blog-container.container,
+.portfolio-container.container,
+section.article.container {
+    margin-top: 140px;
+}
+
 .navbar {
-    position: fixed;
-    width: 100%;
-    backdrop-filter: blur(10px);
     z-index: 1;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    backdrop-filter: blur(10px);
     transition: box-shadow 0.4s;
 
     .container {
@@ -271,9 +294,9 @@ a.text-capitalize.btn {
 // Apple iPhone 12 Pro Max Min-Width Media Queries
 
 @media only screen and (min-width: 428px) {
-    .nav-padding {
-        height: 120px;
-    }
+    // .nav-padding {
+    //     height: 120px;
+    // }
 
     nav {
         img.logo {
@@ -400,11 +423,5 @@ a.text-capitalize.btn {
     .card-body p.card-text:nth-last-child(2) {
         font-size: 0.8rem;
         opacity: 0.7;
-    }
-
-    .row.hero {
-        height: 66vh;
-        align-items: center;
-        margin-bottom: 2rem;
     }
 }

@@ -28,7 +28,6 @@ const MyApp = ({ Component, pageProps, apollo }) => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Nav data={scroll ? "shadow" : ""} />
-      <div className='nav-padding' />
       <Component {...pageProps} />
       <Footer />
     </ApolloProvider>

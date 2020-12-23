@@ -6,7 +6,7 @@ import Fade from 'react-reveal/Fade';
 
 const Blog = () => {
     return (
-        <div className='container'>
+        <div className='blog-container container'>
             <Head>
                 <title>Fernando Boza | Blogs</title>
                 <link rel="icon" href="/favicon.ico" />

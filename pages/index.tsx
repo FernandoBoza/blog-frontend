@@ -5,24 +5,31 @@ import Card from "../components/Card.component"
 import ARTICLE_QUERY from '../apollo/queries/allArticlesQuery';
 import { progressObject as pg, homeObject } from '../utils/CONSTANT'
 import Fade from 'react-reveal/Fade';
-import jump from 'jump.js'
+import jump from 'jump.js';
+
+interface Blog extends Article {
+}
+
+interface Portfolio extends Article {
+}
+
+
+interface Article {
+  title: string,
+  slug: string
+}
 
 const Home = () => {
-  let favorites = {
-    blogs: [],
-    portfolios: []
-  }
-
-  const getFavorites = async (data) => {
-  }
   const dual_col = "col col-sm-6 col-md-6 col-lg-4";
+
   const handleScroll = () => {
     if (typeof window !== 'undefined') {
       jump('#skills', {
-        offset: -100,
+        offset: -90,
       })
     }
   }
+
   return (
     <section className='Home container'>
       <style jsx>{`
@@ -164,12 +171,6 @@ const Home = () => {
           </Fade>
         </div>
       </div>
-      {/* <div className="row">
-        <h1>Favorites</h1>
-        {theArray.map(blog => {
-          return <Card key={blog.title} article={blog}></Card>
-        })}
-      </div> */}
       <div className="row" id='title'>
         <div className={dual_col}>
           <Link href="/blog">
@@ -179,10 +180,8 @@ const Home = () => {
           </Link>
           <Query slug query={ARTICLE_QUERY('blog')}>
             {({ data }) => {
-              getFavorites(data.blogArticles)
-              data = data.blogArticles.slice(0, 4);
               return (
-                data.map(blog => {
+                data.blogArticles.slice(0, 4).map((blog: Blog) => {
                   return (
                     <Fade key={blog.slug} left>
                       <Card article={blog} />
@@ -201,9 +200,8 @@ const Home = () => {
           </Link>
           <Query slug query={ARTICLE_QUERY('portfolio')}>
             {({ data }) => {
-              data = data.portfolioArticles.slice(0, 4);
               return (
-                data.map(portfolio => {
+                data.portfolioArticles.slice(0, 4).map((portfolio: Portfolio) => {
                   return (
                     <Fade key={portfolio.slug} right>
                       <Card article={portfolio} />
