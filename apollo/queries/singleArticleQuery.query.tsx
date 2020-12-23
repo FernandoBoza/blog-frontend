@@ -1,13 +1,14 @@
 import gql from "graphql-tag";
 
 const SINGLE_QUERY = category => {
-    return gql`
+  return gql`
     query Articles($slug: String!) {
       ${category}Articles(where: {slug: $slug}) {
         title
         slug
         published_at
         articleBase {
+          favorite
           url
           content
           image {

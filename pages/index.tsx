@@ -8,6 +8,13 @@ import Fade from 'react-reveal/Fade';
 import jump from 'jump.js'
 
 const Home = () => {
+  let favorites = {
+    blogs: [],
+    portfolios: []
+  }
+
+  const getFavorites = async (data) => {
+  }
   const dual_col = "col col-sm-6 col-md-6 col-lg-4";
   const handleScroll = () => {
     if (typeof window !== 'undefined') {
@@ -157,6 +164,12 @@ const Home = () => {
           </Fade>
         </div>
       </div>
+      {/* <div className="row">
+        <h1>Favorites</h1>
+        {theArray.map(blog => {
+          return <Card key={blog.title} article={blog}></Card>
+        })}
+      </div> */}
       <div className="row" id='title'>
         <div className={dual_col}>
           <Link href="/blog">
@@ -166,6 +179,7 @@ const Home = () => {
           </Link>
           <Query slug query={ARTICLE_QUERY('blog')}>
             {({ data }) => {
+              getFavorites(data.blogArticles)
               data = data.blogArticles.slice(0, 4);
               return (
                 data.map(blog => {
