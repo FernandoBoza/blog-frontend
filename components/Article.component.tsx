@@ -32,15 +32,16 @@ const Article = ({ article }) => {
 
             <div className="d-flex mt-5 flex-column flex-lg-row">
                 <Fade left>
-                    <div className="mr-auto"><h1 className='wow fadeInDown'>{article.title}</h1></div>
+                    <div className="mr-auto"><h1 className=''>{article.title}</h1></div>
                 </Fade>
                 <Fade right>
                     {projURL()}
                 </Fade>
             </div>
+            <img className='article-image img-fluid my-5 wow fadeInUp' data-wow-delay="1s" src={imgPath} />
 
             <Fade up    >
-                <div className='wow fadeInUp' id={styles.content} dangerouslySetInnerHTML={{ __html: article.articleBase.content }} />
+                <div className='' id={styles.content} dangerouslySetInnerHTML={{ __html: article.articleBase.content }} />
             </Fade>
 
         </section>

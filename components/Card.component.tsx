@@ -9,12 +9,12 @@ const Card = ({ article }) => {
     let color = article.__typename.toLowerCase().replace('articles', '')
     return (
         <Link href={path}>
-            <a className="card_custom card mb-3 wow fadeInDown" data-wow-delay=".7s">
+            <a className="card_custom card mb-3">
                 <div className="row no-gutters">
-                    {/* <div className="col-md-4">
+                    <div className="col-md-4 col-lg-6">
                         <img src={imgPath} className="card-img rounded" alt="..." />
-                    </div> */}
-                    <div className="col-md-8 col-lg-12">
+                    </div>
+                    <div className="col-md-8 col-lg-6">
                         <div className="card-body">
                             <h5 className={"card-title bg-" + color}>{article.title}</h5>
                             <p className="card-text">{shortenContent(article.articleBase.content, 70)}</p>
