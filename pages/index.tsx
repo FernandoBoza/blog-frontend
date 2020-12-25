@@ -7,11 +7,9 @@ import { progressObject as pg, homeObject } from '../utils/CONSTANT'
 import Fade from 'react-reveal/Fade';
 import jump from 'jump.js';
 
-interface Blog extends Article {
-}
+interface Blog extends Article { }
 
-interface Portfolio extends Article {
-}
+interface Portfolio extends Article { }
 
 
 interface Article {
@@ -28,6 +26,11 @@ const Home = () => {
         offset: -90,
       })
     }
+  }
+
+
+  const handleFillProgress = (target: number): string => {
+    return `${target}%`;
   }
 
   return (
@@ -147,23 +150,23 @@ const Home = () => {
             <h1 className="title">What I Do</h1>
             <p>{homeObject.services}</p>
             <div className="btn_list">
-              <a className="text-capitalize btn btn-primary mr-3" target="_blank" href="/FernandoBoza_Resume.pdf" download="FernandoBoza-Resume">
+              <a className="text-capitalize btn btn-outline-primary mr-3" target="_blank" href="/FernandoBoza_Resume.pdf" download="FernandoBoza-Resume">
                 <i className="mr-2 fas fa-download" /> Download Resume
               </a>
               <Link href='/FernandoBoza_Resume.pdf'>
-                <a className="text-capitalize btn btn-success "><i className="mr-2 far fa-window" /> View Resume</a>
+                <a className="text-capitalize btn btn-outline-success "><i className="mr-2 far fa-window" /> View Resume</a>
               </Link>
             </div>
           </Fade>
         </div>
         <div className="col-12 offset-lg-1 col-lg-5">
-          <Fade right cascade>
+          <Fade duration={1300} right cascade>
             {pg.map(data => {
               return (
                 <div key={data.text} className="progress-container">
                   <h1 className={`d-flex justify-content-between ${data.h1Class}`}>{data.text} <i className={`fal ${data.icon}`}></i></h1>
                   <div className="progress">
-                    <div className={`progress-bar ${data.prgsbarColor}`} role="progressbar" style={{ width: data.width }}>{data.width}</div>
+                    <div className={`progress-bar ${data.prgsbarColor}`} role="progressbar" style={{ width: handleFillProgress(data.width) }}>{data.width}%</div>
                   </div>
                 </div>
               )

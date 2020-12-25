@@ -11,12 +11,12 @@ const Article = ({ article }) => {
             return (
                 <div>
                     <Link href={'/' + category_title.toLowerCase()}>
-                        <a className='text-capitalize btn btn-warning'>
+                        <a className='text-capitalize btn btn-outline-warning'>
                             <i className="fas fa-chevron-left" /> Back To {category_title}
                         </a>
                     </Link>
                     <Link href={article.articleBase.url}>
-                        <a className='btn btn-primary text-capitalize ml-3' target="_blank">
+                        <a className='btn btn-outline-primary text-capitalize ml-3' target="_blank">
                             <i className="fas fa-external-link-square-alt"></i>
                         View Project</a>
                     </Link>
@@ -38,9 +38,11 @@ const Article = ({ article }) => {
                     {projURL()}
                 </Fade>
             </div>
-            <img className='article-image img-fluid my-5 wow fadeInUp' data-wow-delay="1s" src={imgPath} />
+            <Fade delay={1000} down>
+                <img className='article-image img-fluid my-5 wow fadeInUp' data-wow-delay="1s" src={imgPath} />
+            </Fade>
 
-            <Fade up    >
+            <Fade up>
                 <div className='' id={styles.content} dangerouslySetInnerHTML={{ __html: article.articleBase.content }} />
             </Fade>
 
