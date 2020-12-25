@@ -31,6 +31,9 @@
         border-bottom: 1px solid #404040;
         box-shadow: 0 3px 40px rgba(0, 0, 0, 0.21);
     }
+    .progress {
+        background-color: darken($bg, $amount: 3%);
+    }
 }
 
 @media (prefers-color-scheme: light) {
@@ -56,6 +59,9 @@
         background: #fff;
         border-bottom: 1px solid #d7d7d7;
         box-shadow: 0 3px 40px rgba(0, 0, 0, 0.21);
+    }
+    .progress {
+        background-color: darken($bg, $amount: 3%);
     }
 }
 

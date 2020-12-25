@@ -18,7 +18,7 @@ interface Article {
 }
 
 const Home = () => {
-  const dual_col = "col col-sm-6 col-md-6 col-lg-4";
+  const dual_col = "col col-sm-6 col-md-6 col-lg-6 col-xl-4";
 
   const handleScroll = () => {
     if (typeof window !== 'undefined') {
@@ -75,6 +75,15 @@ const Home = () => {
           padding-left: 1rem;
         }
 
+        .progress-container {
+          margin-bottom: 2rem;
+        }
+
+        .progress-title {
+          font-weight: 500;
+          font-size: 1.3rem;
+        }
+
         .progress-container i {
           font-size: 1.4rem;
         }
@@ -115,10 +124,6 @@ const Home = () => {
               transform: translateY(50px);
               opacity: 0;
           }
-        }
-
-        .progress-container {
-          margin-bottom: 2rem;
         }
 
 `}</style>
@@ -164,7 +169,7 @@ const Home = () => {
             {pg.map(data => {
               return (
                 <div key={data.text} className="progress-container">
-                  <h1 className={`d-flex justify-content-between ${data.h1Class}`}>{data.text} <i className={`fal ${data.icon}`}></i></h1>
+                  <h1 className={`d-flex justify-content-between progress-title ${data.h1Class}`}>{data.text} <i className={`fal ${data.icon}`}></i></h1>
                   <div className="progress">
                     <div className={`progress-bar ${data.prgsbarColor}`} role="progressbar" style={{ width: handleFillProgress(data.width) }}>{data.width}%</div>
                   </div>
