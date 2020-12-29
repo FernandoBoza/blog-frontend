@@ -1,11 +1,12 @@
 import Link from "next/link";
+import Image from 'next/image'
 import Head from 'next/head';
 import styles from "../styles/blog.module.scss";
 import Fade from 'react-reveal/Fade';
 
 const Article = ({ article }) => {
     const category_title = article.__typename.replace('Articles', '');
-    const imgPath = article.articleBase.image.length > 0 ? article.articleBase.image[1].url : "https://via.placeholder.com/1200x600";
+    const imgPath = article.articleBase.image.length > 0 ? article.articleBase.image[1].url : "http://via.placeholder.com/1200x600";
     const projURL = () => {
         if (article.articleBase.url != null) {
             return (
@@ -39,7 +40,12 @@ const Article = ({ article }) => {
                 </Fade>
             </div>
             <Fade delay={1000} down>
-                <img className='article-image img-fluid my-5 wow fadeInUp' data-wow-delay="1s" src={imgPath} />
+                <Image
+                    width={1200}
+                    height={600}
+                    className='article-image img-fluid my-5 wow fadeInUp'
+                    src={imgPath}
+                />
             </Fade>
 
             <Fade up>

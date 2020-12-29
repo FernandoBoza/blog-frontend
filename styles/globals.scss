@@ -7,6 +7,31 @@
     font-weight: 100 !important;
 }
 
+h1 {
+    text-transform: uppercase;
+}
+
+.colored-meta {
+    position: relative;
+    z-index: 2;
+    text-align: left;
+    width: fit-content;
+    color: #d600a8;
+
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 50%;
+        height: 2px;
+        background: #d600a8;
+        z-index: 2;
+        left: 110%;
+        top: 30%;
+        border-radius: 4px;
+    }
+}
+
 @media (prefers-color-scheme: dark) {
     $bg: #333;
     $color: #ebebeb;
@@ -102,6 +127,12 @@ html {
         position: absolute;
         left: 0;
         z-index: -1;
+    }
+
+    .col-hero-right {
+        position: absolute;
+        top: 84vh;
+        left: 0;
     }
 }
 
