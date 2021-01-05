@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from "next/link";
 import Query from "../components/Query.component"
 import Card from "../components/Card.component"
+import Hero from "../components/Hero.component"
 import ARTICLE_QUERY from '../apollo/queries/allArticlesQuery';
 import { progressObject as pg, homeObject } from '../utils/CONSTANT'
 import Fade from 'react-reveal/Fade';
@@ -82,73 +83,20 @@ const Home = () => {
         .progress-title {
           font-weight: 500;
           font-size: 1.3rem;
+		  text-transform: capitalize;
         }
 
         .progress-container i {
           font-size: 1.4rem;
         }
-
-        .mousey {
-          width: 20px;
-          height: 30px;
-          border-radius: 6px;
-          padding: 0 6px;
-          border: 1px solid;
-          box-sizing: border-box;
-          position: relative;
-          cursor: pointer;
-          margin: 0 auto;
-        }
-        .scroller {
-          position: relative;
-          left: 50%;
-          top: 6px;
-          margin-left: -2px;
-          width: 4px;
-          height: 4px;
-          border-radius: 4px;
-          animation-name: scroll;
-          animation-duration: 2.2s;
-          animation-timing-function: cubic-bezier(0.15, 0.41, 0.69, 0.94);
-          animation-iteration-count: infinite;
-        }
-        @keyframes scroll {
-          0% {
-              opacity: 0;
-          }
-          10% {
-              transform: translateY(0);
-              opacity: 1;
-          }
-          100% {
-              transform: translateY(50px);
-              opacity: 0;
-          }
-        }
-
 `}</style>
       <Head>
         <title>Fernando Boza | Home</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="row hero">
-        <Fade top cascade>
-          <div className="col-sm-12 col-md-12 offset-lg-3 col-lg-6 text-center">
-            <h1 className='m-0'>Hi there, i'm 👋</h1>
-            <h1 className="title my-4">
-              <span className='font-weight-light '>Fernando</span>
-              <span className=''>Boza</span>
-            </h1>
-            <p className=''>{homeObject.intro}</p>
-            <div className="mt-5">
-              <div onClick={handleScroll} className="mousey">
-                <div className="scroller" />
-              </div>
-            </div>
-          </div>
-        </Fade>
-      </div>
+      <Hero handleScroll={handleScroll} />
+
       <div className="row" id="skills">
         <div className="col-12 offset-0 offset-lg-0 col-lg-5 mb-5">
           <Fade left>
@@ -159,7 +107,7 @@ const Home = () => {
                 <i className="mr-2 fas fa-download" /> Download Resume
               </a>
               <Link href='/FernandoBoza_Resume.pdf'>
-                <a className="text-capitalize btn btn-outline-success "><i className="mr-2 far fa-window" /> View Resume</a>
+                <a target='_blank' className="text-capitalize btn btn-outline-success "><i className="mr-2 far fa-window" /> View Resume</a>
               </Link>
             </div>
           </Fade>
