@@ -15,7 +15,7 @@ export default function Custom404() {
                 
                 #pg404::before {
                     content: "";
-                    background-image: url("../404.jpg");
+                    background-image: url("../static/imgs/404.jpg");
                     background-size: cover;
                     position: absolute;
                     top: 0px;
