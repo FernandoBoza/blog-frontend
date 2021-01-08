@@ -43,7 +43,7 @@ export default function Hero({ handleScroll }) {
                 }
               }
             `}</style>
-            <div className="col-sm-12 col-md-12 offset-lg-0 col-lg-5 ">
+            <div className="d-flex col-sm-12 col-md-12 offset-lg-0 col-lg-5 ">
                 <h1 className="title my-4">
                     <Fade bottom cascade>
                         <span className='font-weight-light'>Fernando</span>
@@ -52,12 +52,12 @@ export default function Hero({ handleScroll }) {
                 </h1>
             </div>
             <Fade top cascade>
-                <div className='offset-lg-2 col-lg-5'>
-                    <p className='colored-meta'> Full Stack Developer</p>
+                <div className='flex-column offset-lg-2 col-lg-5'>
+                    {/* <p className='colored-meta'> Full Stack Developer</p> */}
                     <h2><b>Welcome</b></h2>
                     <p className=''>{homeObject.intro}</p>
 
-                    <p className='colored-meta text-right'> UI | UX Designer</p>
+                    {/* <p className='colored-meta text-right'> UI | UX Designer</p> */}
                 </div>
             </Fade>
             <div className='col-12 col-hero-right'>
