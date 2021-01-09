@@ -41,34 +41,87 @@ export default function Hero({ handleScroll }) {
                     transform: translateY(50px);
                     opacity: 0;
                 }
-              }
+            }
+
+            .right-img-container {
+                position: absolute;
+                overflow: hidden;
+                width: 100vw;
+                height: 100vh;
+                right: 0;
+                top: 0;
+                // transform: scale(1.2)
+            }
+
+            .dark.ipad {
+                position: absolute;
+                width: 1000px;
+                top: 90px;
+                left: 40%;
+            }
+            .dark.iphone {
+                position: absolute; 
+                width: 410px;
+            }
+            .dark.iphone.iphone-1 {
+                top: 52%;
+                right: 30%;
+            }
+            .dark.iphone.iphone-2 {
+                top: 67%;
+                right: 15%;
+            }
+
+            @media (max-width: 900px) {
+                .right-img-container {
+                    display: none;
+                }
+            }
+            
+            @media (max-width: 1200px) {
+                .dark.iphone.iphone-1 {
+                    right: 10%;
+                }
+            }
+
+            
             `}</style>
-            <div className="d-flex col-sm-12 col-md-12 offset-lg-0 col-lg-5 ">
+            <div className="d-flex flex-column col-sm-12 col-md-12 offset-lg-0 col-lg-5 ">
                 <h1 className="title my-4">
                     <Fade bottom cascade>
                         <span className='font-weight-light'>Fernando</span>
                         <span className=''>Boza</span>
                     </Fade>
                 </h1>
-            </div>
-            <Fade top cascade>
-                <div className='flex-column offset-lg-2 col-lg-5'>
-                    {/* <p className='colored-meta'> Full Stack Developer</p> */}
-                    <h2><b>Welcome</b></h2>
-                    <p className=''>{homeObject.intro}</p>
-
-                    {/* <p className='colored-meta text-right'> UI | UX Designer</p> */}
-                </div>
-            </Fade>
-            <div className='col-12 col-hero-right'>
-                <Fade top>
-                    <div className="mt-5">
-                        <div onClick={handleScroll} className="mousey">
-                            <div className="scroller" />
-                        </div>
+                <Fade top cascade>
+                    <div className='flex-column'>
+                        <h2><b>Welcome</b></h2>
+                        <p className=''>{homeObject.intro}</p>
                     </div>
                 </Fade>
             </div>
+
+            <div className="right-img-container">
+                <Fade duration={1500} delay={300} right><img className='dark ipad' src="../static/imgs/hero/dark-ipad.png" alt="" /></Fade>
+                <Fade duration={1200} delay={500} right><img className='dark iphone iphone-1' src="../static/imgs/hero/dark-iphone-1.png" alt="" /></Fade>
+                <Fade duration={1100} delay={700} right><img className='dark iphone iphone-2' src="../static/imgs/hero/dark-iphone-2.png" alt="" /></Fade>
+            </div>
+
+            <div className='col-12 col-hero-right'>
+                {mousy(handleScroll)}
+            </div>
         </div>
+    )
+}
+
+function mousy(handleScroll) {
+    return (
+        <Fade top>
+            <div className="mt-5">
+                <div onClick={handleScroll} className="mousey">
+                    <div className="scroller" />
+                </div>
+            </div>
+        </Fade>
     )
 }
