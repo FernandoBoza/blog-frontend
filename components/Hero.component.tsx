@@ -95,16 +95,15 @@ export default function Hero({ handleScroll }) {
                 </h1>
                 <Fade top cascade>
                     <div className='flex-column'>
-                        <h2><b>Welcome</b></h2>
                         <p className=''>{homeObject.intro}</p>
                     </div>
                 </Fade>
             </div>
 
             <div className="right-img-container">
-                <Fade duration={1500} delay={300} right><img className='dark ipad' src="../static/imgs/hero/dark-ipad.png" alt="" /></Fade>
-                <Fade duration={1200} delay={500} right><img className='dark iphone iphone-1' src="../static/imgs/hero/dark-iphone-1.png" alt="" /></Fade>
-                <Fade duration={1100} delay={700} right><img className='dark iphone iphone-2' src="../static/imgs/hero/dark-iphone-2.png" alt="" /></Fade>
+                <Fade duration={1500} delay={500} right><img className='dark ipad' src="../static/imgs/hero/dark-ipad.png" alt="" /></Fade>
+                <Fade duration={1200} delay={700} right><img className='dark iphone iphone-1' src="../static/imgs/hero/dark-iphone-1.png" alt="" /></Fade>
+                <Fade duration={1100} delay={900} right><img className='dark iphone iphone-2' src="../static/imgs/hero/dark-iphone-2.png" alt="" /></Fade>
             </div>
 
             <div className='col-12 col-hero-right'>

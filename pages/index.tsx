@@ -83,7 +83,7 @@ const Home = () => {
         .progress-title {
           font-weight: 500;
           font-size: 1.3rem;
-		  text-transform: capitalize;
+		      text-transform: capitalize;
         }
 
         .progress-container i {
@@ -99,21 +99,23 @@ const Home = () => {
 
       <div className="row" id="skills">
         <div className="col-12 offset-0 offset-lg-0 col-lg-5 mb-5">
-          <Fade left>
-            <h1 className="title">What I Do</h1>
-            <p>{homeObject.services}</p>
-            <div className="btn_list">
+          <h1 className="title"> <Fade bottom cascade>What I Do</Fade></h1>
+          <Fade top cascade delay={900}>
+            <div><p>{homeObject.services}</p></div>
+            <div className="btn_list d-flex">
               <a className="text-capitalize btn btn-outline-primary mr-3" target="_blank" href="/FernandoBoza_Resume.pdf" download="FernandoBoza-Resume">
                 <i className="mr-2 fas fa-download" /> Download Resume
               </a>
-              <Link href='/FernandoBoza_Resume.pdf'>
-                <a target='_blank' className="text-capitalize btn btn-outline-success "><i className="mr-2 far fa-window" /> View Resume</a>
-              </Link>
+              <div>
+                <Link href='/FernandoBoza_Resume.pdf'>
+                  <a target='_blank' className="text-capitalize btn btn-outline-success "><i className="mr-2 far fa-window" /> View Resume</a>
+                </Link>
+              </div>
             </div>
           </Fade>
         </div>
         <div className="col-12 offset-lg-1 col-lg-5">
-          <Fade duration={1300} right cascade>
+          <Fade duration={1300} delay={900} right cascade>
             {pg.map(data => {
               return (
                 <div key={data.text} className="progress-container">
@@ -131,7 +133,7 @@ const Home = () => {
         <div className={dual_col}>
           <Link href="/blog">
             <a className='category-title-link'>
-              <h1 className=' '>Blog.<i className="fas fa-external-link-square-alt" /></h1>
+              <h1 className=' '> <Fade bottom cascade>Blog.</Fade><i className="fas fa-external-link-square-alt" /></h1>
             </a>
           </Link>
           <Query slug query={ARTICLE_QUERY('blog')}>
@@ -139,7 +141,7 @@ const Home = () => {
               return (
                 data.blogArticles.slice(0, 4).map((blog: Blog) => {
                   return (
-                    <Fade key={blog.slug} left>
+                    <Fade delay={800} key={blog.slug} left>
                       <Card article={blog} />
                     </Fade>
                   )
@@ -151,7 +153,7 @@ const Home = () => {
         <div className={dual_col}>
           <Link href="/portfolio">
             <a className='category-title-link'>
-              <h1 className=' '>Portfolio. <i className="fas fa-external-link-square-alt" /></h1>
+              <h1 className=' '> <Fade bottom cascade>Portfolio.</Fade> <i className="fas fa-external-link-square-alt" /></h1>
             </a>
           </Link>
           <Query slug query={ARTICLE_QUERY('portfolio')}>
@@ -159,7 +161,7 @@ const Home = () => {
               return (
                 data.portfolioArticles.slice(0, 4).map((portfolio: Portfolio) => {
                   return (
-                    <Fade key={portfolio.slug} right>
+                    <Fade delay={800} key={portfolio.slug} right>
                       <Card article={portfolio} />
                     </Fade>
                   )
