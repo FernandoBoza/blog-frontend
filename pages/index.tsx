@@ -23,7 +23,7 @@ const Home = () => {
 
   const handleScroll = () => {
     if (typeof window !== 'undefined') {
-      jump('#skills', {
+      jump('#services', {
         offset: -90,
       })
     }
@@ -130,9 +130,19 @@ const Home = () => {
         </div>
       </div>
        */}
-      <div id="services">
+      <div id="services" className='my-5'>
         <h1 className="title"> <Fade bottom cascade>What I Do</Fade></h1>
-        <div className="row">
+        <div className="btn_list d-flex">
+          <a className="text-capitalize btn btn-outline-primary mr-3" target="_blank" href="/FernandoBoza_Resume.pdf" download="FernandoBoza-Resume">
+            <i className="mr-2 fas fa-download" /> Download Resume
+              </a>
+          <div>
+            <Link href='/FernandoBoza_Resume.pdf'>
+              <a target='_blank' className="text-capitalize btn btn-outline-success "><i className="mr-2 far fa-window" /> View Resume</a>
+            </Link>
+          </div>
+        </div>
+        <div className="row mt-5">
           {servicesObj.map((service, index) => <ServiceCol key={service.title} first={index == 0} data={service} />)}
         </div>
       </div>
@@ -188,7 +198,7 @@ export default Home;
 
 function ServiceCol({ first, data }) {
   const { title, color, icon, content } = data;
-  let validateCol = first ? 'service-col col col-lg-3' : 'service-col col col-lg-3 offset-lg-1';
+  let validateCol = first ? 'service-col col-12 col-md-4 col-lg-3' : 'service-col col-12 col-md-4 col-lg-3 offset-lg-1';
   return (
     <Fade delay={900} duration={1000} bottom>
       <div className={validateCol}>
@@ -224,6 +234,13 @@ function ServiceCol({ first, data }) {
       .service-col:hover {
         transform: scale(1.1);
         z-index: 3;
+      }
+
+      @media (max-width: 766px) {
+        img {
+          left: 35%;
+          top: 23%;
+        }
       }
 
       @media (prefers-color-scheme: dark) {

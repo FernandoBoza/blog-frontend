@@ -408,8 +408,11 @@ section.article.container {
         }
     }
 
-    h1.title {
-        font-size: 60px;
+    h1 {
+        font-size: 1.9rem;
+        &.title {
+            font-size: 60px;
+        }
     }
 }
 

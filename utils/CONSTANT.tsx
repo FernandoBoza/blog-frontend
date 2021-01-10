@@ -46,7 +46,7 @@ export const servicesObj = [
     {
         color: 'rgb(67,145,227)',
         title: 'Frontend Development',
-        content: "From building B2C/B2B websites to building admin dashboards for AWS server http communications. Knowledgable in Angular.io, React 16, Next.JS, Redux and SASS.",
+        content: "From building B2C/B2B websites to building admin dashboards for AWS EC2 instance's status and modification. Knowledgable in Angular.io, React 16, Next.JS, Redux and SASS.",
         icon: 'frontend'
     },
     {
@@ -58,7 +58,7 @@ export const servicesObj = [
     {
         color: 'rgb(241,155,56)',
         title: 'UI & UX Design',
-        content: 'With 10 years of 3D, graphic and motion graphic design, I have designed content and assets for both platforms and social media content.',
+        content: 'With 10 years of 3D, graphic and motion graphic design, I have designed content and assets for both platforms and social media content. Expert PS, AE, AI and XD user.',
         icon: 'ui-ux'
     },
 ]
