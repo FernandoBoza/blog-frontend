@@ -34,8 +34,9 @@ const Nav = ({ data }) => {
                 </Fade>
                 <div className="right">
                     <Fade right>
+                        <Link href="/tutorials"><a className={category === 'tutorials' ? 'active nav-item' : 'nav-item'}>TUTORIALS</a></Link>
                         <Link href="/blog"><a className={category === 'blog' ? 'active nav-item' : 'nav-item'}>BLOG</a></Link>
-                        <Link href="/portfolio"><a className={category === 'portfolio' ? 'active nav-item' : 'nav-item'}>PORTFOLIO</a></Link>
+                        <Link href="/portfolio"><a className={category === 'portfolio' ? 'active nav-item' : 'nav-item'}>WORK</a></Link>
                     </Fade>
 
                     <Fade right cascade>

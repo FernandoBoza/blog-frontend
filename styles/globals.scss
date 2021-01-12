@@ -63,7 +63,7 @@ h1 {
 
 @media (prefers-color-scheme: light) {
     $bg: #f7f7f7;
-    $color: #333;
+    $color: rgb(51, 51, 51);
     body {
         background: $bg;
         color: $color;
@@ -198,60 +198,60 @@ nav {
     }
 }
 
-.card {
-    background-color: transparent;
-    border: none;
+// .card {
+//     background-color: transparent;
+//     border: none;
 
-    &-body {
-        padding: 1rem 0 0 1rem;
-        justify-content: space-between;
-        height: 100%;
-        flex-direction: column;
-        display: flex;
+//     &-body {
+//         padding: 1rem 0 0 1rem;
+//         justify-content: space-between;
+//         height: 100%;
+//         flex-direction: column;
+//         display: flex;
 
-        p.card-text:nth-last-child(2) {
-            height: 70px;
-        }
-    }
-}
+//         p.card-text:nth-last-child(2) {
+//             height: 70px;
+//         }
+//     }
+// }
 
-.card_custom {
-    transition: box-shadow 0.4s;
-    padding: 1rem;
+// .card_custom {
+//     transition: box-shadow 0.4s;
+//     padding: 1rem;
 
-    img.card-img.rounded {
-        transition: box-shadow 0.5s;
-    }
+//     img.card-img.rounded {
+//         transition: box-shadow 0.5s;
+//     }
 
-    .card-title {
-        transition: background 0.4s, color 0.35s;
-        padding: 0.5rem;
-        border-radius: 4px;
-    }
+// .card-title {
+//     transition: background 0.4s, color 0.35s;
+//     padding: 0.5rem;
+//     border-radius: 4px;
+// }
 
-    &:hover {
-        box-shadow: 0px 5px 10px 0px #00000012;
+// &:hover {
+//     box-shadow: 0px 5px 10px 0px #00000012;
 
-        img.card-img.rounded {
-            box-shadow: 0px 0px 16px 0px #00000059;
-        }
+//     img.card-img.rounded {
+//         box-shadow: 0px 0px 16px 0px #00000059;
+//     }
 
-        .card-title {
-            &.bg- {
-                &portfolio {
-                    background-color: #4caf50;
-                }
+// .card-title {
+//     &.bg- {
+//         &portfolio {
+//             background-color: #4caf50;
+//         }
 
-                &blog {
-                    background-color: #0c7cd5;
-                }
-            }
-            color: white;
-        }
-    }
-}
+//         &blog {
+//             background-color: #0c7cd5;
+//         }
+//     }
+//     color: white;
+// }
+//     }
+// }
 
-.card,
+// .card,
 .navbar {
     box-shadow: none;
 }
@@ -366,15 +366,15 @@ section.article.container {
         }
     }
 
-    .card-body {
-        padding: 1rem 0 0 0;
-    }
+    // .card-body {
+    //     padding: 1rem 0 0 0;
+    // }
 
-    .card-body p.card-text:nth-last-child(2) {
-        display: none;
-    }
+    // .card-body p.card-text:nth-last-child(2) {
+    //     display: none;
+    // }
 
-    h1.title {
+    .title {
         font-size: 51px;
     }
 }
@@ -418,11 +418,11 @@ section.article.container {
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
-    .card-body {
-        padding: 0 0 0 1rem;
-    }
+    // .card-body {
+    //     padding: 0 0 0 1rem;
+    // }
 
-    h1.title {
+    .title {
         font-size: 87px;
     }
 
@@ -436,11 +436,11 @@ section.article.container {
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
-    .card-body p.card-text:nth-last-child(2) {
-        display: unset;
-    }
+    // .card-body p.card-text:nth-last-child(2) {
+    //     display: unset;
+    // }
 
-    h1.title {
+    .title {
         font-size: 39px;
     }
 }
@@ -455,13 +455,13 @@ section.article.container {
         max-width: 1241px;
     }
 
-    h1.title {
+    .title {
         font-size: 51px;
         flex-direction: row;
     }
 
-    .card-body p.card-text:nth-last-child(2) {
-        font-size: 0.8rem;
-        opacity: 0.7;
-    }
+    // .card-body p.card-text:nth-last-child(2) {
+    //     font-size: 0.8rem;
+    //     opacity: 0.7;
+    // }
 }

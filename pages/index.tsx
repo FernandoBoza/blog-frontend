@@ -1,22 +1,13 @@
 import Head from 'next/head'
-import Link from "next/link";
 import Query from "../components/Query.component"
-import Card from "../components/Card.component"
 import Hero from "../components/Hero.component"
+import BlogCard from "../components/BlogCard.component";
+import PortfolioCard from "../components/PortfolioCard.component";
 import ARTICLE_QUERY from '../apollo/queries/allArticlesQuery';
-import { progressObject as pg, homeObject, servicesObj } from '../utils/CONSTANT'
+import { progressObject as pg, homeObject, servicesObj, clientIcons } from '../utils/CONSTANT'
 import Fade from 'react-reveal/Fade';
 import jump from 'jump.js';
-
-interface Blog extends Article { }
-
-interface Portfolio extends Article { }
-
-
-interface Article {
-  title: string,
-  slug: string
-}
+import { Portfolio, Blog } from '../interfaces/Interfaces.interface';
 
 const Home = () => {
   const dual_col = "col col-sm-6 col-md-6 col-lg-6 col-xl-4";
@@ -27,11 +18,6 @@ const Home = () => {
         offset: -90,
       })
     }
-  }
-
-
-  const handleFillProgress = (target: number): string => {
-    return `${target}%`;
   }
 
   return (
@@ -89,6 +75,13 @@ const Home = () => {
         .progress-container i {
           font-size: 1.4rem;
         }
+
+        .client-icon-container {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          grid-gap: 1rem;
+        }
+        
 `}</style>
       <Head>
         <title>Fernando Boza | Home</title>
@@ -97,90 +90,24 @@ const Home = () => {
 
       <Hero handleScroll={handleScroll} />
 
-      {/* <div className="row" id="skills">
-        <div className="col-12 offset-0 offset-lg-0 col-lg-5 mb-5">
-          <h1 className="title"> <Fade bottom cascade>What I Do</Fade></h1>
-          <Fade top cascade delay={900}>
-            <div><p>{homeObject.services}</p></div>
-            <div className="btn_list d-flex">
-              <a className="text-capitalize btn btn-outline-primary mr-3" target="_blank" href="/FernandoBoza_Resume.pdf" download="FernandoBoza-Resume">
-                <i className="mr-2 fas fa-download" /> Download Resume
-              </a>
-              <div>
-                <Link href='/FernandoBoza_Resume.pdf'>
-                  <a target='_blank' className="text-capitalize btn btn-outline-success "><i className="mr-2 far fa-window" /> View Resume</a>
-                </Link>
-              </div>
-            </div>
-          </Fade>
-        </div>
-        <div className="col-12 offset-lg-1 col-lg-5">
-          <Fade duration={1300} delay={900} right cascade>
-            {pg.map(data => {
-              return (
-                <div key={data.text} className="progress-container">
-                  <h1 className={`d-flex justify-content-between progress-title ${data.h1Class}`}>{data.text} <i className={`fal ${data.icon}`}></i></h1>
-                  <div className="progress">
-                    <div className={`progress-bar ${data.prgsbarColor}`} role="progressbar" style={{ width: handleFillProgress(data.width) }}>{data.width}%</div>
-                  </div>
-                </div>
-              )
-            })}
-          </Fade>
-        </div>
-      </div>
-       */}
       <div id="services" className='my-5'>
         <h1 className="title"> <Fade bottom cascade>What I Do</Fade></h1>
-        <div className="btn_list d-flex">
-          <a className="text-capitalize btn btn-outline-primary mr-3" target="_blank" href="/FernandoBoza_Resume.pdf" download="FernandoBoza-Resume">
-            <i className="mr-2 fas fa-download" /> Download Resume
-              </a>
-          <div>
-            <Link href='/FernandoBoza_Resume.pdf'>
-              <a target='_blank' className="text-capitalize btn btn-outline-success "><i className="mr-2 far fa-window" /> View Resume</a>
-            </Link>
-          </div>
-        </div>
-        <div className="row mt-5">
-          {servicesObj.map((service, index) => <ServiceCol key={service.title} first={index == 0} data={service} />)}
+        <div className="row mt-5 mx-0">
+          {servicesObj.map(service => <ServiceCol key={service.title} data={service} />)}
         </div>
       </div>
-      <div className="row" id='title'>
-        <div className={dual_col}>
-          <Link href="/blog">
-            <a className='category-title-link'>
-              <h1 className=' '> <Fade bottom cascade>Blog.</Fade><i className="fas fa-external-link-square-alt" /></h1>
-            </a>
-          </Link>
-          <Query slug query={ARTICLE_QUERY('blog')}>
-            {({ data }) => {
-              return (
-                data.blogArticles.slice(0, 4).map((blog: Blog) => {
-                  return (
-                    <Fade delay={800} key={blog.slug} left>
-                      <Card article={blog} />
-                    </Fade>
-                  )
-                })
-              );
-            }}
-          </Query>
-        </div>
-        <div className={dual_col}>
-          <Link href="/portfolio">
-            <a className='category-title-link'>
-              <h1 className=' '> <Fade bottom cascade>Portfolio.</Fade> <i className="fas fa-external-link-square-alt" /></h1>
-            </a>
-          </Link>
+
+
+      <div className="portfolio-section">
+        <h1 className="title">PORTFOLIO</h1>
+        <div className="card-deck">
           <Query slug query={ARTICLE_QUERY('portfolio')}>
             {({ data }) => {
               return (
-                data.portfolioArticles.slice(0, 4).map((portfolio: Portfolio) => {
+                data.portfolioArticles.slice(0, 3).map((portfolio: Portfolio) => {
+                  const img = portfolio.articleBase.image[1] ? portfolio.articleBase.image[1].url : 'http://via.placeholder.com/337x200';
                   return (
-                    <Fade delay={800} key={portfolio.slug} right>
-                      <Card article={portfolio} />
-                    </Fade>
+                    <PortfolioCard article={portfolio} key={portfolio.slug} />
                   )
                 })
               );
@@ -189,23 +116,84 @@ const Home = () => {
         </div>
       </div>
 
+      <div className="blog-section">
+        <h1 className="title">BLOG</h1>
+        <div className="card-deck">
+          <Query slug query={ARTICLE_QUERY('blog')}>
+            {({ data }) => {
+              return (
+                data.blogArticles.slice(0, 3).map((blog: Blog) => {
+                  return (
+                    <BlogCard article={blog} key={blog.slug} />
+                  )
+                })
+              );
+            }}
+          </Query>
+        </div>
+      </div>
+
+      <div className="home-footer row">
+        <div className="col-4 col-lg-5">
+          <h1 className="title">HAPPY CLIENTS</h1>
+        </div>
+        <div className="offset-1 col-4 offset-lg-2 col-lg-3 client-icon-container">
+          {clientIcons.map(client => <ClientIcon key={client.name} client={client} />)}
+        </div>
+      </div>
     </section >
   )
 }
 
 export default Home;
 
+function ClientIcon({ client }) {
+  let Icon;
+  if (!client.src) {
+    Icon = <i style={{ fontSize: '2rem' }} className={`fab fa-${client.name}`}></i>
+  } else {
+    Icon = <img style={{ width: '30px', filter: 'grayscale(100%)' }} className='imgSize' src={client.src} alt={client.name} />
+  }
+  return (
+    <div className='box'>
+      <style jsx>{`
+      .box {
+        width: 80px;
+        height: 80px;
+        display: flex;
+        border-radius: 5px;
+        align-items: center;
+        border: 1px solid white;
+        justify-content: center;
+      }
 
-function ServiceCol({ first, data }) {
+      .box img {
+        filter: blur(2px)
+      }
+      `}</style>
+      {Icon}
+    </div>
+  );
+}
+
+function ServiceCol({ data }) {
   const { title, color, icon, content } = data;
-  let validateCol = first ? 'service-col col-12 col-md-4 col-lg-3' : 'service-col col-12 col-md-4 col-lg-3 offset-lg-1';
+  let arr = title.split(' ');
+  let heavy = arr[0],
+    light = arr[1];
+
+  if (title.includes('UI')) {
+    heavy = 'UI & UX';
+    light = 'Design'
+  }
   return (
     <Fade delay={900} duration={1000} bottom>
-      <div className={validateCol}>
+      <div className='service-col col-12 col-md-4'>
         <style jsx>{`
       h4 {
         margin-bottom: 14rem;
         font-weight: bold;
+        text-transform: uppercase;
       }
 
       img {
@@ -266,7 +254,9 @@ function ServiceCol({ first, data }) {
       }
       `}</style>
         <i className="fas fa-circle" style={{ color: color }}></i>
-        <h4>{title}</h4>
+        <h4 className=''>{heavy}
+          <span className='font-weight-light'> {light}</span>
+        </h4>
         <img src={`../static/imgs/icon-${icon}.svg`} alt={title} />
         <p>{content}</p>
       </div>

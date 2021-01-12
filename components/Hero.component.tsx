@@ -56,8 +56,8 @@ export default function Hero({ handleScroll }) {
             .dark.ipad {
                 position: absolute;
                 width: 1000px;
-                top: 90px;
-                left: 40%;
+                top: 210px;
+                left: 54%;
             }
             .dark.iphone {
                 position: absolute; 

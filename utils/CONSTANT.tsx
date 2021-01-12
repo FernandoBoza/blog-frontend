@@ -62,3 +62,28 @@ export const servicesObj = [
         icon: 'ui-ux'
     },
 ]
+
+export const clientIcons = [
+    {
+        name: 'IBM',
+        src: './static/imgs/clients/IBM_logo.svg'
+    },
+    {
+        name: 'Salesforce',
+        src: './static/imgs/clients/logo-salesforce.svg'
+    },
+    {
+        name: 'ABInBev',
+        src: './static/imgs/clients/abinbev_logo_en.svg'
+    },
+    {
+        name: 'Intel',
+        src: './static/imgs/clients/intel.png'
+    },
+    {
+        name: 'windows',
+    },
+    {
+        name: 'kickstarter',
+    },
+]

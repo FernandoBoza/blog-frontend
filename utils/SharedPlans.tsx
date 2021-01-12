@@ -29,6 +29,6 @@ export const getItemsInCol = (data, type) => {
     )
 }
 
-export const shortenContent = (content, len) => {
+export const shortenContent = (content, len = 70) => {
     return content.slice(0, len) + "...";
 }
