@@ -24,7 +24,7 @@ const BlogCard = ({ article }) => {
             }
 
             .card:hover {
-                box-shadow: 0px 5px 8px rgba(0,0,0,.3);
+                box-shadow: 0px 3px 16px rgba(0,0,0,.2);
             }
 
             .card-title {

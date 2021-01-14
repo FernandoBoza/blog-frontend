@@ -154,7 +154,7 @@ html {
 }
 
 img.article-image {
-    box-shadow: 0px 4px 19px 0px #000000c7;
+    // box-shadow: 0px 4px 19px 0px #000000c7;
     border-radius: 11px;
     display: flex;
     margin: 0 auto;
@@ -228,10 +228,6 @@ section.article.container {
 // Apple iPhone 12 Pro Max Min-Width Media Queries
 
 @media only screen and (min-width: 428px) {
-    // .nav-padding {
-    //     height: 120px;
-    // }
-
     nav {
         img.logo {
             width: 40px;
@@ -263,28 +259,13 @@ section.article.container {
         }
     }
 
-    // .card-body {
-    //     padding: 1rem 0 0 0;
-    // }
-
-    // .card-body p.card-text:nth-last-child(2) {
-    //     display: none;
-    // }
-
     .title {
         font-size: 51px;
     }
 }
 
-// Small devices (landscape phones, 576px and up)
-// @media (min-width: 440px) {}
-
-// Extra small devices (portrait phones, less than 576px)
-// No media query for `xs` since this is the default in Bootstrap
-
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 500px) {
-    nav {
+@media only screen and (min-width: 500px) {
+    body nav {
         img.logo {
             width: 50px;
             height: 50px;
@@ -311,11 +292,7 @@ section.article.container {
 }
 
 // Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-    // .card-body {
-    //     padding: 0 0 0 1rem;
-    // }
-
+@media only screen and (min-width: 768px) {
     .title {
         font-size: 87px;
     }
@@ -329,18 +306,14 @@ section.article.container {
 }
 
 // Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-    // .card-body p.card-text:nth-last-child(2) {
-    //     display: unset;
-    // }
-
+@media only screen and (min-width: 992px) {
     .title {
         font-size: 39px;
     }
 }
 
 // Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
+@media only screen and (min-width: 1200px) {
     .container,
     .container-sm,
     .container-md,

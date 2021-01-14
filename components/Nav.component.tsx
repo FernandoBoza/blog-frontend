@@ -14,7 +14,7 @@ const Nav = ({ data }) => {
             <style jsx>{`
 
                 nav .right {
-                    width: 30vw;
+                    // width: 30vw;
                     display: flex;
                     justify-content: space-between;
                 }
@@ -39,7 +39,7 @@ const Nav = ({ data }) => {
                     width: 110%;
                 }
                 nav .right .icon-group {
-                    width: 204px;
+                    width: 164px;
                     display: flex;
                     position: relative;
                     justify-content: space-between;
@@ -51,6 +51,7 @@ const Nav = ({ data }) => {
                     display: block;
                     width: 1px;
                     top: -30%;
+                    left: -10%;
                 }
                 
                 .icon-group a:nth-child(1):hover {
@@ -75,7 +76,7 @@ const Nav = ({ data }) => {
                 </Fade>
                 <div className="right">
                     <Fade right>
-                        {/* <Link href="/tutorials"><a className={category === 'tutorials' ? 'active nav-item' : 'nav-item'}>TUTORIALS</a></Link> */}
+                        <Link href="/tutorials"><a className={category === 'tutorials' ? 'active nav-item' : 'nav-item'}>TUTORIALS</a></Link>
                         <Link href="/blog"><a className={category === 'blog' ? 'active nav-item' : 'nav-item'}>BLOG</a></Link>
                         <Link href="/portfolio"><a className={category === 'portfolio' ? 'active nav-item' : 'nav-item'}>WORK</a></Link>
                     </Fade>

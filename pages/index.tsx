@@ -243,8 +243,9 @@ function ServiceCol({ data }) {
       }      
       
       .service-col:hover {
+        box-shadow: 0px 3px 16px rgba(0,0,0,.2);
         transform: scale(1.1);
-        z-index: 3;
+        z-index: 0;
       }
 
       @media (max-width: 766px) {
@@ -261,7 +262,6 @@ function ServiceCol({ data }) {
 
         .service-col:hover {
           background: rgb(78,78,78);
-          box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
         }
       }
       
@@ -272,7 +272,6 @@ function ServiceCol({ data }) {
 
         .service-col:hover {
           background: rgb(231, 231, 231);
-          box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
         }
       }
       `}</style>
