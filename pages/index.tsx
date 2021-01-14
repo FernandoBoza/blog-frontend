@@ -107,27 +107,29 @@ const Home = () => {
       </div>
 
 
-      <div className="portfolio-section my-5">
-        <h1 className="title text-center">MY PORTFOLIO</h1>
-        <p className="display-content text-center mx-auto">{homeObj.snippet_portfolio}</p>
-        <div className="card-deck">
-          <Query slug query={ARTICLE_QUERY('portfolio')}>
-            {({ data }) => {
-              return (
-                data.portfolioArticles.slice(0, 3).map((portfolio: Portfolio) => {
-                  const img = portfolio.articleBase.image[1] ? portfolio.articleBase.image[1].url : 'http://via.placeholder.com/337x200';
-                  return (
-                    <PortfolioCard article={portfolio} key={portfolio.slug} />
-                  )
-                })
-              );
-            }}
-          </Query>
+      <Fade bottom cascade>
+        <div className="portfolio-section my-5">
+          <h1 className="title text-center"><Fade bottom cascade>MY PORTFOLIO</Fade></h1>
+          <p className="display-content text-center mx-auto">{homeObj.snippet_portfolio}</p>
+          <div className="card-deck">
+            <Query slug query={ARTICLE_QUERY('portfolio')}>
+              {({ data }) => {
+                return (
+                  data.portfolioArticles.slice(0, 3).map((portfolio: Portfolio) => {
+                    const img = portfolio.articleBase.image[1] ? portfolio.articleBase.image[1].url : 'http://via.placeholder.com/337x200';
+                    return (
+                      <PortfolioCard article={portfolio} key={portfolio.slug} />
+                    )
+                  })
+                );
+              }}
+            </Query>
+          </div>
         </div>
-      </div>
+      </Fade>
 
       <div className="blog-section my-5">
-        <h1 className="title">WHAT'S NEW</h1>
+        <h1 className="title"><Fade right cascade>WHAT'S NEW</Fade></h1>
         <p className="display-content">{homeObj.snippet_blog}</p>
         <div className="card-deck">
           <Query slug query={ARTICLE_QUERY('blog')}>
@@ -135,7 +137,9 @@ const Home = () => {
               return (
                 data.blogArticles.slice(0, 3).map((blog: Blog) => {
                   return (
-                    <BlogCard article={blog} key={blog.slug} />
+                    <Fade bottom>
+                      <BlogCard article={blog} key={blog.slug} />
+                    </Fade>
                   )
                 })
               );

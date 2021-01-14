@@ -3,8 +3,8 @@ import { publishDate, shortenContent } from "../utils/SharedPlans";
 
 const BlogCard = ({ article }) => {
     const { title, slug, articleBase, published_at } = article;
-    const img = 'http://via.placeholder.com/337x200';
-    // const img = articleBase.image[1] ? articleBase.image[1].url : 'http://via.placeholder.com/337x200';
+    // const img = 'http://via.placeholder.com/337x200';
+    const img = articleBase.image[0] ? articleBase.image[0].url : 'http://via.placeholder.com/384x228';
 
     let d = publishDate(published_at).split(' '),
         month = d[0],
@@ -20,7 +20,8 @@ const BlogCard = ({ article }) => {
             .card {
                 border-radius: 8px;
                 box-shadow: none;
-                transition: box-shadow .5s
+                transition: box-shadow .5s;
+                width: 383px;
             }
 
             .card:hover {
@@ -84,7 +85,7 @@ const BlogCard = ({ article }) => {
                 <Link href={`/blog/${slug}`}><a className=" d-sm-none d-lg-block card-link font-weight-bold">Read Full Blog <i className="ml-2 fas fa-chevron-right"></i></a></Link>
             </div>
             <div className="date-badge shadow-lg">
-                <h5 className='font-weight-bold'>{month} <span>{day}</span>   </h5>
+                <h5 className='font-weight-bold mb-0'>{month} <span>{day}</span>   </h5>
             </div>
         </div>
     )

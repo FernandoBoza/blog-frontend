@@ -1,10 +1,8 @@
 import Link from "next/link";
-import { publishDate, shortenContent } from "../utils/SharedPlans";
+import Fade from 'react-reveal/Fade';
 
 const PortfolioCard = ({ article }) => {
     const { title, articleBase, slug } = article;
-    const img = 'http://via.placeholder.com/337x250';
-    // const img = articleBase.image[1] ? articleBase.image[1].url : 'http://via.placeholder.com/337x200';
 
     return (
         <Link href={`/portfolio/${slug}`}>
@@ -17,38 +15,12 @@ const PortfolioCard = ({ article }) => {
             .card {
                 border-radius: 8px;
                 box-shadow: none;
-                transition: box-shadow .5s
+                transition: box-shadow .5s;
+                width: 383px;
             }
 
             h4 {
                 font-size: 1.2rem
-            }
-
-            .overflow-image {
-                position: relative;
-                overflow: hidden
-            }
-
-            .overflow-image img {
-                transition: opacity .4s
-            }
-            
-            .overflow-image:hover img {
-                opacity: .5;
-            }
-
-            .overflow-image p {
-                position: absolute;
-                bottom: -14%;
-                opacity: 0;
-                padding: 1rem;
-                font-size: 1.4rem;
-                transition: opacity .5s, bottom .6s;
-            }  
-            
-            .overflow-image:hover p {
-                opacity: 1;
-                bottom: 4%;
             }
 
             @media (prefers-color-scheme: light) {
@@ -60,6 +32,10 @@ const PortfolioCard = ({ article }) => {
                 .date-badge {
                     background: #2afabc;
                 }
+
+                img {
+                    content: url(${articleBase.image[0].url})
+                }
             }
             @media (prefers-color-scheme: dark) {
                 .card {
@@ -69,12 +45,13 @@ const PortfolioCard = ({ article }) => {
                 .date-badge {
                     background: #5088f9;
                 }
+
+                img {
+                    content: url(${articleBase.image[1].url})
+                }
             }
             `}</style>
-                <div className="overflow-image">
-                    <img className="card-img shadow-lg" src={img} alt="Card image cap" />
-                    <p className="card-text d-sm-none d-lg-block">{shortenContent(articleBase.content, 80)}</p>
-                </div>
+                <img className="card-img shadow-lg" alt="Card image cap" />
                 <div className="card-body pl-0">
                     <h4 className="card-title font-weight-bold">{title}</h4>
                 </div>
