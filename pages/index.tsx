@@ -4,7 +4,7 @@ import Hero from "../components/Hero.component"
 import BlogCard from "../components/BlogCard.component";
 import PortfolioCard from "../components/PortfolioCard.component";
 import ARTICLE_QUERY from '../apollo/queries/allArticlesQuery';
-import { progressObject as pg, homeObject, servicesObj, clientIcons } from '../utils/CONSTANT'
+import { progressObject as pg, servicesObj, clientIcons, homeObj } from '../utils/CONSTANT'
 import Fade from 'react-reveal/Fade';
 import jump from 'jump.js';
 import { Portfolio, Blog } from '../interfaces/Interfaces.interface';
@@ -109,7 +109,7 @@ const Home = () => {
 
       <div className="portfolio-section my-5">
         <h1 className="title text-center">MY PORTFOLIO</h1>
-        <p className="display-content text-center mx-auto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A enim suscipit ratione quia ea inventore incidunt veniam excepturi odit neque dolorem, beatae quidem vitae soluta, odio atque facere assumenda ullam.</p>
+        <p className="display-content text-center mx-auto">{homeObj.snippet_portfolio}</p>
         <div className="card-deck">
           <Query slug query={ARTICLE_QUERY('portfolio')}>
             {({ data }) => {
@@ -128,7 +128,7 @@ const Home = () => {
 
       <div className="blog-section my-5">
         <h1 className="title">WHAT'S NEW</h1>
-        <p className="display-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A enim suscipit ratione quia ea inventore incidunt veniam excepturi odit neque dolorem, beatae quidem vitae soluta, odio atque facere assumenda ullam.</p>
+        <p className="display-content">{homeObj.snippet_blog}</p>
         <div className="card-deck">
           <Query slug query={ARTICLE_QUERY('blog')}>
             {({ data }) => {
@@ -157,12 +157,6 @@ const Home = () => {
 export default Home;
 
 function ClientIcon({ client }) {
-  let Icon;
-  if (!client.src) {
-    Icon = <i style={{ fontSize: '3rem' }} className={`fab fa-${client.name}`}></i>
-  } else {
-    Icon = <img style={{ width: '60px', filter: 'grayscale(100%)' }} className='imgSize' src={client.src} alt={client.name} />
-  }
   return (
     <div className='box'>
       <style jsx>{`
@@ -176,8 +170,30 @@ function ClientIcon({ client }) {
         justify-content: center;
       }
 
+
+      .box i {
+        font-size: 3rem;
+      }
+
       .box img {
-        filter: blur(2px)
+        width: 60px; 
+        filter: grayscale(100%);
+      }
+
+      @media (min-width: 500px){
+        .box {
+          width: 90px;
+          height: 90px;
+        }
+        
+        .box img {
+          width: 40px; 
+        }
+
+        .box i {
+          font-size: 2.4rem;
+        }
+
       }
 
       @media (prefers-color-scheme: dark) {
@@ -192,7 +208,7 @@ function ClientIcon({ client }) {
         }
       }
       `}</style>
-      {Icon}
+      {!client.src ? <i className={`fab fa-${client.name}`}></i> : <img className='imgSize' src={client.src} alt={client.name} />}
     </div>
   );
 }

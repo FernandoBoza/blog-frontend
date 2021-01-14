@@ -73,7 +73,7 @@ const PortfolioCard = ({ article }) => {
             `}</style>
                 <div className="overflow-image">
                     <img className="card-img shadow-lg" src={img} alt="Card image cap" />
-                    <p className="card-text">{shortenContent(articleBase.content,)}</p>
+                    <p className="card-text d-sm-none d-lg-block">{shortenContent(articleBase.content, 80)}</p>
                 </div>
                 <div className="card-body pl-0">
                     <h4 className="card-title font-weight-bold">{title}</h4>

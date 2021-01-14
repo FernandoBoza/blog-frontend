@@ -1,5 +1,5 @@
 import Fade from "react-reveal/Fade";
-import { homeObject } from "../utils/CONSTANT";
+import { HeroObject } from "../utils/CONSTANT";
 
 export default function Hero({ handleScroll }) {
     return (
@@ -95,7 +95,7 @@ export default function Hero({ handleScroll }) {
                 </h1>
                 <Fade delay={700} top cascade>
                     <div className='flex-column'>
-                        <p className='display-content'>{homeObject.intro}</p>
+                        <p className='display-content'>{HeroObject.intro}</p>
                     </div>
                 </Fade>
             </div>

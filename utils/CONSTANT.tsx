@@ -29,18 +29,17 @@ export const progressObject = [
     }
 ]
 
-export const homeObject = {
-    intro: `
-            Software developer by trade, I started while working as a 
-            developer community manager in Paris I fell
-            in love with the art and dynamics of algorithms and fully
-            transitioned to Computer Science. I build full stack
-            and front end solutions revolving around users and
-            project objective.
-    `,
-    services: `
-        From mockup and prototype to database configuration and cloud deployment. I also have 5+ years of in agency environment and content creaton.
-    `
+let devYears: string = (new Date().getFullYear() - 2015).toString();
+let designYears: string = (new Date().getFullYear() - 2011).toString();
+
+export const homeObj = {
+    snippet_portfolio: `${designYears} years of Wordpress development and graphic design, ${devYears} years of development on Node, Python, and Java ecosystems. Dozens of B2B and B2C `,
+    snippet_blog: `Here is where I post some stuff/designs/code i'm working on. I spend a lot of time researching new libraries, frameworks, languages, and techniques for building and scaling apps.`,
+}
+
+export const HeroObject = {
+    intro: `Software developer by trade, I started while working as a developer community manager in Paris I fell in love with the art and dynamics of algorithms and fully transitioned to Computer Science. I build full stack and front end solutions revolving around users and project objective.`,
+    services: `From mockup and prototype to database configuration and cloud deployment. I also have 5+ years of in agency environment and content creaton.`,
 }
 
 export const servicesObj = [

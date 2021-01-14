@@ -13,7 +13,7 @@ const BlogCard = ({ article }) => {
         <div className="card">
             <style jsx>{`
             .card-img {
-                transform: scale(.9);
+                transform: scaleX(0.95) scaleY(0.9);
                 border-radius: 7px;
             }
 
@@ -80,8 +80,8 @@ const BlogCard = ({ article }) => {
             <img className="card-img shadow-lg" src={img} alt="Card image cap" />
             <div className="card-body">
                 <h4 className="card-title font-weight-bold">{title}</h4>
-                <p className="card-text">{shortenContent(articleBase.content,)}</p>
-                <Link href={`/blog/${slug}`}><a className="card-link font-weight-bold">Read Full Blog <i className="ml-2 fas fa-chevron-right"></i></a></Link>
+                <p className="card-text d-sm-none d-lg-block">{shortenContent(articleBase.content,)}</p>
+                <Link href={`/blog/${slug}`}><a className=" d-sm-none d-lg-block card-link font-weight-bold">Read Full Blog <i className="ml-2 fas fa-chevron-right"></i></a></Link>
             </div>
             <div className="date-badge shadow-lg">
                 <h5 className='font-weight-bold'>{month} <span>{day}</span>   </h5>
