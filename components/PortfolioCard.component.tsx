@@ -20,13 +20,36 @@ const PortfolioCard = ({ article }) => {
                 transition: box-shadow .5s
             }
 
-            // .card:hover {
-            //     box-shadow: 0px 5px 8px rgba(0,0,0,.3);
-            // }
-
             h4 {
                 font-size: 1.2rem
-              }
+            }
+
+            .overflow-image {
+                position: relative;
+                overflow: hidden
+            }
+
+            .overflow-image img {
+                transition: opacity .4s
+            }
+            
+            .overflow-image:hover img {
+                opacity: .5;
+            }
+
+            .overflow-image p {
+                position: absolute;
+                bottom: -14%;
+                opacity: 0;
+                padding: 1rem;
+                font-size: 1.4rem;
+                transition: opacity .5s, bottom .6s;
+            }  
+            
+            .overflow-image:hover p {
+                opacity: 1;
+                bottom: 4%;
+            }
 
             @media (prefers-color-scheme: light) {
                 $color: #333;
@@ -48,10 +71,12 @@ const PortfolioCard = ({ article }) => {
                 }
             }
             `}</style>
-                <img className="card-img shadow-lg" src={img} alt="Card image cap" />
+                <div className="overflow-image">
+                    <img className="card-img shadow-lg" src={img} alt="Card image cap" />
+                    <p className="card-text">{shortenContent(articleBase.content,)}</p>
+                </div>
                 <div className="card-body pl-0">
                     <h4 className="card-title font-weight-bold">{title}</h4>
-                    {/* <p className="card-text">{shortenContent(articleBase.content,)}</p> */}
                 </div>
             </a>
         </Link>
