@@ -14,7 +14,7 @@ const Portfolio = () => {
             <div className="row">
                 <Fade top cascade>
                     <div className="col">
-                        <h1>Portfolio 🎯</h1>
+                        <h1 className='title'>Portfolio 🎯</h1>
                         <p>Here you can find my professional work for clients, agencies and such.</p>
                     </div>
                 </Fade>

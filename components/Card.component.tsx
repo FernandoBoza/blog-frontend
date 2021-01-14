@@ -11,6 +11,50 @@ const Card = ({ article }) => {
     return (
         <Link href={path}>
             <a className="card_custom card mb-3">
+                <style jsx>{`
+            .card {
+                background-color: transparent;
+                border: none;
+           }
+            .card-body {
+                padding: 1rem 0 0 1rem;
+                justify-content: space-between;
+                height: 100%;
+                flex-direction: column;
+                display: flex;
+           }
+            .card-body p.card-text:nth-last-child(2) {
+                height: 70px;
+           }
+            .card_custom {
+                transition: box-shadow 0.4s;
+                padding: 1rem;
+           }
+            .card_custom img.card-img.rounded {
+                transition: box-shadow 0.5s;
+           }
+            .card_custom .card-title {
+                transition: background 0.4s, color 0.35s;
+                padding: 0.5rem;
+                border-radius: 4px;
+           }
+            .card_custom:hover {
+                box-shadow: 0px 5px 10px 0px #000 12;
+           }
+            .card_custom:hover img.card-img.rounded {
+                box-shadow: 0px 0px 16px 0px #000 59;
+           }
+            .card_custom:hover .card-title {
+                color: white;
+           }
+            .card_custom:hover .card-title.bg-portfolio {
+                background-color: #4caf50;
+           }
+            .card_custom:hover .card-title.bg-blog {
+                background-color: #0c7cd5;
+           }
+            
+            `}</style>
                 <div className="row no-gutters">
                     <div className="col-md-4 col-lg-6">
                         <Image

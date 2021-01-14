@@ -3,7 +3,8 @@ import { publishDate, shortenContent } from "../utils/SharedPlans";
 
 const BlogCard = ({ article }) => {
     const { title, slug, articleBase, published_at } = article;
-    const img = articleBase.image[1] ? articleBase.image[1].url : 'http://via.placeholder.com/337x200';
+    const img = 'http://via.placeholder.com/337x200';
+    // const img = articleBase.image[1] ? articleBase.image[1].url : 'http://via.placeholder.com/337x200';
 
     let d = publishDate(published_at).split(' '),
         month = d[0],
@@ -11,7 +12,7 @@ const BlogCard = ({ article }) => {
     return (
         <div className="card">
             <style jsx>{`
-            .card-img-top {
+            .card-img {
                 transform: scale(.9);
                 border-radius: 7px;
             }
@@ -24,6 +25,10 @@ const BlogCard = ({ article }) => {
 
             .card:hover {
                 box-shadow: 0px 5px 8px rgba(0,0,0,.3);
+            }
+
+            .card-title {
+                height: 3rem;
             }
 
             .date-badge {
@@ -72,7 +77,7 @@ const BlogCard = ({ article }) => {
                 }
             }
             `}</style>
-            <img className="card-img-top shadow-lg" src={img} alt="Card image cap" />
+            <img className="card-img shadow-lg" src={img} alt="Card image cap" />
             <div className="card-body">
                 <h4 className="card-title font-weight-bold">{title}</h4>
                 <p className="card-text">{shortenContent(articleBase.content,)}</p>

@@ -1,6 +1,6 @@
 const Footer = () => {
     return (
-        <footer className="footer">
+        <footer className="footer mb-3">
             <div className="container">
                 <h1>Contact</h1>
                 <p className='m-0 d-flex justify-content-between'>

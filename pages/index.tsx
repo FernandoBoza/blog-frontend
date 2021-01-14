@@ -14,7 +14,7 @@ const Home = () => {
 
   const handleScroll = () => {
     if (typeof window !== 'undefined') {
-      jump('#services', {
+      jump('#services-section', {
         offset: -90,
       })
     }
@@ -31,10 +31,6 @@ const Home = () => {
         section.Home h1.title .font-weight-light {
           letter-spacing: 0;
         }
-
-        // section.Home h1.title {
-        //   letter-spacing: 4px;
-        // }
 
         .bg-pink {
           background-color: #FF19AF;
@@ -82,6 +78,19 @@ const Home = () => {
           grid-gap: 1rem;
         }
         
+        .display-content{
+          width: 67%;
+        }
+
+        .home-footer {
+          height: 60vh;
+          align-items: center;
+        }
+
+        .home-footer h1 {
+          width: 20rem;
+        }
+        
 `}</style>
       <Head>
         <title>Fernando Boza | Home</title>
@@ -90,16 +99,17 @@ const Home = () => {
 
       <Hero handleScroll={handleScroll} />
 
-      <div id="services" className='my-5'>
-        <h1 className="title"> <Fade bottom cascade>What I Do</Fade></h1>
-        <div className="row mt-5 mx-0">
+      <div id="services-section" className='my-5'>
+        <h1 className="title text-center"> <Fade bottom cascade>What I Do</Fade></h1>
+        <div className="row ">
           {servicesObj.map(service => <ServiceCol key={service.title} data={service} />)}
         </div>
       </div>
 
 
-      <div className="portfolio-section">
-        <h1 className="title">PORTFOLIO</h1>
+      <div className="portfolio-section my-5">
+        <h1 className="title text-center">MY PORTFOLIO</h1>
+        <p className="display-content text-center mx-auto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A enim suscipit ratione quia ea inventore incidunt veniam excepturi odit neque dolorem, beatae quidem vitae soluta, odio atque facere assumenda ullam.</p>
         <div className="card-deck">
           <Query slug query={ARTICLE_QUERY('portfolio')}>
             {({ data }) => {
@@ -116,8 +126,9 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="blog-section">
-        <h1 className="title">BLOG</h1>
+      <div className="blog-section my-5">
+        <h1 className="title">WHAT'S NEW</h1>
+        <p className="display-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A enim suscipit ratione quia ea inventore incidunt veniam excepturi odit neque dolorem, beatae quidem vitae soluta, odio atque facere assumenda ullam.</p>
         <div className="card-deck">
           <Query slug query={ARTICLE_QUERY('blog')}>
             {({ data }) => {
@@ -133,11 +144,9 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="home-footer row">
-        <div className="col-4 col-lg-5">
-          <h1 className="title">HAPPY CLIENTS</h1>
-        </div>
-        <div className="offset-1 col-4 offset-lg-2 col-lg-3 client-icon-container">
+      <div className="home-footer d-flex justify-content-between">
+        <h1 className="title">HAPPY CLIENTS</h1>
+        <div className="client-icon-container">
           {clientIcons.map(client => <ClientIcon key={client.name} client={client} />)}
         </div>
       </div>
@@ -150,25 +159,37 @@ export default Home;
 function ClientIcon({ client }) {
   let Icon;
   if (!client.src) {
-    Icon = <i style={{ fontSize: '2rem' }} className={`fab fa-${client.name}`}></i>
+    Icon = <i style={{ fontSize: '3rem' }} className={`fab fa-${client.name}`}></i>
   } else {
-    Icon = <img style={{ width: '30px', filter: 'grayscale(100%)' }} className='imgSize' src={client.src} alt={client.name} />
+    Icon = <img style={{ width: '60px', filter: 'grayscale(100%)' }} className='imgSize' src={client.src} alt={client.name} />
   }
   return (
     <div className='box'>
       <style jsx>{`
       .box {
-        width: 80px;
-        height: 80px;
+        width: 150px;
+        height: 150px;
         display: flex;
-        border-radius: 5px;
+        border-radius: 15px;
         align-items: center;
-        border: 1px solid white;
+        border: 1px solid;
         justify-content: center;
       }
 
       .box img {
         filter: blur(2px)
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .box {
+          border-color: #e3e3e3
+        }
+      }
+      
+      @media (prefers-color-scheme: light) {
+        .box {
+          border-color: #999
+        }
       }
       `}</style>
       {Icon}
@@ -191,30 +212,32 @@ function ServiceCol({ data }) {
       <div className='service-col col-12 col-md-4'>
         <style jsx>{`
       h4 {
-        margin-bottom: 14rem;
+        // margin-bottom: 14rem;
         font-weight: bold;
         text-transform: uppercase;
+        font-size: 2.5rem;
+        text-align: center;
       }
 
       img {
-        width: 10rem;
-        position: absolute;
-        left: 22%;
-        top: 20%;
+        width: 11rem;
+        margin: 5rem auto;
       }
 
       .fas.fa-circle {
+        font-size: 11rem;
         position: absolute;
-        display: block;
-        width: 100%;
-        text-align: center;
-        font-size: 7rem;
-        top: 8rem;
+        top: 34%;
+        left: 31%;
+        z-index: -1;
+        text-shadow: 0 0 50px currentcolor;
       }
     
       .service-col {
-        position: relative;
         padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        position: relative;
         border-radius: 5px;
         transition: color .4s, background .4s, box-shadow .4s, transform .5s;
       }      
@@ -254,11 +277,11 @@ function ServiceCol({ data }) {
       }
       `}</style>
         <i className="fas fa-circle" style={{ color: color }}></i>
-        <h4 className=''>{heavy}
+        <h4 className='d-flex flex-column'>{heavy}
           <span className='font-weight-light'> {light}</span>
         </h4>
         <img src={`../static/imgs/icon-${icon}.svg`} alt={title} />
-        <p>{content}</p>
+        <p className=''>{content}</p>
       </div>
     </Fade>
   )

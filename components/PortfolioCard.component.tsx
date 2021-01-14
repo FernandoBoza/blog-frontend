@@ -3,12 +3,13 @@ import { publishDate, shortenContent } from "../utils/SharedPlans";
 
 const PortfolioCard = ({ article }) => {
     const { title, articleBase } = article;
-    const img = articleBase.image[1] ? articleBase.image[1].url : 'http://via.placeholder.com/337x200';
+    const img = 'http://via.placeholder.com/337x250';
+    // const img = articleBase.image[1] ? articleBase.image[1].url : 'http://via.placeholder.com/337x200';
 
     return (
         <div className="card">
             <style jsx>{`
-            .card-img-top {
+            .card-img {
                 border-radius: 7px;
             }
 
@@ -42,7 +43,7 @@ const PortfolioCard = ({ article }) => {
                 }
             }
             `}</style>
-            <img className="card-img-top shadow-lg" src={img} alt="Card image cap" />
+            <img className="card-img shadow-lg" src={img} alt="Card image cap" />
             <div className="card-body pl-0">
                 <h4 className="card-title font-weight-bold">{title}</h4>
                 {/* <p className="card-text">{shortenContent(articleBase.content,)}</p> */}

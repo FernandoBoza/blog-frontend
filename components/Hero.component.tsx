@@ -50,14 +50,14 @@ export default function Hero({ handleScroll }) {
                 height: 100vh;
                 right: 0;
                 top: 0;
-                // transform: scale(1.2)
+                pointer-events: none;
             }
 
             .dark.ipad {
                 position: absolute;
                 width: 1000px;
                 top: 210px;
-                left: 54%;
+                left: 59%;
             }
             .dark.iphone {
                 position: absolute; 
@@ -65,11 +65,11 @@ export default function Hero({ handleScroll }) {
             }
             .dark.iphone.iphone-1 {
                 top: 52%;
-                right: 30%;
+                right: 25%;
             }
             .dark.iphone.iphone-2 {
                 top: 67%;
-                right: 15%;
+                right: 10%;
             }
 
             @media (max-width: 900px) {
@@ -86,7 +86,7 @@ export default function Hero({ handleScroll }) {
 
             
             `}</style>
-            <div className="d-flex flex-column col-sm-12 col-md-12 offset-lg-0 col-lg-5 ">
+            <div className="d-flex flex-column col-sm-12 col-md-12 offset-lg-0 col-lg-6">
                 <h1 className="title my-4">
                     <Fade delay={600} bottom cascade>
                         <span className='font-weight-light'>Fernando</span>
@@ -95,7 +95,7 @@ export default function Hero({ handleScroll }) {
                 </h1>
                 <Fade delay={700} top cascade>
                     <div className='flex-column'>
-                        <p className=''>{homeObject.intro}</p>
+                        <p className='display-content'>{homeObject.intro}</p>
                     </div>
                 </Fade>
             </div>
