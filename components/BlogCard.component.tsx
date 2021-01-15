@@ -59,7 +59,6 @@ const BlogCard = ({ article }) => {
             }
 
             @media (prefers-color-scheme: light) {
-                $color: #333;
                 .card {
                     background-color: #f7f7f7;
                     color: #333;

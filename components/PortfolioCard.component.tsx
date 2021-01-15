@@ -55,6 +55,9 @@ const PortfolioCard = ({ article }) => {
                     box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
                 }
             }
+
+            
+
             `}</style>
                 <img className="card-img" alt="Card image cap" />
                 <div className="card-body pl-0">
