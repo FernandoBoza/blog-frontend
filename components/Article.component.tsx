@@ -38,14 +38,14 @@ const Article = ({ article }) => {
                     {projURL()}
                 </Fade>
             </div>
-            <Fade delay={1000} down>
+            <Fade duration={1000} delay={500} down>
                 {
                     article.articleBase.image.length > 2 ?
                         <Image
                             width={1200}
                             height={600}
                             className='article-image img-fluid'
-                            src={article.articleBase.image[3].url}
+                            src={article.articleBase.image[2].url}
                         /> : <Image
                             width={1200}
                             height={600}
