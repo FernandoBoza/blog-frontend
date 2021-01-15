@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Query from "../components/Query.component";
 import ARTICLE_QUERY from '../apollo/queries/allArticlesQuery'
-import { getItemsInCol } from '../utils/SharedPlans'
+import { getItemsInColBlog } from '../utils/SharedPlans'
 import Fade from 'react-reveal/Fade';
 
 const Blog = () => {
@@ -22,7 +22,7 @@ const Blog = () => {
             <Query slug query={ARTICLE_QUERY('blog')}>
                 {({ data }) => {
                     return (
-                        getItemsInCol(data, 'blog')
+                        getItemsInColBlog(data, 'blog')
                     );
                 }}
             </Query>
