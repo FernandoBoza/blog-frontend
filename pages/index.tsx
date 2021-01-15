@@ -163,8 +163,8 @@ const Home = () => {
               return (
                 data.blogArticles.slice(0, 3).map((blog: Blog) => {
                   return (
-                    <Fade bottom>
-                      <BlogCard article={blog} key={blog.slug} />
+                    <Fade key={blog.slug} bottom>
+                      <BlogCard article={blog} />
                     </Fade>
                   )
                 })

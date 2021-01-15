@@ -17,17 +17,6 @@ const BlogCard = ({ article }) => {
                 border-radius: 7px;
             }
 
-            .card {
-                border-radius: 8px;
-                box-shadow: none;
-                transition: box-shadow .5s;
-                width: 383px;
-            }
-
-            .card:hover {
-                box-shadow: 0px 3px 16px rgba(0,0,0,.2);
-            }
-
             .card-title {
                 height: 3rem;
             }
@@ -56,6 +45,12 @@ const BlogCard = ({ article }) => {
 
             .card-text {
                 opacity: .7
+            }
+
+            @media only screen and (min-width: 375px) {
+                body .card-deck .card {
+                    width: unset;
+                }
             }
 
             @media (prefers-color-scheme: light) {

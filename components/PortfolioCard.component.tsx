@@ -12,13 +12,6 @@ const PortfolioCard = ({ article }) => {
                 border-radius: 7px;
             }
 
-            .card {
-                border-radius: 8px;
-                box-shadow: none;
-                transition: box-shadow .5s;
-                width: 383px;
-            }
-
             h4 {
                 font-size: 1.2rem
             }

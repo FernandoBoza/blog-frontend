@@ -1,6 +1,6 @@
 @import "./bootstrap.4.5.2.scss";
 @import "./bootswatch_materia.scss";
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;900&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;900&display=swap");
 
 .font-weight-light {
     font-weight: 100 !important;
@@ -227,8 +227,15 @@ section.article.container {
 }
 
 @media only screen and (min-width: 375px) {
-    body .card-deck .card {
-        width: unset;
+    .card {
+        border-radius: 8px;
+        box-shadow: none;
+        transition: box-shadow 0.5s;
+        width: 383px;
+
+        &:hover {
+            box-shadow: 0px 3px 16px rgba(0, 0, 0, 0.2);
+        }
     }
 }
 
