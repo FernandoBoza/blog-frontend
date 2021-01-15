@@ -57,7 +57,7 @@ const Article = ({ article }) => {
             </Fade>
 
             <Fade up>
-                <div className='' id={styles.content} dangerouslySetInnerHTML={{ __html: article.articleBase.content }} />
+                <div className='mt-5' id={styles.content} dangerouslySetInnerHTML={{ __html: article.articleBase.content }} />
             </Fade>
 
         </section>
