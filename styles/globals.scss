@@ -226,7 +226,11 @@ section.article.container {
     background-image: url("../public/Logo.svg");
 }
 
-// Apple iPhone 12 Pro Max Min-Width Media Queries
+@media only screen and (min-width: 375px) {
+    body .card-deck .card {
+        width: unset;
+    }
+}
 
 @media only screen and (min-width: 428px) {
     nav {
@@ -236,7 +240,7 @@ section.article.container {
         }
 
         .right {
-            width: 75vw;
+            width: 100%;
 
             .icon-group {
                 width: 134px;
@@ -296,13 +300,6 @@ section.article.container {
 @media only screen and (min-width: 768px) {
     .title {
         font-size: 87px;
-    }
-
-    nav.navbar.shadow {
-        height: 61px;
-        .container {
-            flex-direction: row;
-        }
     }
 }
 

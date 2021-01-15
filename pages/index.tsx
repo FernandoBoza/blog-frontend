@@ -90,6 +90,32 @@ const Home = () => {
         .home-footer h1 {
           width: 20rem;
         }
+
+        @media only screen and (min-width: 375px) {
+
+          .home-footer {
+            height: 43vh;
+          }
+
+          .display-content{
+            width: unset
+          }
+
+          .client-icon-container {
+            margin: 0 auto;
+            grid-template-columns: repeat(3, max-content);
+            transform: scale(.7);
+            transform-origin: 0% 10%;
+          } 
+        }
+
+        @media only screen and (min-width: 428px) {
+          .client-icon-container {
+            grid-template-columns: max-content max-content;
+            transform: scale(.9);
+            transform-origin: 0% 10%;
+          } 
+        }
         
 `}</style>
       <Head>
@@ -148,7 +174,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="home-footer d-flex justify-content-between">
+      <div className="home-footer d-md-flex justify-content-between">
         <h1 className="title">HAPPY CLIENTS</h1>
         <div className="client-icon-container">
           {clientIcons.map(client => <ClientIcon key={client.name} client={client} />)}
