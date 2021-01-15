@@ -77,6 +77,7 @@ const Nav = ({ data }) => {
                 <div className="right">
                     <Fade right>
                         {/* <Link href="/tutorials"><a className={category === 'tutorials' ? 'active nav-item' : 'nav-item'}>TUTORIALS</a></Link> */}
+                        <Link href="/FernandoBoza_Resume.pdf"><a className='nav-item' target='_blank' download>RESUME</a></Link>
                         <Link href="/blog"><a className={category === 'blog' ? 'active nav-item' : 'nav-item'}>BLOG</a></Link>
                         <Link href="/portfolio"><a className={category === 'portfolio' ? 'active nav-item' : 'nav-item'}>PORTFOLIO</a></Link>
                     </Fade>
