@@ -111,8 +111,8 @@ const Home = () => {
 
         @media only screen and (min-width: 428px) {
           .client-icon-container {
-            grid-template-columns: max-content max-content;
-            transform: scale(.9);
+            grid-template-columns: max-content max-content max-content;
+            transform: scale(1);
             transform-origin: 0% 10%;
           } 
         }
@@ -210,7 +210,7 @@ function ClientIcon({ client }) {
         filter: grayscale(100%);
       }
 
-      @media (min-width: 500px){
+      @media (min-width: 428px){
         .box {
           width: 90px;
           height: 90px;
