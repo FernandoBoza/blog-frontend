@@ -47,11 +47,16 @@ const PortfolioCard = ({ article }) => {
                 }
 
                 img {
+                    transition: box-shadow .4s;
                     content: url(${articleBase.image[1].url})
+                }
+
+                .card:hover img {
+                    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
                 }
             }
             `}</style>
-                <img className="card-img shadow-lg" alt="Card image cap" />
+                <img className="card-img" alt="Card image cap" />
                 <div className="card-body pl-0">
                     <h4 className="card-title font-weight-bold">{title}</h4>
                 </div>
