@@ -226,17 +226,14 @@ section.article.container {
     background-image: url("../public/Logo.svg");
 }
 
-@media only screen and (min-width: 375px) {
-    .card {
-        border-radius: 8px;
-        box-shadow: none;
-        transition: box-shadow 0.5s;
-        width: 383px;
+.card {
+    border-radius: 8px;
+    box-shadow: none;
+    transition: box-shadow 0.5s;
+}
 
-        &:hover {
-            box-shadow: 0px 3px 16px rgba(0, 0, 0, 0.2);
-        }
-    }
+#blog-card:hover {
+    box-shadow: 0px 3px 16px rgba(0, 0, 0, 0.2);
 }
 
 @media only screen and (min-width: 428px) {
