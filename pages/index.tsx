@@ -137,14 +137,15 @@ const Home = () => {
         <div className="portfolio-section my-5">
           <h1 className="title text-center"><Fade bottom cascade>MY PORTFOLIO</Fade></h1>
           <p className="display-content text-center mx-auto">{homeObj.snippet_portfolio}</p>
-          <div className="card-deck">
+          {/* <div className="card-deck"> */}
+          <div className="row">
             <Query slug query={ARTICLE_QUERY('portfolio')}>
               {({ data }) => {
                 return (
                   data.portfolioArticles.slice(0, 3).map((portfolio: Portfolio) => {
                     const img = portfolio.articleBase.image[1] ? portfolio.articleBase.image[1].url : 'http://via.placeholder.com/337x200';
                     return (
-                      <PortfolioCard article={portfolio} key={portfolio.slug} />
+                      <div key={portfolio.slug} className="col"><PortfolioCard article={portfolio} /></div>
                     )
                   })
                 );
@@ -164,7 +165,7 @@ const Home = () => {
                 data.blogArticles.slice(0, 3).map((blog: Blog) => {
                   return (
                     <Fade key={blog.slug} bottom>
-                      <BlogCard article={blog} />
+                      <div className="col"><BlogCard article={blog} /></div>
                     </Fade>
                   )
                 })
