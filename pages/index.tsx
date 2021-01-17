@@ -158,7 +158,7 @@ const Home = () => {
       <div className="blog-section my-5">
         <h1 className="title"><Fade right cascade>WHAT'S NEW</Fade></h1>
         <p className="display-content">{homeObj.snippet_blog}</p>
-        <div className="card-deck">
+        <div className="row">
           <Query slug query={ARTICLE_QUERY('blog')}>
             {({ data }) => {
               return (

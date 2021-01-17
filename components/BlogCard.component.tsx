@@ -47,12 +47,6 @@ const BlogCard = ({ article }) => {
                 opacity: .7
             }
 
-            @media only screen and (min-width: 375px) {
-                body .card-deck .card {
-                    width: unset;
-                }
-            }
-
             @media (prefers-color-scheme: light) {
                 .card {
                     background-color: #f7f7f7;
