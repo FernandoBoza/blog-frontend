@@ -10,7 +10,7 @@ const BlogCard = ({ article }) => {
         month = d[0],
         day = d[1];
     return (
-        <div className="card">
+        <div id='blog-card' className="card">
             <style jsx>{`
             .card-img {
                 transform: scaleX(0.95) scaleY(0.9);

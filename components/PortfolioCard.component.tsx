@@ -6,7 +6,7 @@ const PortfolioCard = ({ article }) => {
 
     return (
         <Link href={`/portfolio/${slug}`}>
-            <a className="card">
+            <a className="card portfolio-card">
                 <style jsx>{`
             .card-img {
                 border-radius: 7px;
