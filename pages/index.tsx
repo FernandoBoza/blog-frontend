@@ -78,6 +78,7 @@ const Home = () => {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
           grid-gap: 1rem;
+          justify-content: flex-end;
         }
         
         .display-content{
@@ -89,9 +90,9 @@ const Home = () => {
           align-items: center;
         }
 
-        .home-footer h1 {
-          width: 20rem;
-        }
+        // .home-footer h1 {
+        //   width: 20rem;
+        // }
 
         @media only screen and (min-width: 375px) {
 
@@ -177,10 +178,13 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="home-footer d-md-flex justify-content-between">
-        <h1 className="title">HAPPY CLIENTS</h1>
-        <div className="client-icon-container">
-          {clientIcons.map(client => <ClientIcon key={client.name} client={client} />)}
+      {/* <div className="home-footer d-md-flex justify-content-between"> */}
+      <div className="home-footer row">
+        <div className="col col-lg-4"><h1 className="title">HAPPY CLIENTS</h1></div>
+        <div className="col">
+          <div className="client-icon-container">
+            {clientIcons.map(client => <ClientIcon key={client.name} client={client} />)}
+          </div>
         </div>
       </div>
     </section >

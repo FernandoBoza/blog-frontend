@@ -22,9 +22,7 @@ const PortfolioCard = ({ article }) => {
                     background-color: #f7f7f7;
                     color: #333;
                 }
-                .date-badge {
-                    background: #2afabc;
-                }
+               
 
                 img {
                     content: url(${articleBase.image[0].url})
@@ -38,9 +36,6 @@ const PortfolioCard = ({ article }) => {
                 .card {
                     background-color: rgb(51,51,51); 
                     color: #f7f7f7;
-                }
-                .date-badge {
-                    background: #5088f9;
                 }
 
                 img {

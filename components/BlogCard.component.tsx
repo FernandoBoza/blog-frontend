@@ -25,10 +25,6 @@ const BlogCard = ({ article }) => {
 
             .date-badge {
                 position: absolute;
-                right: 2%;
-                top: 43%;
-                width: 50px;
-                height: 50px;
                 display: flex;
                 text-align: center;
                 align-items: center;
