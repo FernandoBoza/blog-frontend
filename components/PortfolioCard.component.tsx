@@ -29,10 +29,14 @@ const PortfolioCard = ({ article }) => {
                 img {
                     content: url(${articleBase.image[0].url})
                 }
+
+                #portfolio-card:hover {
+                    box-shadow: 0px 3px 16px rgba(0, 0, 0, 0.2);
+                }
             }
             @media (prefers-color-scheme: dark) {
                 .card {
-                    background-color: #333;
+                    background-color: rgb(51,51,51); 
                     color: #f7f7f7;
                 }
                 .date-badge {
@@ -45,7 +49,7 @@ const PortfolioCard = ({ article }) => {
                 }
 
                 .card:hover img {
-                    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+                    box-shadow: 0 1rem 3rem rgba(0,0,0,.4)!important;
                 }
             }
 

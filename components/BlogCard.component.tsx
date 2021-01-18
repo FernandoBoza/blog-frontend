@@ -21,6 +21,8 @@ const BlogCard = ({ article }) => {
                 height: 3rem;
             }
 
+            
+
             .date-badge {
                 position: absolute;
                 right: 2%;
@@ -55,14 +57,22 @@ const BlogCard = ({ article }) => {
                 .date-badge {
                     background: #2afabc;
                 }
+
+                #blog-card:hover {
+                    box-shadow: 0px 3px 16px rgba(0, 0, 0, 0.2);
+                }
             }
             @media (prefers-color-scheme: dark) {
                 .card {
-                    background-color: #333;
+                    background-color: rgb(61,61,61);
                     color: #f7f7f7;
                 }
                 .date-badge {
                     background: #5088f9;
+                }
+
+                #blog-card:hover {
+                    box-shadow: 0px 3px 16px rgba(0, 0, 0, 0.4);
                 }
             }
             `}</style>

@@ -20,6 +20,8 @@ const Home = () => {
     }
   }
 
+  const col = "col-12 col-md-4"
+
   return (
     <section className='Home container'>
       <style jsx>{`
@@ -145,7 +147,7 @@ const Home = () => {
                   data.portfolioArticles.slice(0, 3).map((portfolio: Portfolio) => {
                     const img = portfolio.articleBase.image[1] ? portfolio.articleBase.image[1].url : 'http://via.placeholder.com/337x200';
                     return (
-                      <div key={portfolio.slug} className="col"><PortfolioCard article={portfolio} /></div>
+                      <div key={portfolio.slug} className={col}><PortfolioCard article={portfolio} /></div>
                     )
                   })
                 );
@@ -165,7 +167,7 @@ const Home = () => {
                 data.blogArticles.slice(0, 3).map((blog: Blog) => {
                   return (
                     <Fade key={blog.slug} bottom>
-                      <div className="col"><BlogCard article={blog} /></div>
+                      <div className={col}><BlogCard article={blog} /></div>
                     </Fade>
                   )
                 })
