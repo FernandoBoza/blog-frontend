@@ -41,6 +41,7 @@ const Nav = ({ data }) => {
             height: '100%',
             backdropFilter: 'blur(5px)',
             pointerEvents: menuToggle ? 'all' : 'none',
+            padding: '5rem'
 
         }
     }
