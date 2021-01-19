@@ -178,8 +178,8 @@ const Home = () => {
 
       {/* <div className="home-footer d-md-flex justify-content-between"> */}
       <div className="home-footer row">
-        <div className="col col-md-7"><h1 className="title">HAPPY CLIENTS</h1></div>
-        <div className="col col-md-3">
+        <div className="col col-md-7 col-lg-3"><h1 className="title">HAPPY CLIENTS</h1></div>
+        <div className="col col-md-3 offset-lg-6">
           <div className="client-icon-container">
             {clientIcons.map(client => <ClientIcon key={client.name} client={client} />)}
           </div>
@@ -309,11 +309,22 @@ function ServiceCol({ data }) {
         transform: scale(1.1);
         z-index: 0;
       }
+      
 
       @media (max-width: 766px) {
         img {
           left: 35%;
           top: 23%;
+        }
+
+        .service-col {
+          transform: scale(.5);
+        }
+      }
+
+      @media (max-width: 1200px) {
+        .service-col {
+          transform: scale(.8) !important;
         }
       }
 

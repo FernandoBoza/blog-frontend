@@ -41,7 +41,8 @@ const Nav = ({ data }) => {
             height: '100%',
             backdropFilter: 'blur(5px)',
             pointerEvents: menuToggle ? 'all' : 'none',
-            padding: '5rem'
+            padding: '5rem',
+            fontSize: '3rem'
 
         }
     }
@@ -69,8 +70,9 @@ const Nav = ({ data }) => {
         <nav className='navbar p-0'>
             <style jsx>{`
 
-                i {
-                    cursor: pointer
+                i.fa-cheeseburger {
+                    cursor: pointer;
+                    font-size: 2rem
                 }
 
                 a.nav-item {
@@ -87,7 +89,8 @@ const Nav = ({ data }) => {
                 }
                 
                 .show.mobile .icon-group a {
-                    transform: translateX(10%)
+                    transform: translateX(10%);
+                    width: max-content;
                 }
 
                 .desktop a.active.nav-item::after {
