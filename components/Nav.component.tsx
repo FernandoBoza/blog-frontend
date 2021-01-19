@@ -1,97 +1,145 @@
 import Link from "next/link"
 import { useRouter } from "next/router";
 import Fade from 'react-reveal/Fade';
+import { useState } from 'react';
 
 const Nav = ({ data }) => {
+
+    const [menuToggle, handleMenuToggle] = useState(false);
+
     let category;
     if (useRouter().query.category == undefined) {
         category = useRouter().pathname.replace('/', '');
     } else {
         category = useRouter().query.category;
     }
+
+    const mobileStyles = {
+        navBar: {
+            backgroundImage: 'url(/Logo.svg)',
+            width: '55px',
+            height: '50px',
+            backgroundSize: 'cover'
+        },
+        logo_burger: {
+            zIndex: 1,
+            height: '80px',
+            width: '100vw',
+            position: 'fixed',
+            alignItems: 'center',
+            transition: "box-shadow .4s",
+            backdropFilter: 'blur(4px)',
+            boxShadow: data == 'shadow' ? "0 9px 23px rgba(0,0,0,.28)" : ''
+        },
+        icon_group: {
+            zIndex: 2,
+            top: 0,
+            position: 'fixed',
+            opacity: menuToggle ? 1 : 0,
+            transition: "opacity .4s",
+            width: '100%',
+            height: '100%',
+            backdropFilter: 'blur(5px)',
+            pointerEvents: menuToggle ? 'all' : 'none',
+
+        }
+    }
+
+    const desktopStyles = {
+        d: {
+            zIndex: 1,
+            width: "100%",
+            position: "fixed",
+            top: 0,
+            transition: "box-shadow .4s",
+            backdropFilter: 'blur(10px)',
+            boxShadow: data == 'shadow' ? "0 9px 23px rgba(0,0,0,.28)" : ''
+
+        },
+        logo: {
+            backgroundImage: 'url(/Logo.svg)',
+            width: '55px',
+            height: '50px',
+            backgroundSize: 'cover',
+            boxShadow: 'none'
+        },
+    }
     return (
-        <nav className={`navbar ${data}`}>
+        <nav className='navbar p-0'>
             <style jsx>{`
 
-                nav .right {
-                    // width: 30vw;
-                    display: flex;
-                    justify-content: space-between;
+                i {
+                    cursor: pointer
                 }
-                nav .right a.nav-item {
+
+                a.nav-item {
                     font-weight: 300;
-                    text-decoration: none;
                     letter-spacing: 2px;
-                    position: relative;
                 }
-                nav .right a.nav-item::after {
-                    content: "";
-                    background: #d600a8;
-                    height: 1px;
+
+                .mobile .icon-group a {
+                    transition: transform .4s
+                }
+            
+                .hide.mobile .icon-group a {
+                    transform: translateX(-10%)
+                }
+                
+                .show.mobile .icon-group a {
+                    transform: translateX(10%)
+                }
+
+                .desktop a.active.nav-item::after {
+                    content: '';
+                    background: black;
+                    height: 2px;
                     position: absolute;
-                    top: 45%;
-                    display: block;
-                    width: 0%;
-                    left: -3%;
-                    transition: width 0.4s;
+                    bottom: -20%;
+                    width: 100%;
+                    left: 0;
                 }
-                nav .right a.nav-item:hover::after, nav .right a.nav-item.active::after {
-                    width: 110%;
-                }
-                nav .right .icon-group {
-                    width: 164px;
-                    display: flex;
+                
+                .desktop a.active.nav-item {
                     position: relative;
-                    justify-content: space-between;
-                }
-                nav .right .icon-group::after {
-                    content: "";
-                    height: 150%;
-                    position: absolute;
-                    display: block;
-                    width: 1px;
-                    top: -30%;
-                    left: -10%;
-                }
-                
-                .icon-group a:nth-child(1):hover {
-                    color: #d600a8
-                }
-                
-                .icon-group a:nth-child(2):hover {
-                    color: #0c7cd5
-                }
-                
-                .icon-group a:nth-child(3):hover {
-                    color: #4caf50
-                }
-                
-                .icon-group a:nth-child(4):hover {
-                    color: #ffa726
                 }
             `}</style>
-            <section className="container">
-                <Fade top>
-                    <Link href="/"><a className="navbar-brand" href="#"></a></Link>
-                </Fade>
-                <div className="right">
+            <div style={desktopStyles.d} className="desktop d-none p-3 justify-content-between d-md-flex" >
+                <div className="container">
+                    <Fade top>
+                        <Link href="/"><a className="navbar-brand d-flex" style={desktopStyles.logo} href="#"></a></Link>
+                    </Fade>
                     <Fade right>
-                        {/* <Link href="/tutorials"><a className={category === 'tutorials' ? 'active nav-item' : 'nav-item'}>TUTORIALS</a></Link> */}
                         <Link href="/FernandoBoza_Resume.pdf"><a className='nav-item' target='_blank' download>RESUME</a></Link>
                         <Link href="/blog"><a className={category === 'blog' ? 'active nav-item' : 'nav-item'}>BLOG</a></Link>
                         <Link href="/portfolio"><a className={category === 'portfolio' ? 'active nav-item' : 'nav-item'}>PORTFOLIO</a></Link>
                     </Fade>
 
-                    <Fade right cascade>
-                        <div className="icon-group">
+                    <div className="icon-group w-25 d-flex justify-content-around">
+                        <Fade right cascade>
                             <a target='_blank' href="http://github.com/FernandoBoza"><i className="fab fa-github" /></a>
                             <a target='_blank' href="https://repl.it/@fernandob"><i className="fas fa-terminal" /></a>
                             <a target='_blank' href="https://codepen.io/fernandob"><i className="fab fa-codepen" /></a>
                             <a target='_blank' href="https://www.linkedin.com/in/fboza/"><i className="fab fa-linkedin" /></a>
-                        </div>
-                    </Fade>
+                        </Fade>
+                    </div>
                 </div>
-            </section>
+            </div>
+            <div className={`${menuToggle ? 'show' : 'hide'}` + " mobile d-flex d-md-none"}>
+                <div className=" d-flex p-3 justify-content-between logo-burger" style={mobileStyles.logo_burger}>
+                    <Fade top>
+                        <Link href="/"><a className="navbar-brand d-flex" style={mobileStyles.navBar} href="#"></a></Link>
+                    </Fade>
+                    <i onClick={() => handleMenuToggle(!menuToggle)} className="fas fa-cheeseburger"></i>
+                </div>
+                <div onClick={() => handleMenuToggle(!menuToggle)} className='icon-group d-flex flex-column justify-content-around' style={mobileStyles.icon_group}>
+                    <Link href="/blog"><a className={category === 'blog' ? 'active nav-item' : 'nav-item'}>BLOG</a></Link>
+                    <Link href="/portfolio"><a className={category === 'portfolio' ? 'active nav-item' : 'nav-item'}>PORTFOLIO</a></Link>
+                    <a target='_blank' href="http://github.com/FernandoBoza"><i className="fab fa-github" /></a>
+                    <a target='_blank' href="https://repl.it/@fernandob"><i className="fas fa-terminal" /></a>
+                    <a target='_blank' href="https://codepen.io/fernandob"><i className="fab fa-codepen" /></a>
+                    <a target='_blank' href="https://www.linkedin.com/in/fboza/"><i className="fab fa-linkedin" /></a>
+                </div>
+            </div>
         </nav>
     );
 }

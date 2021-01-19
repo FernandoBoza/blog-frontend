@@ -148,11 +148,6 @@ html {
     }
 }
 
-// .card,
-.navbar {
-    box-shadow: none;
-}
-
 img.article-image {
     // box-shadow: 0px 4px 19px 0px #000000c7;
     border-radius: 11px;
@@ -197,34 +192,34 @@ section.article.container {
     margin-bottom: 140px;
 }
 
-.navbar {
-    z-index: 1;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    backdrop-filter: blur(10px);
-    transition: box-shadow 0.4s;
+// .navbar {
+//     z-index: 1;
+//     width: 100%;
+//     position: fixed;
+//     top: 0;
+//     backdrop-filter: blur(10px);
+//     transition: box-shadow 0.4s;
 
-    .container {
-        transition: transform 0.4s;
-    }
+//     .container {
+//         transition: transform 0.4s;
+//     }
 
-    &.shadow {
-        height: 61px;
-        box-shadow: 0 9px 23px rgba(0, 0, 0, 0.28);
-        .container {
-            transform: scale(0.7) translateY(-17px);
-        }
-    }
-}
+//     &.shadow {
+//         height: 61px;
+//         box-shadow: 0 9px 23px rgba(0, 0, 0, 0.28);
+//         .container {
+//             transform: scale(0.7) translateY(-17px);
+//         }
+//     }
+// }
 
-.navbar-brand {
-    width: 56px;
-    height: 50px;
-    display: block;
-    background-size: cover;
-    background-image: url("../public/Logo.svg");
-}
+// .navbar-brand {
+//     width: 56px;
+//     height: 50px;
+//     display: block;
+//     background-size: cover;
+//     background-image: url("../public/Logo.svg");
+// }
 
 .card {
     border-radius: 8px;
@@ -241,64 +236,12 @@ section.article.container {
     }
 }
 @media only screen and (min-width: 428px) {
-    nav {
-        img.logo {
-            width: 40px;
-            height: auto;
-        }
-
-        .right {
-            width: 100%;
-
-            .icon-group {
-                width: 134px;
-
-                &::after {
-                    left: -14%;
-                }
-            }
-        }
-
-        &.navbar.shadow {
-            height: 81px;
-            .container {
-                display: flex;
-                flex-direction: column;
-            }
-        }
-
-        .navbar-brand {
-            margin-bottom: 8px;
-        }
-    }
-
     .title {
         font-size: 51px;
     }
 }
 
 @media only screen and (min-width: 500px) {
-    body nav {
-        img.logo {
-            width: 50px;
-            height: 50px;
-        }
-
-        .right {
-            width: 461px;
-
-            a {
-                font-size: 1rem;
-            }
-
-            .icon-group {
-                &::after {
-                    left: -29%;
-                }
-            }
-        }
-    }
-
     h1 {
         font-size: 1.9rem;
     }
