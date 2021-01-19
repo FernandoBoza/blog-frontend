@@ -76,49 +76,47 @@ const Home = () => {
 
         .client-icon-container {
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
+          grid-template-columns: repeat(3, max-content);
           grid-gap: 1rem;
-          justify-content: flex-end;
         }
         
         .display-content{
           width: 67%;
         }
 
-        .home-footer {
-          height: 60vh;
-          align-items: center;
-        }
-
-        // .home-footer h1 {
-        //   width: 20rem;
-        // }
+        
 
         @media only screen and (min-width: 375px) {
 
-          .home-footer {
-            height: 43vh;
-          }
+          // .home-footer {
+          //   height: 43vh;
+          // }
 
           .display-content{
             width: unset
           }
 
-          .client-icon-container {
-            margin: 0 auto;
-            grid-template-columns: repeat(3, max-content);
-            transform: scale(.7);
-            transform-origin: 0% 10%;
-          } 
+         
         }
 
-        @media only screen and (min-width: 428px) {
+        @media only screen and (min-width: 1200px) {
           .client-icon-container {
-            grid-template-columns: max-content max-content max-content;
-            transform: scale(1);
-            transform-origin: 0% 10%;
-          } 
+            grid-template-columns: repeat(3, max-content);
+            justify-content: flex-end;
+          }
+          
+          .home-footer {
+            // height: 28vh;
+            display: flex;
+            align-items: center
+          }
+
+          .home-footer h1 {
+            margin: 0
+          }
         }
+
+        
         
 `}</style>
       <Head>
@@ -180,8 +178,8 @@ const Home = () => {
 
       {/* <div className="home-footer d-md-flex justify-content-between"> */}
       <div className="home-footer row">
-        <div className="col col-lg-4"><h1 className="title">HAPPY CLIENTS</h1></div>
-        <div className="col">
+        <div className="col col-md-7"><h1 className="title">HAPPY CLIENTS</h1></div>
+        <div className="col col-md-3">
           <div className="client-icon-container">
             {clientIcons.map(client => <ClientIcon key={client.name} client={client} />)}
           </div>
@@ -197,30 +195,25 @@ function ClientIcon({ client }) {
   return (
     <div className='box'>
       <style jsx>{`
+
+
       .box {
-        width: 150px;
-        height: 150px;
         display: flex;
         border-radius: 15px;
         align-items: center;
         border: 1px solid;
         justify-content: center;
       }
-
-
-      .box i {
-        font-size: 3rem;
-      }
-
+      
       .box img {
-        width: 60px; 
         filter: grayscale(100%);
       }
 
-      @media (min-width: 428px){
+
+      @media (min-width: 375px){
         .box {
-          width: 90px;
-          height: 90px;
+          width: 80px;
+          height: 80px;
         }
         
         .box img {
@@ -231,6 +224,22 @@ function ClientIcon({ client }) {
           font-size: 2.4rem;
         }
 
+      }
+
+      @media only screen and (min-width: 1200px) {
+        .box {
+          width: 150px;
+          height: 150px;
+        }
+  
+  
+        .box i {
+          font-size: 3rem;
+        }
+  
+        .box img {
+          width: 60px; 
+        }
       }
 
       @media (prefers-color-scheme: dark) {
