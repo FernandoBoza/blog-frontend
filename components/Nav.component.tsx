@@ -14,7 +14,7 @@ const Nav = ({ data }) => {
         category = useRouter().query.category;
     }
 
-    const mobileStyles = {
+    const mobileStyles: any = {
         navBar: {
             backgroundImage: 'url(/Logo.svg)',
             width: '55px',
@@ -47,7 +47,7 @@ const Nav = ({ data }) => {
         }
     }
 
-    const desktopStyles = {
+    const desktopStyles: any = {
         d: {
             zIndex: 1,
             width: "100%",
