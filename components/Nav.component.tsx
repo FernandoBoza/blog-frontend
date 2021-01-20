@@ -22,6 +22,7 @@ const Nav = ({ data }) => {
             backgroundSize: 'cover'
         },
         logo_burger: {
+            top: 0,
             zIndex: 1,
             height: '80px',
             width: '100vw',
