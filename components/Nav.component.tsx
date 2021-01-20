@@ -28,7 +28,7 @@ const Nav = ({ data }) => {
             position: 'fixed',
             alignItems: 'center',
             transition: "box-shadow .4s",
-            backdropFilter: 'blur(4px)',
+            // backdropFilter: 'blur(10px)',
             boxShadow: data == 'shadow' ? "0 9px 23px rgba(0,0,0,.28)" : ''
         },
         icon_group: {
@@ -39,7 +39,7 @@ const Nav = ({ data }) => {
             transition: "opacity .4s",
             width: '100%',
             height: '100%',
-            backdropFilter: 'blur(5px)',
+            // backdropFilter: 'blur(10px)',
             pointerEvents: menuToggle ? 'all' : 'none',
             padding: '5rem',
             fontSize: '3rem'
@@ -54,7 +54,7 @@ const Nav = ({ data }) => {
             position: "fixed",
             top: 0,
             transition: "box-shadow .4s",
-            backdropFilter: 'blur(10px)',
+            // backdropFilter: 'blur(10px)',
             boxShadow: data == 'shadow' ? "0 9px 23px rgba(0,0,0,.28)" : ''
 
         },
@@ -69,6 +69,17 @@ const Nav = ({ data }) => {
     return (
         <nav className='navbar p-0'>
             <style jsx>{`
+
+                .mobile .icon-group,
+                .desktop {
+                    backdrop-filter: blur(10px);
+                }
+
+
+                .logo-burger {
+                    backdrop-filter: blur(10px);
+                }
+                
 
                 i.fa-cheeseburger {
                     cursor: pointer;
