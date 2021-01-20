@@ -176,10 +176,9 @@ const Home = () => {
         </div>
       </div>
 
-      {/* <div className="home-footer d-md-flex justify-content-between"> */}
-      <div className="home-footer row">
-        <div className="col col-md-7 col-lg-3"><h1 className="title">HAPPY CLIENTS</h1></div>
-        <div className="col col-md-3 offset-lg-6">
+      <div className="home-footer row d-flex justify-content-between">
+        <div className="col-3"><h1 className="title">HAPPY CLIENTS</h1></div>
+        <div className="">
           <div className="client-icon-container">
             {clientIcons.map(client => <ClientIcon key={client.name} client={client} />)}
           </div>
