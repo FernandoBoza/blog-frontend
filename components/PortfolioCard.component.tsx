@@ -34,7 +34,7 @@ const PortfolioCard = ({ article }) => {
             }
             @media (prefers-color-scheme: dark) {
                 .card {
-                    background-color: rgb(51,51,51); 
+                    background-color: rgb(50,50,50); 
                     color: #f7f7f7;
                 }
 
