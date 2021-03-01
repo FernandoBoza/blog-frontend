@@ -4,24 +4,28 @@ import Head from 'next/head';
 import styles from "../styles/blog.module.scss";
 import Fade from 'react-reveal/Fade';
 
-const Article = ({ article }) => {
-    const category_title = article.__typename.replace('Articles', '');
-    const projURL = () => {
-        if (article.articleBase.url != null) {
-            return (
-                <div>
-                    <Link href={'/' + category_title.toLowerCase()}>
-                        <a className='text-capitalize btn btn-outline-warning'>
-                            <i className="fas fa-chevron-left" /> Back To {category_title}
-                        </a>
-                    </Link>
-                    <Link href={article.articleBase.url}>
-                        <a className='btn btn-outline-primary text-capitalize ml-3' target="_blank">
-                            <i className="fas fa-external-link-square-alt"></i>
-                        View Project</a>
-                    </Link>
-                </div>
-            )
+const Article = async ({ article }) => {
+    const category_title = await article.__typename.replace('Articles', '');
+    const projURL = async () => {
+        try {
+            if (article.articleBase.url != null) {
+                return (
+                    <div>
+                        <Link href={'/' + category_title.toLowerCase()}>
+                            <a className='text-capitalize btn btn-outline-warning'>
+                                <i className="fas fa-chevron-left" /> Back To {category_title}
+                            </a>
+                        </Link>
+                        <Link href={article.articleBase.url}>
+                            <a className='btn btn-outline-primary text-capitalize ml-3' target="_blank">
+                                <i className="fas fa-external-link-square-alt"/>
+                                View Project</a>
+                        </Link>
+                    </div>
+                )
+            }
+        } catch (err) {
+            console.error(err);
         }
     };
     return (
