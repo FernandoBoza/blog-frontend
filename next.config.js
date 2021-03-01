@@ -33,6 +33,10 @@ module.exports = {
                                 "https://fonts.googleapis.com",
                                 "https://www.googletagmanager.com/"
                             ],
+                            fontSrc: [
+                                "https://fonts.googleapis.com",
+                                "https://fonts.gstatic.com",
+                            ],
                             imgSrc: [
                                 "https://www.fernandoboza.com",
                                 "'self'",
