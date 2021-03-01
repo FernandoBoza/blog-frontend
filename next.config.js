@@ -11,10 +11,17 @@ module.exports = {
                     contentSecurityPolicy: {
                         directives: {
                             defaultSrc: [
-                                "'self'"
+                                "'self'",
+                                "via.placeholder.com",
+                                "strapi-next-s3.s3.amazonaws.com",
+                                "https://fb-cms.herokuapp.com"
                             ],
                             styleSrc: ["'self'", "'unsafe-inline'"],
-                            imgSrc: ["'self'"],
+                            imgSrc: [
+                                "'self'",
+                                "via.placeholder.com",
+                                "strapi-next-s3.s3.amazonaws.com",
+                            ],
                             baseUri: "self",
                             formAction: "self",
                             frameAncestors: true,
@@ -35,8 +42,9 @@ module.exports = {
     },
     images: {
         domains: [
-            'via.placeholder.com',
-            'strapi-next-s3.s3.amazonaws.com',
+            "via.placeholder.com",
+            "strapi-next-s3.s3.amazonaws.com",
+            "https://fb-cms.herokuapp.com"
         ],
     },
     webpack(config) {
