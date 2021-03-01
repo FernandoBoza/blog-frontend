@@ -1,5 +1,5 @@
 
-const SriPlugin = require("webpack-subresource-integrity");
+// const SriPlugin = require("webpack-subresource-integrity");
 const { createSecureHeaders } = require("next-secure-headers");
 
 module.exports = {
