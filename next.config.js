@@ -8,7 +8,8 @@ module.exports = {
             "via.placeholder.com",
             "strapi-next-s3.s3.amazonaws.com",
             "https://fb-cms.herokuapp.com",
-            "https://fb-client.herokuapp.com"
+            "https://fb-client.herokuapp.com",
+            "https://www.fernandoboza.com"
         ],
     },
     async headers() {
@@ -22,7 +23,8 @@ module.exports = {
                                 "'self'",
                                 "via.placeholder.com",
                                 "strapi-next-s3.s3.amazonaws.com",
-                                "https://fb-cms.herokuapp.com"
+                                "https://fb-cms.herokuapp.com",
+                                "https://www.fernandoboza.com"
                             ],
                             styleSrc: ["'self'", "'unsafe-inline'"],
                             imgSrc: [
