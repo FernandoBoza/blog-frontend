@@ -26,8 +26,9 @@ module.exports = {
                                 "https://fb-cms.herokuapp.com",
                                 "https://www.fernandoboza.com"
                             ],
-                            styleSrc: ["'self'", "'unsafe-inline'"],
+                            styleSrc: ["'self'", "'unsafe-inline'", "https://www.fernandoboza.com"],
                             imgSrc: [
+                                "https://www.fernandoboza.com",
                                 "'self'",
                                 "via.placeholder.com",
                                 "strapi-next-s3.s3.amazonaws.com",
