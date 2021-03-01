@@ -51,15 +51,15 @@ module.exports = {
             }
         ];
     },
-    webpack(config) {
-        config.output.crossOriginLoading = "anonymous";
-        config.plugins.push(
-            new SriPlugin({
-                hashFuncNames: ["sha256", "sha384"],
-                enabled: true,
-            })
-        );
-
-        return config;
-    },
+    // webpack(config) {
+    //     config.output.crossOriginLoading = "anonymous";
+    //     config.plugins.push(
+    //         new SriPlugin({
+    //             hashFuncNames: ["sha256", "sha384"],
+    //             enabled: true,
+    //         })
+    //     );
+    //
+    //     return config;
+    // },
 };
