@@ -4,9 +4,9 @@ import Head from 'next/head';
 import styles from "../styles/blog.module.scss";
 import Fade from 'react-reveal/Fade';
 
-const Article = async ({ article }) => {
-    const category_title = await article.__typename.replace('Articles', '');
-    const projURL = async () => {
+const Article = ({ article }) => {
+    const category_title = article.__typename.replace('Articles', '');
+    const projURL = () => {
         try {
             if (article.articleBase.url != null) {
                 return (
