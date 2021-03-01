@@ -26,7 +26,13 @@ module.exports = {
                                 "https://fb-cms.herokuapp.com",
                                 "https://www.fernandoboza.com"
                             ],
-                            styleSrc: ["'self'", "'unsafe-inline'", "https://www.fernandoboza.com"],
+                            styleSrc: [
+                                "'self'",
+                                "'unsafe-inline'",
+                                "https://www.fernandoboza.com",
+                                "https://fonts.googleapis.com",
+                                "https://www.googletagmanager.com/"
+                            ],
                             imgSrc: [
                                 "https://www.fernandoboza.com",
                                 "'self'",
