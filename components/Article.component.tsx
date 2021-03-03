@@ -34,9 +34,21 @@ const Article = ({ article }) => {
                 <title>Fernando Boza | {article.title}</title>
             </Head>
 
+            <style jsx>{`
+                .articleTitleWidth {
+                    width: 100%
+                }
+                
+                @media only screen and (min-width: 600px) {
+                    .articleTitleWidth {
+                        width: 75%
+                    }
+                }
+            `}</style>
+
             <div className="d-flex my-5 flex-column flex-lg-row">
                 <Fade left>
-                    <div className="mr-auto"><h1 className=''>{article.title}</h1></div>
+                    <div className="mr-auto articleTitleWidth"><h1 className=''>{article.title}</h1></div>
                 </Fade>
                 <Fade right>
                     {projURL()}

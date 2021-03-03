@@ -107,7 +107,6 @@ const Nav = ({ data }) => {
 
                 .desktop a.active.nav-item::after {
                     content: '';
-                    background: black;
                     height: 2px;
                     position: absolute;
                     bottom: -20%;
@@ -117,6 +116,18 @@ const Nav = ({ data }) => {
                 
                 .desktop a.active.nav-item {
                     position: relative;
+                }
+                
+                @media (prefers-color-scheme: light) {
+                    .desktop a.active.nav-item::after {
+                        background: black;
+                    }
+                }
+                
+                @media (prefers-color-scheme: dark) {
+                    .desktop a.active.nav-item::after {
+                        background: white;
+                    }
                 }
             `}</style>
             <div style={desktopStyles.d} className="desktop d-none p-3 justify-content-between d-md-flex" >
