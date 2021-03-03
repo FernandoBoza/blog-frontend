@@ -1,11 +1,11 @@
+const withPWA = require('next-pwa')
 const runtimeCaching = require('next-pwa/cache')
-const withOffline = require("next-offline");
 
-const nextConfig = {
-    pwa: {
-        dest: 'public',
-        runtimeCaching,
-    },
+module.exports = withPWA({
+    // pwa: {
+    //     dest: 'public',
+    //     runtimeCaching,
+    // },
     images: {
         domains: [
             "'self'",
@@ -16,6 +16,4 @@ const nextConfig = {
             "https://www.fernandoboza.com"
         ],
     }
- };
-
-module.exports = withOffline(nextConfig);
+})
