@@ -1,8 +1,11 @@
+const runtimeCaching = require('next-pwa/cache')
+const withOffline = require("next-offline");
 
-// const SriPlugin = require("webpack-subresource-integrity");
-const { createSecureHeaders } = require("next-secure-headers");
-
-module.exports = {
+const nextConfig = {
+    pwa: {
+        dest: 'public',
+        runtimeCaching,
+    },
     images: {
         domains: [
             "'self'",
@@ -12,61 +15,7 @@ module.exports = {
             "https://fb-client.herokuapp.com",
             "https://www.fernandoboza.com"
         ],
-    },
-    // async headers() {
-    //     return [
-    //         {
-    //             source: "/(.*)",
-    //             headers: createSecureHeaders({
-    //                 contentSecurityPolicy: {
-    //                     directives: {
-    //                         defaultSrc: [
-    //                             "'self'",
-    //                         ],
-    //                         imgSrc: [
-    //                             "'self'",
-    //                             // 'https://www.googletagmanager.com'
-    //                         ],
-    //                         fontSrc: [
-    //                             "'self'",
-    //                             'https://fonts.gstatic.com/'
-    //                         ],
-    //                         styleSrc: [
-    //                             "'self'",
-    //                             "'unsafe-inline'",
-    //                             'https://fonts.googleapis.com/',
-    //                         ],
-    //                         // scriptSrc: [
-    //                         //     "'self'",
-    //                         //     // "https://www.googletagmanager.com/",
-    //                         // ],
-    //                         baseUri: "self",
-    //                         formAction: "self",
-    //                         frameAncestors: true,
-    //                     },
-    //                 },
-    //                 frameGuard: "deny",
-    //                 noopen: "noopen",
-    //                 nosniff: "nosniff",
-    //                 xssProtection: "sanitize",
-    //                 forceHTTPSRedirect: [
-    //                     true,
-    //                     { maxAge: 60 * 60 * 24 * 360, includeSubDomains: true },
-    //                 ],
-    //                 referrerPolicy: "same-origin",
-    //             }),
-    //         }
-    //     ];
-    // },
-    // webpack(config) {
-    //     config.output.crossOriginLoading = "anonymous";
-    //     config.plugins.push(
-    //         new SriPlugin({
-    //             hashFuncNames: ["sha256", "sha384"],
-    //             enabled: true,
-    //         })
-    //     );
-    //
-    //     return config;
-    // },
-};
+    }
+ };
+
+module.exports = withOffline(nextConfig);
