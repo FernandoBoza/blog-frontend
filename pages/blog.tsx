@@ -8,7 +8,7 @@ import useSWR from "swr";
 import BlogCard from "../components/BlogCard.component";
 
 const Blog = () => {
-    const fetcher = async query => await request('http://localhost:1337/graphql', query)
+    const fetcher = async query => await request('https://fb-cms.herokuapp.com/graphql', query)
     const { data, error } = useSWR(
         `{
             blogArticles {
