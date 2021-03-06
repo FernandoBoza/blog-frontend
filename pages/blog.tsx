@@ -1,11 +1,13 @@
 import Head from 'next/head'
 // import Query from "../components/Query.component";
 // import ARTICLE_QUERY from '../apollo/queries/allArticlesQuery'
-import { getItemsInColBlog } from '../utils/SharedPlans'
+import {getItemsInCol, getItemsInColBlog} from '../utils/SharedPlans'
 import Fade from 'react-reveal/Fade';
 import { request } from 'graphql-request'
 import useSWR from "swr";
 import BlogCard from "../components/BlogCard.component";
+import ARTICLES_QUERY from "../apollo/queries/allArticlesQuery";
+import Query from "../components/Query.component";
 
 const Blog = () => {
     const fetcher = async query => await request('https://fb-cms.herokuapp.com/graphql', query)
@@ -39,15 +41,23 @@ const Blog = () => {
                 </Fade>
             </div>
 
-            {
-                data?.blogArticles.map(blog => {
+            {/*{*/}
+            {/*    data?.blogArticles.map(blog => {*/}
+            {/*        return (*/}
+            {/*            <Fade key={blog.slug} left>*/}
+            {/*                <BlogCard article={blog} />*/}
+            {/*            </Fade>*/}
+            {/*        )*/}
+            {/*    })*/}
+            {/*}*/}
+
+            <Query slug query={ARTICLES_QUERY('blog')}>
+                {({ data }) => {
                     return (
-                        <Fade key={blog.slug} left>
-                            <BlogCard article={blog} />
-                        </Fade>
-                    )
-                })
-            }
+                        getItemsInCol(data, 'blog')
+                    );
+                }}
+            </Query>
         </div>
     )
 }

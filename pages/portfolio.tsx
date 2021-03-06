@@ -9,7 +9,6 @@ const Portfolio = () => {
         <div className='portfolio-container container'>
             <Head>
                 <title>Fernando Boza | Portfolios</title>
-                <link rel="icon" href="/favicon.ico" />
             </Head>
             <div className="row">
                 <Fade top cascade>
