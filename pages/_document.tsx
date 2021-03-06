@@ -5,11 +5,10 @@ export default class MyDocument extends Document {
         return (
             <Html lang="en">
                 <Head>
-                    <link rel="manifest" href="/manifest.json" />
-                    <meta name="theme-color" content="#90cdf4" />
-                    <link rel="apple-touch-icon" href="images/logo-96x96.png" />
-                    <meta name="apple-mobile-web-app-status-bar" content="#90cdf4" />
-
+                    {/*<link rel="manifest" href="/manifest.json" />*/}
+                    {/*<meta name="theme-color" content="#90cdf4" />*/}
+                    {/*<link rel="apple-touch-icon" href="images/logo-96x96.png" />*/}
+                    {/*<meta name="apple-mobile-web-app-status-bar" content="#90cdf4" />*/}
                     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6MV56X9TG9"></script>
                     <script
                         dangerouslySetInnerHTML={{
