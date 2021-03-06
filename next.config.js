@@ -1,7 +1,9 @@
 const withPWA = require('next-pwa')
 const runtimeCaching = require('next-pwa/cache')
 
-module.exports = withPWA({
+// withPWA(
+
+module.exports = {
     // pwa: {
     //     dest: 'public',
     //     runtimeCaching,
@@ -16,4 +18,4 @@ module.exports = withPWA({
             "https://www.fernandoboza.com"
         ],
     }
-})
+}
