@@ -1,15 +1,34 @@
 import Head from 'next/head'
-import Query from "../components/Query.component";
-import ARTICLE_QUERY from '../apollo/queries/allArticlesQuery'
+// import Query from "../components/Query.component";
+// import ARTICLE_QUERY from '../apollo/queries/allArticlesQuery'
 import { getItemsInColBlog } from '../utils/SharedPlans'
 import Fade from 'react-reveal/Fade';
+import { request } from 'graphql-request'
+import useSWR from "swr";
+import BlogCard from "../components/BlogCard.component";
 
 const Blog = () => {
+    const fetcher = async query => await request('https://fb-cms.herokuapp.com/graphql', query)
+    const { data, error } = useSWR(
+        `{
+            blogArticles {
+            title,
+            slug,
+           articleBase {
+              content
+              url
+              image {
+                url
+              }
+            }
+          }
+        }`,
+        fetcher
+    )
     return (
         <div className='blog-container container'>
             <Head>
                 <title>Fernando Boza | Blogs</title>
-                <link rel="icon" href="/favicon.ico" />
             </Head>
             <div className="row">
                 <Fade top cascade>
@@ -19,15 +38,17 @@ const Blog = () => {
                     </div>
                 </Fade>
             </div>
-            <Query slug query={ARTICLE_QUERY('blog')}>
-                {({ data }) => {
+
+            {
+                data?.blogArticles.map(blog => {
                     return (
-                        getItemsInColBlog(data, 'blog')
-                    );
-                }}
-            </Query>
+                        <Fade key={blog.slug} left>
+                            <BlogCard article={blog} />
+                        </Fade>
+                    )
+                })
+            }
         </div>
     )
 }
-
 export default Blog
