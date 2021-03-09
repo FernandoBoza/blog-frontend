@@ -69,7 +69,6 @@ const Article = ({ article }) => {
                             src={article.articleBase.image[1].url}
                         />
                 }
-
             </Fade>
 
             <Fade up>

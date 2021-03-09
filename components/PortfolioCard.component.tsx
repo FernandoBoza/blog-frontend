@@ -22,11 +22,6 @@ const PortfolioCard = ({ article }) => {
                     background-color: #f7f7f7;
                     color: #333;
                 }
-               
-
-                img {
-                    content: url(${articleBase.image[0].url})
-                }
 
                 #portfolio-card:hover {
                     box-shadow: 0px 3px 16px rgba(0, 0, 0, 0.2);
@@ -38,11 +33,6 @@ const PortfolioCard = ({ article }) => {
                     color: #f7f7f7;
                 }
 
-                img {
-                    transition: box-shadow .4s;
-                    content: url(${articleBase.image[1].url})
-                }
-
                 .card:hover img {
                     box-shadow: 0 1rem 3rem rgba(0,0,0,.4)!important;
                 }
@@ -51,7 +41,7 @@ const PortfolioCard = ({ article }) => {
             
 
             `}</style>
-                <img className="card-img" alt="Card image cap" />
+                <img className="card-img" alt="Card image cap" src={`${articleBase.image[0].url}`} />
                 <div className="card-body pl-0">
                     <h4 className="card-title font-weight-bold">{title}</h4>
                 </div>
