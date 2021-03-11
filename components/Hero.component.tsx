@@ -4,7 +4,7 @@ import { HeroObject } from "../utils/CONSTANT";
 export default function Hero({ handleScroll }) {
     return (
         <div className="row hero">
-            <style>{`
+            <style jsx global>{`
             .mousey {
                 width: 20px;
                 height: 30px;
@@ -70,6 +70,12 @@ export default function Hero({ handleScroll }) {
             .dark.iphone.iphone-2 {
                 top: 67%;
                 right: 10%;
+            }
+            
+            @media (max-width: 430px) {
+                .row.hero {
+                    height: 70vh;
+                }
             }
 
             @media (max-width: 900px) {
