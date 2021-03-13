@@ -5,7 +5,8 @@ import styles from "../styles/blog.module.scss";
 import Fade from 'react-reveal/Fade';
 
 const Article = ({ article }) => {
-    const category_title = article.__typename.replace('Articles', '');
+    console.log(article)
+    const category_title = article?.__typename.replace('Articles', '');
     const projURL = () => {
         try {
             if (article.articleBase.url != null) {
@@ -31,7 +32,7 @@ const Article = ({ article }) => {
     return (
         <section className='article container'>
             <Head>
-                <title>Fernando Boza | {article.title}</title>
+                <title>Fernando Boza | {article?.title}</title>
             </Head>
 
             <style jsx>{`
