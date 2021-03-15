@@ -56,17 +56,18 @@ const Article = ({ article }) => {
             </div>
             <Fade duration={1000} delay={500} down>
                 {
-                    article.articleBase.image.length > 2 ?
+                    article.articleBase.image[1] ?
                         <Image
                             width={1200}
                             height={600}
                             className='article-image img-fluid'
-                            src={article.articleBase.image[2].url}
-                        /> : <Image
+                            src={article.articleBase.image[1].url}
+                        /> :
+                        <Image
                             width={1200}
                             height={600}
                             className='article-image img-fluid'
-                            src={article.articleBase.image[1].url}
+                            src={article.articleBase.image[0].url}
                         />
                 }
             </Fade>
