@@ -5,7 +5,7 @@ import styles from "../styles/blog.module.scss";
 import Fade from 'react-reveal/Fade';
 
 const Article = ({ article }) => {
-    const category_title = article.__typename.replace('Articles', '');
+    const category_title = article?.__typename.replace('Articles', '');
     const projURL = () => {
         try {
             if (article.articleBase.url != null) {
@@ -31,7 +31,7 @@ const Article = ({ article }) => {
     return (
         <section className='article container'>
             <Head>
-                <title>Fernando Boza | {article.title}</title>
+                <title>Fernando Boza | {article?.title}</title>
             </Head>
 
             <style jsx>{`
@@ -48,7 +48,7 @@ const Article = ({ article }) => {
 
             <div className="d-flex my-5 flex-column flex-lg-row">
                 <Fade left>
-                    <div className="mr-auto articleTitleWidth"><h1 className=''>{article.title}</h1></div>
+                    <div className="mr-auto articleTitleWidth"><h1 className=''>{article?.title}</h1></div>
                 </Fade>
                 <Fade right>
                     {projURL()}
@@ -56,24 +56,25 @@ const Article = ({ article }) => {
             </div>
             <Fade duration={1000} delay={500} down>
                 {
-                    article.articleBase.image[1] ?
+                    article && article.articleBase.image[1] ?
                         <Image
                             width={1200}
                             height={600}
                             className='article-image img-fluid'
                             src={article.articleBase.image[1].url}
                         /> :
+                        article ?
                         <Image
                             width={1200}
                             height={600}
                             className='article-image img-fluid'
                             src={article.articleBase.image[0].url}
-                        />
+                        /> : ""
                 }
             </Fade>
 
             <Fade up>
-                <div className='mt-5' id={styles.content} dangerouslySetInnerHTML={{ __html: article.articleBase.content }} />
+                <div className='mt-5' id={styles.content} dangerouslySetInnerHTML={{ __html: article?.articleBase.content }} />
             </Fade>
 
         </section>

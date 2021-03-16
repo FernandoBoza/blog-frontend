@@ -1,22 +1,18 @@
 import Head from 'next/head'
-// import Query from "../components/Query.component";
-// import ARTICLE_QUERY from '../apollo/queries/allArticlesQuery'
-import {getItemsInCol, getItemsInColBlog} from '../utils/SharedPlans'
 import Fade from 'react-reveal/Fade';
 import { request } from 'graphql-request'
 import useSWR from "swr";
 import BlogCard from "../components/BlogCard.component";
-import ARTICLES_QUERY from "../apollo/queries/allArticlesQuery";
-import Query from "../components/Query.component";
 
 const Blog = () => {
     const fetcher = async query => await request('https://fb-cms.herokuapp.com/graphql', query)
     const { data, error } = useSWR(
         `{
-            blogArticles {
+            blogArticles(sort: "published_at:desc") {
             title,
             slug,
-           articleBase {
+            published_at,
+            articleBase {
               content
               url
               image {
@@ -41,23 +37,19 @@ const Blog = () => {
                 </Fade>
             </div>
 
-            {/*{*/}
-            {/*    data?.blogArticles.map(blog => {*/}
-            {/*        return (*/}
-            {/*            <Fade key={blog.slug} left>*/}
-            {/*                <BlogCard article={blog} />*/}
-            {/*            </Fade>*/}
-            {/*        )*/}
-            {/*    })*/}
-            {/*}*/}
-
-            <Query slug query={ARTICLES_QUERY('blog')}>
-                {({ data }) => {
-                    return (
-                        getItemsInCol(data, 'blog')
-                    );
-                }}
-            </Query>
+           <div className="card-container row row-cols-3">
+               {
+                   data?.blogArticles.map(blog => {
+                       return (
+                           <div className="col">
+                               <Fade key={blog.slug} left>
+                                   <BlogCard article={blog} />
+                               </Fade>
+                           </div>
+                       )
+                   })
+               }
+           </div>
         </div>
     )
 }
