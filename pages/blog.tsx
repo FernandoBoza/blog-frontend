@@ -38,8 +38,8 @@ const Blog = () => {
            <div className="card-container row row-cols-3">
                {data?.blogArticles.map(blog => {
                     return (
-                       <div className="col">
-                           <Fade key={blog.slug} left>
+                       <div key={blog.slug} className="col">
+                           <Fade left>
                                <BlogCard article={blog} />
                            </Fade>
                        </div>
