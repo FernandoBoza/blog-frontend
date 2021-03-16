@@ -1,15 +1,33 @@
 import Head from 'next/head'
-import Query from "../components/Query.component";
-import ARTICLES_QUERY from "../apollo/queries/allArticlesQuery";
-import { getItemsInCol } from "../utils/SharedPlans";
 import Fade from 'react-reveal/Fade';
+import { request } from 'graphql-request'
+import useSWR from "swr";
+import PortfolioCard from "../components/PortfolioCard.component";
+
+
 
 const Portfolio = () => {
+    const fetcher = async query => await request('https://fb-cms.herokuapp.com/graphql', query)
+    const { data, error } = useSWR(
+        `{
+            portfolioArticles(sort: "published_at:desc") {
+            title,
+            slug,
+            published_at,
+            articleBase {
+              content
+              url
+              image {
+                url
+              }
+            }
+          }
+        }`,
+        fetcher
+    )
     return (
         <div className='portfolio-container container'>
-            <Head>
-                <title>Fernando Boza | Portfolios</title>
-            </Head>
+            <Head><title>Fernando Boza | Portfolios</title></Head>
             <div className="row">
                 <Fade top cascade>
                     <div className="col">
@@ -18,13 +36,17 @@ const Portfolio = () => {
                     </div>
                 </Fade>
             </div>
-            <Query slug query={ARTICLES_QUERY('portfolio')}>
-                {({ data }) => {
+            <div className="card-container row row-cols-3">
+                {data?.portfolioArticles.map(portfolio => {
                     return (
-                        getItemsInCol(data, 'portfolio')
-                    );
-                }}
-            </Query>
+                        <div key={portfolio.slug} className="col">
+                            <Fade left>
+                                <PortfolioCard article={portfolio}/>
+                            </Fade>
+                        </div>
+                    )
+                })}
+            </div>
         </div>
     )
 }
