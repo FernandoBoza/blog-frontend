@@ -136,7 +136,7 @@ const Nav = ({ data }) => {
                         <Link href="/"><a className="navbar-brand d-flex" style={desktopStyles.logo} href="#"></a></Link>
                     </Fade>
                     <Fade right>
-                        <Link href="/FernandoBoza_Resume.pdf"><a className='nav-item' target='_blank' download>RESUME</a></Link>
+                        {/*<Link href="/FernandoBoza_Resume.pdf"><a className='nav-item' target='_blank' download>RESUME</a></Link>*/}
                         <Link href="/blog"><a className={category === 'blog' ? 'active nav-item' : 'nav-item'}>BLOG</a></Link>
                         <Link href="/portfolio"><a className={category === 'portfolio' ? 'active nav-item' : 'nav-item'}>PORTFOLIO</a></Link>
                     </Fade>
