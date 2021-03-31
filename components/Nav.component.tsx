@@ -97,7 +97,7 @@ const Nav = ({ data }) => {
                 }
                 
                 .show.mobile .icon-group a {
-                    transform: translateX(10%);
+                    // transform: translateX(10%);
                     width: max-content;
                 }
 
