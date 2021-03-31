@@ -35,7 +35,7 @@ const Blog = () => {
                 </Fade>
             </div>
 
-           <div className="card-container row row-cols-3">
+            <div className="card-container row row-cols-1 row-cols-md-3">
                {data?.blogArticles.map(blog => {
                     return (
                        <div key={blog.slug} className="col">
