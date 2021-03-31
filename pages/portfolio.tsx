@@ -36,7 +36,7 @@ const Portfolio = () => {
                     </div>
                 </Fade>
             </div>
-            <div className="card-container row row-cols-3">
+            <div className="card-container row row-cols-1 row-cols-md-3">
                 {data?.portfolioArticles.map(portfolio => {
                     return (
                         <div key={portfolio.slug} className="col">
