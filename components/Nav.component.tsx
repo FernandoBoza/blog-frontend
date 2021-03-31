@@ -4,16 +4,13 @@ import Fade from 'react-reveal/Fade';
 import { useState } from 'react';
 
 const Nav = ({ data }) => {
-
     const [menuToggle, handleMenuToggle] = useState(false);
-
     let category;
     if (useRouter().query.category == undefined) {
         category = useRouter().pathname.replace('/', '');
     } else {
         category = useRouter().query.category;
     }
-
     const mobileStyles: any = {
         navBar: {
             backgroundImage: 'url(/Logo.svg)',
@@ -47,7 +44,6 @@ const Nav = ({ data }) => {
 
         }
     }
-
     const desktopStyles: any = {
         d: {
             zIndex: 1,
@@ -133,7 +129,7 @@ const Nav = ({ data }) => {
             <div style={desktopStyles.d} className="desktop d-none p-3 justify-content-between d-md-flex" >
                 <div className="container">
                     <Fade top>
-                        <Link href="/"><a className="navbar-brand d-flex" style={desktopStyles.logo} href="#"></a></Link>
+                        <Link href="/"><a className="navbar-brand d-flex" style={desktopStyles.logo} href="#"/></Link>
                     </Fade>
                     <Fade right>
                         {/*<Link href="/FernandoBoza_Resume.pdf"><a className='nav-item' target='_blank' download>RESUME</a></Link>*/}
@@ -154,9 +150,9 @@ const Nav = ({ data }) => {
             <div className={`${menuToggle ? 'show' : 'hide'}` + " mobile d-flex d-md-none"}>
                 <div className=" d-flex p-3 justify-content-between logo-burger" style={mobileStyles.logo_burger}>
                     <Fade top>
-                        <Link href="/"><a className="navbar-brand d-flex" style={mobileStyles.navBar} href="#"></a></Link>
+                        <Link href="/"><a className="navbar-brand d-flex" style={mobileStyles.navBar} href="#"/></Link>
                     </Fade>
-                    <i onClick={() => handleMenuToggle(!menuToggle)} className="fas fa-cheeseburger"></i>
+                    <i onClick={() => handleMenuToggle(!menuToggle)} className="fas fa-cheeseburger"/>
                 </div>
                 <div onClick={() => handleMenuToggle(!menuToggle)} className='icon-group d-flex flex-column justify-content-around' style={mobileStyles.icon_group}>
                     <Link href="/blog"><a className={category === 'blog' ? 'active nav-item' : 'nav-item'}>BLOG</a></Link>
