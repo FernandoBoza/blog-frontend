@@ -62,7 +62,7 @@ const Card = ({ article }) => {
                             width={200}
                             height={240}
                             className="card-img rounded"
-                            alt="..."
+                            alt={article.title}
                         />
                     </div>
                     <div className="col-md-8 col-lg-6">
