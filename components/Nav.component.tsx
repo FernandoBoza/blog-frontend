@@ -123,13 +123,13 @@ const Nav = ({ data }) => {
                 @media (prefers-color-scheme: dark) {
                     .desktop a.active.nav-item::after {
                         background: white;
-                    }
+                    } 
                 }
             `}</style>
             <div style={desktopStyles.d} className="desktop d-none p-3 justify-content-between d-md-flex" >
                 <div className="container">
                     <Fade top>
-                        <Link href="/"><a className="navbar-brand d-flex" style={desktopStyles.logo} href="#"/></Link>
+                        <Link href="/"><a className="navbar-brand  d-flex" style={desktopStyles.logo} href="#"/></Link>
                     </Fade>
                     <Fade right>
                         {/*<Link href="/FernandoBoza_Resume.pdf"><a className='nav-item' target='_blank' download>RESUME</a></Link>*/}
