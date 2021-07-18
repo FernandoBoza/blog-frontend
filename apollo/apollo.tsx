@@ -12,7 +12,7 @@ const link = createHttpLink({
     uri: GRAPHQL_URL + '/graphql'
 });
 
-export default withApollo((initateState: any) => new ApolloClient({
+export default withApollo((initiateState: any) => new ApolloClient({
     link: link,
-    cache: new InMemoryCache().restore(initateState || {})
+    cache: new InMemoryCache().restore(initiateState || {})
 }))

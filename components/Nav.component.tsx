@@ -129,8 +129,10 @@ const Nav = ({ data }) => {
             <div style={desktopStyles.d} className="desktop d-none p-3 justify-content-between d-md-flex" >
                 <div className="container">
                     <Fade top>
+
                         <Link href="/"><a className="navbar-brand  d-flex" style={desktopStyles.logo} href="#"/></Link>
                     </Fade>
+
                     <Fade right>
                         {/*<Link href="/FernandoBoza_Resume.pdf"><a className='nav-item' target='_blank' download>RESUME</a></Link>*/}
                         <Link href="/blog"><a className={category === 'blog' ? 'active nav-item' : 'nav-item'}>BLOG</a></Link>
