@@ -3,7 +3,6 @@ import { publishDate, shortenContent } from "../utils/SharedPlans";
 
 const BlogCard = ({ article }) => {
     const { title, slug, articleBase, published_at } = article;
-    // const img = 'http://via.placeholder.com/337x200';
     const img = articleBase.image[0] ? articleBase.image[0].url : 'http://via.placeholder.com/384x228';
 
     let d = publishDate(published_at).split(' '),
@@ -21,8 +20,6 @@ const BlogCard = ({ article }) => {
                 .card-title {
                     height: 3rem;
                 }
-    
-                
     
                 .date-badge {
                     position: absolute;
