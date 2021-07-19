@@ -13,11 +13,11 @@ const Home = () => {
   const dual_col = "col col-sm-6 col-md-6 col-lg-6 col-xl-4";
 
   const handleScroll = () => {
-    if (typeof window !== 'undefined') {
-      jump('#services-section', {
-        offset: -90,
-      })
-    }
+   // if (typeof window !== 'undefined') {
+   //   jump('#services-section', {
+   //     offset: -90,
+   //   })
+  //  }
   }
 
   const col = "col-12 col-md-4"
